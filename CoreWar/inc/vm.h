@@ -22,20 +22,21 @@
 
 typedef struct	s_pc
 {
-	int			pc_index;
-	int			global_i;
-	char		alive_label;
-	int			time_todo;
-	int			command;
-	struct s_pc *next;
+	short			pc_index;
+	unsigned int	global_i;
+	unsigned char	alive_label;
+	unsigned short	time_todo;
+	unsigned char			command;
+	struct s_pc 	*next;
 }				t_pc;
 
 typedef struct	s_player
 {
-	int 				carry;
+	char 				player_number;
+	char 				carry;
 	int 				alive_counter;
 	int 				last_live;
-	unsigned int 		*registry;
+	unsigned int 		registry[REG_NUMBER];
 	t_pc				pc;
 	struct	s_player 	*next;
 }				t_player;
@@ -48,11 +49,19 @@ typedef struct	s_sell
 
 typedef struct	s_game_info
 {
-	int			counter;
-	int			cycle_delta_counter;
-	int			max_checks_counter;
+	int				counter;
+	unsigned short	cycle_delta_counter;
+	unsigned short	max_checks_counter;
 	t_sell		field[FIELD_SIZE];
 }				t_game_info;
+
+typedef struct	s_options
+{
+	char 			reg[3];
+	short			dir[3];
+	unsigned int	ind[2];
+	char			option_number[3];
+}				t_options;
 
 
 
