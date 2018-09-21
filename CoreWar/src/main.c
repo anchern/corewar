@@ -33,7 +33,7 @@ void	print_field(t_game_info *game_info)
 		{
 			ft_printf("\n");
 			if (i != FIELD_SIZE - 1)
-				ft_printf("%#06x : ", i);
+				ft_printf("%#06x : ", i + 1);
 		}
 		else
 			ft_printf(" ");
@@ -79,6 +79,8 @@ int		main (int argc, char **argv)
 {
 	header_t	*header;
 	t_game_info	*game_info;
+	t_options	*options;
+	t_player	*player;
 	int			fd;
 
 	header = (header_t *)ft_memalloc(sizeof(header_t));
@@ -88,6 +90,6 @@ int		main (int argc, char **argv)
 		close(fd);
 		exit(75);
 	}
-	ft_printf("%x", bytestos(game_info->field, 2));
+
 	return (0);
 }

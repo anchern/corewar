@@ -58,14 +58,17 @@ typedef struct			s_game_info
 typedef struct			s_options
 {
 	char 				reg[3];
-	short				dir[3];
-	unsigned int		ind[2];
+	unsigned int		dir[3];
+	short				ind[2];
 	char				option_number[3];
 }						t_options;
 
 unsigned int			bytestoui(const t_sell *byte, short index);
 short					bytestos(const t_sell *byte, short index);
 void					uitobytes(unsigned value, t_sell *field, short index);
-
+void 					alive_command(t_options *options, t_player *player, int counter);
+void					load_command(t_options *options, t_sell *field, t_player *player);
+void					store_command(t_options *options, t_sell *field, t_player *player);
+void					add_command(t_options *options, t_player *player);
 
 #endif
