@@ -7,7 +7,7 @@ include_directories(lib/mylib)
 
 #add_definitions("-Wall -Wextra -Werror -O3")
 
-add_executable(corewar src/main.c inc/vm.h inc/op.h)
+add_executable(corewar src/main.c inc/vm.h inc/op.h src/commands/commands1-5.c src/commands/commands6-10.c src/commands/commands11-15.c)
 
 add_subdirectory(lib/mylib)
 

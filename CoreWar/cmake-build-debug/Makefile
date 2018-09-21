@@ -136,6 +136,87 @@ mylib/fast:
 	$(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/build
 .PHONY : mylib/fast
 
+src/commands/commands1-5.o: src/commands/commands1-5.c.o
+
+.PHONY : src/commands/commands1-5.o
+
+# target to build an object file
+src/commands/commands1-5.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands1-5.c.o
+.PHONY : src/commands/commands1-5.c.o
+
+src/commands/commands1-5.i: src/commands/commands1-5.c.i
+
+.PHONY : src/commands/commands1-5.i
+
+# target to preprocess a source file
+src/commands/commands1-5.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands1-5.c.i
+.PHONY : src/commands/commands1-5.c.i
+
+src/commands/commands1-5.s: src/commands/commands1-5.c.s
+
+.PHONY : src/commands/commands1-5.s
+
+# target to generate assembly for a file
+src/commands/commands1-5.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands1-5.c.s
+.PHONY : src/commands/commands1-5.c.s
+
+src/commands/commands11-15.o: src/commands/commands11-15.c.o
+
+.PHONY : src/commands/commands11-15.o
+
+# target to build an object file
+src/commands/commands11-15.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands11-15.c.o
+.PHONY : src/commands/commands11-15.c.o
+
+src/commands/commands11-15.i: src/commands/commands11-15.c.i
+
+.PHONY : src/commands/commands11-15.i
+
+# target to preprocess a source file
+src/commands/commands11-15.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands11-15.c.i
+.PHONY : src/commands/commands11-15.c.i
+
+src/commands/commands11-15.s: src/commands/commands11-15.c.s
+
+.PHONY : src/commands/commands11-15.s
+
+# target to generate assembly for a file
+src/commands/commands11-15.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands11-15.c.s
+.PHONY : src/commands/commands11-15.c.s
+
+src/commands/commands6-10.o: src/commands/commands6-10.c.o
+
+.PHONY : src/commands/commands6-10.o
+
+# target to build an object file
+src/commands/commands6-10.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands6-10.c.o
+.PHONY : src/commands/commands6-10.c.o
+
+src/commands/commands6-10.i: src/commands/commands6-10.c.i
+
+.PHONY : src/commands/commands6-10.i
+
+# target to preprocess a source file
+src/commands/commands6-10.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands6-10.c.i
+.PHONY : src/commands/commands6-10.c.i
+
+src/commands/commands6-10.s: src/commands/commands6-10.c.s
+
+.PHONY : src/commands/commands6-10.s
+
+# target to generate assembly for a file
+src/commands/commands6-10.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands6-10.c.s
+.PHONY : src/commands/commands6-10.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -173,6 +254,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... corewar"
 	@echo "... mylib"
+	@echo "... src/commands/commands1-5.o"
+	@echo "... src/commands/commands1-5.i"
+	@echo "... src/commands/commands1-5.s"
+	@echo "... src/commands/commands11-15.o"
+	@echo "... src/commands/commands11-15.i"
+	@echo "... src/commands/commands11-15.s"
+	@echo "... src/commands/commands6-10.o"
+	@echo "... src/commands/commands6-10.i"
+	@echo "... src/commands/commands6-10.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

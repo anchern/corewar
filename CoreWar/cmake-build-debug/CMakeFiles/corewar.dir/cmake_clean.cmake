@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/corewar.dir/src/main.c.o"
+  "CMakeFiles/corewar.dir/src/commands/commands1-5.c.o"
+  "CMakeFiles/corewar.dir/src/commands/commands6-10.c.o"
+  "CMakeFiles/corewar.dir/src/commands/commands11-15.c.o"
   "corewar.pdb"
   "corewar"
 )

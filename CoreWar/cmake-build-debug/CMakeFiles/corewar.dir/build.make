@@ -70,18 +70,63 @@ CMakeFiles/corewar.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar.dir/src/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlewando/Corewar/corewar/CoreWar/src/main.c -o CMakeFiles/corewar.dir/src/main.c.s
 
+CMakeFiles/corewar.dir/src/commands/commands1-5.c.o: CMakeFiles/corewar.dir/flags.make
+CMakeFiles/corewar.dir/src/commands/commands1-5.c.o: ../src/commands/commands1-5.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/corewar.dir/src/commands/commands1-5.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/src/commands/commands1-5.c.o   -c /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands1-5.c
+
+CMakeFiles/corewar.dir/src/commands/commands1-5.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar.dir/src/commands/commands1-5.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands1-5.c > CMakeFiles/corewar.dir/src/commands/commands1-5.c.i
+
+CMakeFiles/corewar.dir/src/commands/commands1-5.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar.dir/src/commands/commands1-5.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands1-5.c -o CMakeFiles/corewar.dir/src/commands/commands1-5.c.s
+
+CMakeFiles/corewar.dir/src/commands/commands6-10.c.o: CMakeFiles/corewar.dir/flags.make
+CMakeFiles/corewar.dir/src/commands/commands6-10.c.o: ../src/commands/commands6-10.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/corewar.dir/src/commands/commands6-10.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/src/commands/commands6-10.c.o   -c /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands6-10.c
+
+CMakeFiles/corewar.dir/src/commands/commands6-10.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar.dir/src/commands/commands6-10.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands6-10.c > CMakeFiles/corewar.dir/src/commands/commands6-10.c.i
+
+CMakeFiles/corewar.dir/src/commands/commands6-10.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar.dir/src/commands/commands6-10.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands6-10.c -o CMakeFiles/corewar.dir/src/commands/commands6-10.c.s
+
+CMakeFiles/corewar.dir/src/commands/commands11-15.c.o: CMakeFiles/corewar.dir/flags.make
+CMakeFiles/corewar.dir/src/commands/commands11-15.c.o: ../src/commands/commands11-15.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/corewar.dir/src/commands/commands11-15.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar.dir/src/commands/commands11-15.c.o   -c /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands11-15.c
+
+CMakeFiles/corewar.dir/src/commands/commands11-15.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar.dir/src/commands/commands11-15.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands11-15.c > CMakeFiles/corewar.dir/src/commands/commands11-15.c.i
+
+CMakeFiles/corewar.dir/src/commands/commands11-15.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar.dir/src/commands/commands11-15.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands11-15.c -o CMakeFiles/corewar.dir/src/commands/commands11-15.c.s
+
 # Object files for target corewar
 corewar_OBJECTS = \
-"CMakeFiles/corewar.dir/src/main.c.o"
+"CMakeFiles/corewar.dir/src/main.c.o" \
+"CMakeFiles/corewar.dir/src/commands/commands1-5.c.o" \
+"CMakeFiles/corewar.dir/src/commands/commands6-10.c.o" \
+"CMakeFiles/corewar.dir/src/commands/commands11-15.c.o"
 
 # External object files for target corewar
 corewar_EXTERNAL_OBJECTS =
 
 corewar: CMakeFiles/corewar.dir/src/main.c.o
+corewar: CMakeFiles/corewar.dir/src/commands/commands1-5.c.o
+corewar: CMakeFiles/corewar.dir/src/commands/commands6-10.c.o
+corewar: CMakeFiles/corewar.dir/src/commands/commands11-15.c.o
 corewar: CMakeFiles/corewar.dir/build.make
 corewar: lib/mylib/libmylib.a
 corewar: CMakeFiles/corewar.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable corewar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable corewar"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/corewar.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -395,6 +395,15 @@
 		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h">
 			<Option target="mylib"/>
 		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands1-5.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands11-15.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands6-10.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/main.c">
 			<Option target="corewar"/>
 		</Unit>
