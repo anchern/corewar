@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CoreWar"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\mylib\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="corewar">
+				<Option output="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/corewar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 corewar"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="corewar/fast">
+				<Option output="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/corewar" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 corewar/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mylib">
+				<Option output="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/libmylib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/Makefile&quot;  VERBOSE=1 mylib"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mylib/fast">
+				<Option output="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/libmylib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/Makefile&quot;  VERBOSE=1 mylib/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/inc/op.h">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/inc/vm.h">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_bitoa.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_forparse.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_forparse01.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_forparse02.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_ftoa.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_get_tval.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_getfloatval.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_getint.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_getparam.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_gettxtval.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_getunsignedval.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_itoabase.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_other.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_parsetype.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_printf.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_printf.h">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_proc_e_type.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_procdouble.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_processingflags.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_procint.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_procnotation.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_procstr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_proctxt.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_realloc.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_setcolor.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/get_next_line.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/get_next_line.h">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_atoi.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_bzero.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_isalnum.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_isalpha.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_isascii.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_isdigit.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_isprint.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_itoa.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_lstadd.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_lstdel.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_lstdelone.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_lstiter.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_lstmap.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_lstnew.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_lstpushback.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_memalloc.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_memccpy.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_memchr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_memcmp.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_memcpy.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_memdel.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_memmove.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_memset.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_pow.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_putchar.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_putchar_fd.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_putendl.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_putendl_fd.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_putnbr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_putnbr_fd.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_putstr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_putstr_fd.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strcat.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strchr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strclr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strcmp.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strcpy.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strdel.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strdup.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strequ.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_striter.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_striteri.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strjoin.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strlcat.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strlen.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strmap.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strmapi.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strncat.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strncmp.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strncpy.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strnequ.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strnew.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strnstr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strrchr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strsplit.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strstr.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strsub.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strtrim.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_strtrimc.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_tolower.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/ft_toupper.c">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h">
+			<Option target="mylib"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands1-5.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands11-15.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands6-10.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/main.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\mylib\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

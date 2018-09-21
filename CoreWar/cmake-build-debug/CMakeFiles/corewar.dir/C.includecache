@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dlewando/Corewar/corewar/CoreWar/inc/op.h
+
+/Users/dlewando/Corewar/corewar/CoreWar/inc/vm.h
+../lib/mylib/ft_printf.h
+/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_printf.h
+../inc/op.h
+/Users/dlewando/Corewar/corewar/CoreWar/inc/op.h
+fcntl.h
+-
+
+/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_printf.h
+libft/libft.h
+/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h
+stdarg.h
+-
+math.h
+-
+
+/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+
+/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands1-5.c
+../../inc/vm.h
+/Users/dlewando/Corewar/corewar/CoreWar/inc/vm.h
+
+/Users/dlewando/Corewar/corewar/CoreWar/src/main.c
+../inc/vm.h
+/Users/dlewando/Corewar/corewar/CoreWar/inc/vm.h
+
