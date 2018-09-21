@@ -18,6 +18,8 @@
 # include "../inc/op.h"
 # include <fcntl.h>
 
+# define FIELD_SIZE 4096
+
 typedef struct	s_pc
 {
 	int			pc_index;
@@ -49,7 +51,7 @@ typedef struct	s_game_info
 	int			counter;
 	int			cycle_delta_counter;
 	int			max_checks_counter;
-	t_sell		field[4096];
+	t_sell		field[FIELD_SIZE];
 }				t_game_info;
 
 

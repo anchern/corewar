@@ -8,10 +8,45 @@ void	save_in_var(unsigned int *var, unsigned char *arr)
 	*var = *var | arr[3];
 }
 
-int		read_header(header_t *header, char *filename)
+void	copy_field(t_game_info *game_info, unsigned char *field, int field_size)
+{
+	int		i;
+
+	i = 0;
+	while (i < field_size)
+	{
+		game_info->field[i].value = field[i];
+		i++;
+	}
+}
+
+void	print_field(t_game_info *game_info)
+{
+	int		i;
+
+	i = 0;
+	ft_printf("0x0000 : ");
+	while (i < FIELD_SIZE)
+	{
+		ft_printf("%02x", game_info->field[i].value);
+		if (!((i + 1) % 64))
+		{
+			ft_printf("\n");
+			if (i != FIELD_SIZE - 1)
+				ft_printf("%#06x : ", i);
+		}
+		else
+			ft_printf(" ");
+		i++;
+	}
+}
+
+
+int		read_header(t_game_info *game_info, header_t *header, char *filename)
 {
 	unsigned char	buf[COMMENT_LENGTH + 1];
 	int				fd;
+	ssize_t 		rd;
 
 	fd = open(filename, O_RDONLY);
 	header->magic = 0;
@@ -28,22 +63,27 @@ int		read_header(header_t *header, char *filename)
 	if (read(fd, buf, 4) < 4)
 		return (0);
 	save_in_var(&header->prog_size, buf);
-	ft_printf("%x", header->prog_size);
 	if (read(fd, buf, COMMENT_LENGTH) < COMMENT_LENGTH)
 		return (0);
 	ft_strcpy(header->comment, (char *)buf);
 	if (read(fd, buf, 4) < 4)
 		return (0);
+	if ((rd = read(fd, buf, header->prog_size)) < header->prog_size || rd > 682)
+		return (0);
+	copy_field(game_info, buf, header->prog_size);
+	print_field(game_info);
 	return (fd);
 }
 
 int		main (int argc, char **argv)
 {
 	header_t	*header;
+	t_game_info	*game_info;
 	int			fd;
 
 	header = (header_t *)ft_memalloc(sizeof(header_t));
-	if (!(fd = read_header(header, "../files/helltrain.cor")))
+	game_info = (t_game_info *)ft_memalloc(sizeof(t_game_info));
+	if (!(fd = read_header(game_info, header, "../files/helltrain.cor")))
 	{
 		close(fd);
 		exit(75);
