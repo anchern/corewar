@@ -55,4 +55,18 @@ void	addition_command(t_options *options, t_player *player)
 {
 	player->registry[options->reg[2]] = player->registry[options->reg[0]]
 			+ player->registry[options->reg[1]];
+	if (player->registry[options->reg[2]] == 0)
+		player->carry = 1;
+	else
+		player->carry = 0;
+}
+
+void	substraction_command(t_options *options, t_player *player)
+{
+	player->registry[options->reg[2]] = player->registry[options->reg[0]]
+										- player->registry[options->reg[1]];
+	if (player->registry[options->reg[2]] == 0)
+		player->carry = 1;
+	else
+		player->carry = 0;
 }
