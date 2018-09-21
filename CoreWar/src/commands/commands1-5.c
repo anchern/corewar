@@ -21,5 +21,5 @@ void 	alive_command(unsigned int dir_argument, t_player *player, int counter)
 
 void	load_command(t_options *options, t_sell *field, t_player *player)
 {
-
+ftrf
 }
