@@ -88,5 +88,6 @@ int		main (int argc, char **argv)
 		close(fd);
 		exit(75);
 	}
+	ft_printf("%x", bytestos(game_info->field, 2));
 	return (0);
 }
