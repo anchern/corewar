@@ -18,5 +18,41 @@
 # include "../inc/op.h"
 # include <fcntl.h>
 
+typedef struct	s_pc
+{
+	int			pc_index;
+	int			global_i;
+	char		alive_label;
+	int			time_todo;
+	int			command;
+	struct s_pc *next;
+}				t_pc;
+
+typedef struct	s_player
+{
+	int 				carry;
+	int 				alive_counter;
+	int 				last_live;
+	unsigned int 		*registry;
+	t_pc				pc;
+	struct	s_player 	*next;
+}				t_player;
+
+typedef struct	s_sell
+{
+	char 			owner;
+	unsigned char	value;
+}				t_sell;
+
+typedef struct	s_game_info
+{
+	int			counter;
+	int			cycle_delta_counter;
+	int			max_checks_counter;
+	t_sell		field[4096];
+}				t_game_info;
+
+
+
 
 #endif

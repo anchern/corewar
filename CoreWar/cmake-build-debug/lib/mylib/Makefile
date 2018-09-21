@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/achernys/corewar/CoreWar
+CMAKE_SOURCE_DIR = /Users/dlewando/Corewar/corewar/CoreWar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/achernys/corewar/CoreWar/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles /Users/achernys/corewar/CoreWar/cmake-build-debug/lib/mylib/CMakeFiles/progress.marks
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles 0
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/CMakeFiles/progress.marks
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/clean
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/preinstall
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/preinstall
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/mylib/CMakeFiles/mylib.dir/rule:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/CMakeFiles/mylib.dir/rule
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 lib/mylib/CMakeFiles/mylib.dir/rule
 .PHONY : lib/mylib/CMakeFiles/mylib.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ mylib: lib/mylib/CMakeFiles/mylib.dir/rule
 
 # fast build rule for target.
 mylib/fast:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/build
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/build
 .PHONY : mylib/fast
 
 ft_bitoa.o: ft_bitoa.c.o
@@ -131,7 +131,7 @@ ft_bitoa.o: ft_bitoa.c.o
 
 # target to build an object file
 ft_bitoa.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_bitoa.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_bitoa.c.o
 .PHONY : ft_bitoa.c.o
 
 ft_bitoa.i: ft_bitoa.c.i
@@ -140,7 +140,7 @@ ft_bitoa.i: ft_bitoa.c.i
 
 # target to preprocess a source file
 ft_bitoa.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_bitoa.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_bitoa.c.i
 .PHONY : ft_bitoa.c.i
 
 ft_bitoa.s: ft_bitoa.c.s
@@ -149,7 +149,7 @@ ft_bitoa.s: ft_bitoa.c.s
 
 # target to generate assembly for a file
 ft_bitoa.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_bitoa.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_bitoa.c.s
 .PHONY : ft_bitoa.c.s
 
 ft_forparse.o: ft_forparse.c.o
@@ -158,7 +158,7 @@ ft_forparse.o: ft_forparse.c.o
 
 # target to build an object file
 ft_forparse.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse.c.o
 .PHONY : ft_forparse.c.o
 
 ft_forparse.i: ft_forparse.c.i
@@ -167,7 +167,7 @@ ft_forparse.i: ft_forparse.c.i
 
 # target to preprocess a source file
 ft_forparse.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse.c.i
 .PHONY : ft_forparse.c.i
 
 ft_forparse.s: ft_forparse.c.s
@@ -176,7 +176,7 @@ ft_forparse.s: ft_forparse.c.s
 
 # target to generate assembly for a file
 ft_forparse.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse.c.s
 .PHONY : ft_forparse.c.s
 
 ft_forparse01.o: ft_forparse01.c.o
@@ -185,7 +185,7 @@ ft_forparse01.o: ft_forparse01.c.o
 
 # target to build an object file
 ft_forparse01.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse01.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse01.c.o
 .PHONY : ft_forparse01.c.o
 
 ft_forparse01.i: ft_forparse01.c.i
@@ -194,7 +194,7 @@ ft_forparse01.i: ft_forparse01.c.i
 
 # target to preprocess a source file
 ft_forparse01.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse01.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse01.c.i
 .PHONY : ft_forparse01.c.i
 
 ft_forparse01.s: ft_forparse01.c.s
@@ -203,7 +203,7 @@ ft_forparse01.s: ft_forparse01.c.s
 
 # target to generate assembly for a file
 ft_forparse01.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse01.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse01.c.s
 .PHONY : ft_forparse01.c.s
 
 ft_forparse02.o: ft_forparse02.c.o
@@ -212,7 +212,7 @@ ft_forparse02.o: ft_forparse02.c.o
 
 # target to build an object file
 ft_forparse02.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse02.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse02.c.o
 .PHONY : ft_forparse02.c.o
 
 ft_forparse02.i: ft_forparse02.c.i
@@ -221,7 +221,7 @@ ft_forparse02.i: ft_forparse02.c.i
 
 # target to preprocess a source file
 ft_forparse02.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse02.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse02.c.i
 .PHONY : ft_forparse02.c.i
 
 ft_forparse02.s: ft_forparse02.c.s
@@ -230,7 +230,7 @@ ft_forparse02.s: ft_forparse02.c.s
 
 # target to generate assembly for a file
 ft_forparse02.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse02.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_forparse02.c.s
 .PHONY : ft_forparse02.c.s
 
 ft_ftoa.o: ft_ftoa.c.o
@@ -239,7 +239,7 @@ ft_ftoa.o: ft_ftoa.c.o
 
 # target to build an object file
 ft_ftoa.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_ftoa.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_ftoa.c.o
 .PHONY : ft_ftoa.c.o
 
 ft_ftoa.i: ft_ftoa.c.i
@@ -248,7 +248,7 @@ ft_ftoa.i: ft_ftoa.c.i
 
 # target to preprocess a source file
 ft_ftoa.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_ftoa.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_ftoa.c.i
 .PHONY : ft_ftoa.c.i
 
 ft_ftoa.s: ft_ftoa.c.s
@@ -257,7 +257,7 @@ ft_ftoa.s: ft_ftoa.c.s
 
 # target to generate assembly for a file
 ft_ftoa.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_ftoa.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_ftoa.c.s
 .PHONY : ft_ftoa.c.s
 
 ft_get_tval.o: ft_get_tval.c.o
@@ -266,7 +266,7 @@ ft_get_tval.o: ft_get_tval.c.o
 
 # target to build an object file
 ft_get_tval.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_get_tval.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_get_tval.c.o
 .PHONY : ft_get_tval.c.o
 
 ft_get_tval.i: ft_get_tval.c.i
@@ -275,7 +275,7 @@ ft_get_tval.i: ft_get_tval.c.i
 
 # target to preprocess a source file
 ft_get_tval.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_get_tval.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_get_tval.c.i
 .PHONY : ft_get_tval.c.i
 
 ft_get_tval.s: ft_get_tval.c.s
@@ -284,7 +284,7 @@ ft_get_tval.s: ft_get_tval.c.s
 
 # target to generate assembly for a file
 ft_get_tval.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_get_tval.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_get_tval.c.s
 .PHONY : ft_get_tval.c.s
 
 ft_getfloatval.o: ft_getfloatval.c.o
@@ -293,7 +293,7 @@ ft_getfloatval.o: ft_getfloatval.c.o
 
 # target to build an object file
 ft_getfloatval.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getfloatval.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getfloatval.c.o
 .PHONY : ft_getfloatval.c.o
 
 ft_getfloatval.i: ft_getfloatval.c.i
@@ -302,7 +302,7 @@ ft_getfloatval.i: ft_getfloatval.c.i
 
 # target to preprocess a source file
 ft_getfloatval.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getfloatval.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getfloatval.c.i
 .PHONY : ft_getfloatval.c.i
 
 ft_getfloatval.s: ft_getfloatval.c.s
@@ -311,7 +311,7 @@ ft_getfloatval.s: ft_getfloatval.c.s
 
 # target to generate assembly for a file
 ft_getfloatval.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getfloatval.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getfloatval.c.s
 .PHONY : ft_getfloatval.c.s
 
 ft_getint.o: ft_getint.c.o
@@ -320,7 +320,7 @@ ft_getint.o: ft_getint.c.o
 
 # target to build an object file
 ft_getint.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getint.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getint.c.o
 .PHONY : ft_getint.c.o
 
 ft_getint.i: ft_getint.c.i
@@ -329,7 +329,7 @@ ft_getint.i: ft_getint.c.i
 
 # target to preprocess a source file
 ft_getint.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getint.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getint.c.i
 .PHONY : ft_getint.c.i
 
 ft_getint.s: ft_getint.c.s
@@ -338,7 +338,7 @@ ft_getint.s: ft_getint.c.s
 
 # target to generate assembly for a file
 ft_getint.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getint.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getint.c.s
 .PHONY : ft_getint.c.s
 
 ft_getparam.o: ft_getparam.c.o
@@ -347,7 +347,7 @@ ft_getparam.o: ft_getparam.c.o
 
 # target to build an object file
 ft_getparam.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getparam.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getparam.c.o
 .PHONY : ft_getparam.c.o
 
 ft_getparam.i: ft_getparam.c.i
@@ -356,7 +356,7 @@ ft_getparam.i: ft_getparam.c.i
 
 # target to preprocess a source file
 ft_getparam.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getparam.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getparam.c.i
 .PHONY : ft_getparam.c.i
 
 ft_getparam.s: ft_getparam.c.s
@@ -365,7 +365,7 @@ ft_getparam.s: ft_getparam.c.s
 
 # target to generate assembly for a file
 ft_getparam.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getparam.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getparam.c.s
 .PHONY : ft_getparam.c.s
 
 ft_gettxtval.o: ft_gettxtval.c.o
@@ -374,7 +374,7 @@ ft_gettxtval.o: ft_gettxtval.c.o
 
 # target to build an object file
 ft_gettxtval.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_gettxtval.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_gettxtval.c.o
 .PHONY : ft_gettxtval.c.o
 
 ft_gettxtval.i: ft_gettxtval.c.i
@@ -383,7 +383,7 @@ ft_gettxtval.i: ft_gettxtval.c.i
 
 # target to preprocess a source file
 ft_gettxtval.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_gettxtval.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_gettxtval.c.i
 .PHONY : ft_gettxtval.c.i
 
 ft_gettxtval.s: ft_gettxtval.c.s
@@ -392,7 +392,7 @@ ft_gettxtval.s: ft_gettxtval.c.s
 
 # target to generate assembly for a file
 ft_gettxtval.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_gettxtval.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_gettxtval.c.s
 .PHONY : ft_gettxtval.c.s
 
 ft_getunsignedval.o: ft_getunsignedval.c.o
@@ -401,7 +401,7 @@ ft_getunsignedval.o: ft_getunsignedval.c.o
 
 # target to build an object file
 ft_getunsignedval.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getunsignedval.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getunsignedval.c.o
 .PHONY : ft_getunsignedval.c.o
 
 ft_getunsignedval.i: ft_getunsignedval.c.i
@@ -410,7 +410,7 @@ ft_getunsignedval.i: ft_getunsignedval.c.i
 
 # target to preprocess a source file
 ft_getunsignedval.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getunsignedval.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getunsignedval.c.i
 .PHONY : ft_getunsignedval.c.i
 
 ft_getunsignedval.s: ft_getunsignedval.c.s
@@ -419,7 +419,7 @@ ft_getunsignedval.s: ft_getunsignedval.c.s
 
 # target to generate assembly for a file
 ft_getunsignedval.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getunsignedval.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_getunsignedval.c.s
 .PHONY : ft_getunsignedval.c.s
 
 ft_itoabase.o: ft_itoabase.c.o
@@ -428,7 +428,7 @@ ft_itoabase.o: ft_itoabase.c.o
 
 # target to build an object file
 ft_itoabase.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_itoabase.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_itoabase.c.o
 .PHONY : ft_itoabase.c.o
 
 ft_itoabase.i: ft_itoabase.c.i
@@ -437,7 +437,7 @@ ft_itoabase.i: ft_itoabase.c.i
 
 # target to preprocess a source file
 ft_itoabase.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_itoabase.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_itoabase.c.i
 .PHONY : ft_itoabase.c.i
 
 ft_itoabase.s: ft_itoabase.c.s
@@ -446,7 +446,7 @@ ft_itoabase.s: ft_itoabase.c.s
 
 # target to generate assembly for a file
 ft_itoabase.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_itoabase.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_itoabase.c.s
 .PHONY : ft_itoabase.c.s
 
 ft_other.o: ft_other.c.o
@@ -455,7 +455,7 @@ ft_other.o: ft_other.c.o
 
 # target to build an object file
 ft_other.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_other.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_other.c.o
 .PHONY : ft_other.c.o
 
 ft_other.i: ft_other.c.i
@@ -464,7 +464,7 @@ ft_other.i: ft_other.c.i
 
 # target to preprocess a source file
 ft_other.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_other.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_other.c.i
 .PHONY : ft_other.c.i
 
 ft_other.s: ft_other.c.s
@@ -473,7 +473,7 @@ ft_other.s: ft_other.c.s
 
 # target to generate assembly for a file
 ft_other.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_other.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_other.c.s
 .PHONY : ft_other.c.s
 
 ft_parsetype.o: ft_parsetype.c.o
@@ -482,7 +482,7 @@ ft_parsetype.o: ft_parsetype.c.o
 
 # target to build an object file
 ft_parsetype.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_parsetype.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_parsetype.c.o
 .PHONY : ft_parsetype.c.o
 
 ft_parsetype.i: ft_parsetype.c.i
@@ -491,7 +491,7 @@ ft_parsetype.i: ft_parsetype.c.i
 
 # target to preprocess a source file
 ft_parsetype.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_parsetype.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_parsetype.c.i
 .PHONY : ft_parsetype.c.i
 
 ft_parsetype.s: ft_parsetype.c.s
@@ -500,7 +500,7 @@ ft_parsetype.s: ft_parsetype.c.s
 
 # target to generate assembly for a file
 ft_parsetype.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_parsetype.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_parsetype.c.s
 .PHONY : ft_parsetype.c.s
 
 ft_printf.o: ft_printf.c.o
@@ -509,7 +509,7 @@ ft_printf.o: ft_printf.c.o
 
 # target to build an object file
 ft_printf.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_printf.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_printf.c.o
 .PHONY : ft_printf.c.o
 
 ft_printf.i: ft_printf.c.i
@@ -518,7 +518,7 @@ ft_printf.i: ft_printf.c.i
 
 # target to preprocess a source file
 ft_printf.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_printf.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_printf.c.i
 .PHONY : ft_printf.c.i
 
 ft_printf.s: ft_printf.c.s
@@ -527,7 +527,7 @@ ft_printf.s: ft_printf.c.s
 
 # target to generate assembly for a file
 ft_printf.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_printf.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_printf.c.s
 .PHONY : ft_printf.c.s
 
 ft_proc_e_type.o: ft_proc_e_type.c.o
@@ -536,7 +536,7 @@ ft_proc_e_type.o: ft_proc_e_type.c.o
 
 # target to build an object file
 ft_proc_e_type.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proc_e_type.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proc_e_type.c.o
 .PHONY : ft_proc_e_type.c.o
 
 ft_proc_e_type.i: ft_proc_e_type.c.i
@@ -545,7 +545,7 @@ ft_proc_e_type.i: ft_proc_e_type.c.i
 
 # target to preprocess a source file
 ft_proc_e_type.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proc_e_type.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proc_e_type.c.i
 .PHONY : ft_proc_e_type.c.i
 
 ft_proc_e_type.s: ft_proc_e_type.c.s
@@ -554,7 +554,7 @@ ft_proc_e_type.s: ft_proc_e_type.c.s
 
 # target to generate assembly for a file
 ft_proc_e_type.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proc_e_type.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proc_e_type.c.s
 .PHONY : ft_proc_e_type.c.s
 
 ft_procdouble.o: ft_procdouble.c.o
@@ -563,7 +563,7 @@ ft_procdouble.o: ft_procdouble.c.o
 
 # target to build an object file
 ft_procdouble.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procdouble.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procdouble.c.o
 .PHONY : ft_procdouble.c.o
 
 ft_procdouble.i: ft_procdouble.c.i
@@ -572,7 +572,7 @@ ft_procdouble.i: ft_procdouble.c.i
 
 # target to preprocess a source file
 ft_procdouble.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procdouble.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procdouble.c.i
 .PHONY : ft_procdouble.c.i
 
 ft_procdouble.s: ft_procdouble.c.s
@@ -581,7 +581,7 @@ ft_procdouble.s: ft_procdouble.c.s
 
 # target to generate assembly for a file
 ft_procdouble.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procdouble.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procdouble.c.s
 .PHONY : ft_procdouble.c.s
 
 ft_processingflags.o: ft_processingflags.c.o
@@ -590,7 +590,7 @@ ft_processingflags.o: ft_processingflags.c.o
 
 # target to build an object file
 ft_processingflags.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_processingflags.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_processingflags.c.o
 .PHONY : ft_processingflags.c.o
 
 ft_processingflags.i: ft_processingflags.c.i
@@ -599,7 +599,7 @@ ft_processingflags.i: ft_processingflags.c.i
 
 # target to preprocess a source file
 ft_processingflags.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_processingflags.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_processingflags.c.i
 .PHONY : ft_processingflags.c.i
 
 ft_processingflags.s: ft_processingflags.c.s
@@ -608,7 +608,7 @@ ft_processingflags.s: ft_processingflags.c.s
 
 # target to generate assembly for a file
 ft_processingflags.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_processingflags.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_processingflags.c.s
 .PHONY : ft_processingflags.c.s
 
 ft_procint.o: ft_procint.c.o
@@ -617,7 +617,7 @@ ft_procint.o: ft_procint.c.o
 
 # target to build an object file
 ft_procint.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procint.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procint.c.o
 .PHONY : ft_procint.c.o
 
 ft_procint.i: ft_procint.c.i
@@ -626,7 +626,7 @@ ft_procint.i: ft_procint.c.i
 
 # target to preprocess a source file
 ft_procint.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procint.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procint.c.i
 .PHONY : ft_procint.c.i
 
 ft_procint.s: ft_procint.c.s
@@ -635,7 +635,7 @@ ft_procint.s: ft_procint.c.s
 
 # target to generate assembly for a file
 ft_procint.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procint.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procint.c.s
 .PHONY : ft_procint.c.s
 
 ft_procnotation.o: ft_procnotation.c.o
@@ -644,7 +644,7 @@ ft_procnotation.o: ft_procnotation.c.o
 
 # target to build an object file
 ft_procnotation.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procnotation.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procnotation.c.o
 .PHONY : ft_procnotation.c.o
 
 ft_procnotation.i: ft_procnotation.c.i
@@ -653,7 +653,7 @@ ft_procnotation.i: ft_procnotation.c.i
 
 # target to preprocess a source file
 ft_procnotation.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procnotation.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procnotation.c.i
 .PHONY : ft_procnotation.c.i
 
 ft_procnotation.s: ft_procnotation.c.s
@@ -662,7 +662,7 @@ ft_procnotation.s: ft_procnotation.c.s
 
 # target to generate assembly for a file
 ft_procnotation.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procnotation.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procnotation.c.s
 .PHONY : ft_procnotation.c.s
 
 ft_procstr.o: ft_procstr.c.o
@@ -671,7 +671,7 @@ ft_procstr.o: ft_procstr.c.o
 
 # target to build an object file
 ft_procstr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procstr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procstr.c.o
 .PHONY : ft_procstr.c.o
 
 ft_procstr.i: ft_procstr.c.i
@@ -680,7 +680,7 @@ ft_procstr.i: ft_procstr.c.i
 
 # target to preprocess a source file
 ft_procstr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procstr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procstr.c.i
 .PHONY : ft_procstr.c.i
 
 ft_procstr.s: ft_procstr.c.s
@@ -689,7 +689,7 @@ ft_procstr.s: ft_procstr.c.s
 
 # target to generate assembly for a file
 ft_procstr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procstr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_procstr.c.s
 .PHONY : ft_procstr.c.s
 
 ft_proctxt.o: ft_proctxt.c.o
@@ -698,7 +698,7 @@ ft_proctxt.o: ft_proctxt.c.o
 
 # target to build an object file
 ft_proctxt.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proctxt.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proctxt.c.o
 .PHONY : ft_proctxt.c.o
 
 ft_proctxt.i: ft_proctxt.c.i
@@ -707,7 +707,7 @@ ft_proctxt.i: ft_proctxt.c.i
 
 # target to preprocess a source file
 ft_proctxt.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proctxt.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proctxt.c.i
 .PHONY : ft_proctxt.c.i
 
 ft_proctxt.s: ft_proctxt.c.s
@@ -716,7 +716,7 @@ ft_proctxt.s: ft_proctxt.c.s
 
 # target to generate assembly for a file
 ft_proctxt.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proctxt.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_proctxt.c.s
 .PHONY : ft_proctxt.c.s
 
 ft_realloc.o: ft_realloc.c.o
@@ -725,7 +725,7 @@ ft_realloc.o: ft_realloc.c.o
 
 # target to build an object file
 ft_realloc.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_realloc.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_realloc.c.o
 .PHONY : ft_realloc.c.o
 
 ft_realloc.i: ft_realloc.c.i
@@ -734,7 +734,7 @@ ft_realloc.i: ft_realloc.c.i
 
 # target to preprocess a source file
 ft_realloc.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_realloc.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_realloc.c.i
 .PHONY : ft_realloc.c.i
 
 ft_realloc.s: ft_realloc.c.s
@@ -743,7 +743,7 @@ ft_realloc.s: ft_realloc.c.s
 
 # target to generate assembly for a file
 ft_realloc.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_realloc.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_realloc.c.s
 .PHONY : ft_realloc.c.s
 
 ft_setcolor.o: ft_setcolor.c.o
@@ -752,7 +752,7 @@ ft_setcolor.o: ft_setcolor.c.o
 
 # target to build an object file
 ft_setcolor.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_setcolor.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_setcolor.c.o
 .PHONY : ft_setcolor.c.o
 
 ft_setcolor.i: ft_setcolor.c.i
@@ -761,7 +761,7 @@ ft_setcolor.i: ft_setcolor.c.i
 
 # target to preprocess a source file
 ft_setcolor.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_setcolor.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_setcolor.c.i
 .PHONY : ft_setcolor.c.i
 
 ft_setcolor.s: ft_setcolor.c.s
@@ -770,7 +770,7 @@ ft_setcolor.s: ft_setcolor.c.s
 
 # target to generate assembly for a file
 ft_setcolor.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_setcolor.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/ft_setcolor.c.s
 .PHONY : ft_setcolor.c.s
 
 get_next_line.o: get_next_line.c.o
@@ -779,7 +779,7 @@ get_next_line.o: get_next_line.c.o
 
 # target to build an object file
 get_next_line.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/get_next_line.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/get_next_line.c.o
 .PHONY : get_next_line.c.o
 
 get_next_line.i: get_next_line.c.i
@@ -788,7 +788,7 @@ get_next_line.i: get_next_line.c.i
 
 # target to preprocess a source file
 get_next_line.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/get_next_line.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/get_next_line.c.i
 .PHONY : get_next_line.c.i
 
 get_next_line.s: get_next_line.c.s
@@ -797,7 +797,7 @@ get_next_line.s: get_next_line.c.s
 
 # target to generate assembly for a file
 get_next_line.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/get_next_line.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/get_next_line.c.s
 .PHONY : get_next_line.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
@@ -806,7 +806,7 @@ libft/ft_atoi.o: libft/ft_atoi.c.o
 
 # target to build an object file
 libft/ft_atoi.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_atoi.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_atoi.c.o
 .PHONY : libft/ft_atoi.c.o
 
 libft/ft_atoi.i: libft/ft_atoi.c.i
@@ -815,7 +815,7 @@ libft/ft_atoi.i: libft/ft_atoi.c.i
 
 # target to preprocess a source file
 libft/ft_atoi.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_atoi.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_atoi.c.i
 .PHONY : libft/ft_atoi.c.i
 
 libft/ft_atoi.s: libft/ft_atoi.c.s
@@ -824,7 +824,7 @@ libft/ft_atoi.s: libft/ft_atoi.c.s
 
 # target to generate assembly for a file
 libft/ft_atoi.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_atoi.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_atoi.c.s
 .PHONY : libft/ft_atoi.c.s
 
 libft/ft_bzero.o: libft/ft_bzero.c.o
@@ -833,7 +833,7 @@ libft/ft_bzero.o: libft/ft_bzero.c.o
 
 # target to build an object file
 libft/ft_bzero.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_bzero.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_bzero.c.o
 .PHONY : libft/ft_bzero.c.o
 
 libft/ft_bzero.i: libft/ft_bzero.c.i
@@ -842,7 +842,7 @@ libft/ft_bzero.i: libft/ft_bzero.c.i
 
 # target to preprocess a source file
 libft/ft_bzero.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_bzero.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_bzero.c.i
 .PHONY : libft/ft_bzero.c.i
 
 libft/ft_bzero.s: libft/ft_bzero.c.s
@@ -851,7 +851,7 @@ libft/ft_bzero.s: libft/ft_bzero.c.s
 
 # target to generate assembly for a file
 libft/ft_bzero.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_bzero.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_bzero.c.s
 .PHONY : libft/ft_bzero.c.s
 
 libft/ft_isalnum.o: libft/ft_isalnum.c.o
@@ -860,7 +860,7 @@ libft/ft_isalnum.o: libft/ft_isalnum.c.o
 
 # target to build an object file
 libft/ft_isalnum.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalnum.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalnum.c.o
 .PHONY : libft/ft_isalnum.c.o
 
 libft/ft_isalnum.i: libft/ft_isalnum.c.i
@@ -869,7 +869,7 @@ libft/ft_isalnum.i: libft/ft_isalnum.c.i
 
 # target to preprocess a source file
 libft/ft_isalnum.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalnum.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalnum.c.i
 .PHONY : libft/ft_isalnum.c.i
 
 libft/ft_isalnum.s: libft/ft_isalnum.c.s
@@ -878,7 +878,7 @@ libft/ft_isalnum.s: libft/ft_isalnum.c.s
 
 # target to generate assembly for a file
 libft/ft_isalnum.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalnum.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalnum.c.s
 .PHONY : libft/ft_isalnum.c.s
 
 libft/ft_isalpha.o: libft/ft_isalpha.c.o
@@ -887,7 +887,7 @@ libft/ft_isalpha.o: libft/ft_isalpha.c.o
 
 # target to build an object file
 libft/ft_isalpha.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalpha.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalpha.c.o
 .PHONY : libft/ft_isalpha.c.o
 
 libft/ft_isalpha.i: libft/ft_isalpha.c.i
@@ -896,7 +896,7 @@ libft/ft_isalpha.i: libft/ft_isalpha.c.i
 
 # target to preprocess a source file
 libft/ft_isalpha.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalpha.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalpha.c.i
 .PHONY : libft/ft_isalpha.c.i
 
 libft/ft_isalpha.s: libft/ft_isalpha.c.s
@@ -905,7 +905,7 @@ libft/ft_isalpha.s: libft/ft_isalpha.c.s
 
 # target to generate assembly for a file
 libft/ft_isalpha.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalpha.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isalpha.c.s
 .PHONY : libft/ft_isalpha.c.s
 
 libft/ft_isascii.o: libft/ft_isascii.c.o
@@ -914,7 +914,7 @@ libft/ft_isascii.o: libft/ft_isascii.c.o
 
 # target to build an object file
 libft/ft_isascii.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isascii.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isascii.c.o
 .PHONY : libft/ft_isascii.c.o
 
 libft/ft_isascii.i: libft/ft_isascii.c.i
@@ -923,7 +923,7 @@ libft/ft_isascii.i: libft/ft_isascii.c.i
 
 # target to preprocess a source file
 libft/ft_isascii.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isascii.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isascii.c.i
 .PHONY : libft/ft_isascii.c.i
 
 libft/ft_isascii.s: libft/ft_isascii.c.s
@@ -932,7 +932,7 @@ libft/ft_isascii.s: libft/ft_isascii.c.s
 
 # target to generate assembly for a file
 libft/ft_isascii.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isascii.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isascii.c.s
 .PHONY : libft/ft_isascii.c.s
 
 libft/ft_isdigit.o: libft/ft_isdigit.c.o
@@ -941,7 +941,7 @@ libft/ft_isdigit.o: libft/ft_isdigit.c.o
 
 # target to build an object file
 libft/ft_isdigit.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isdigit.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isdigit.c.o
 .PHONY : libft/ft_isdigit.c.o
 
 libft/ft_isdigit.i: libft/ft_isdigit.c.i
@@ -950,7 +950,7 @@ libft/ft_isdigit.i: libft/ft_isdigit.c.i
 
 # target to preprocess a source file
 libft/ft_isdigit.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isdigit.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isdigit.c.i
 .PHONY : libft/ft_isdigit.c.i
 
 libft/ft_isdigit.s: libft/ft_isdigit.c.s
@@ -959,7 +959,7 @@ libft/ft_isdigit.s: libft/ft_isdigit.c.s
 
 # target to generate assembly for a file
 libft/ft_isdigit.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isdigit.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isdigit.c.s
 .PHONY : libft/ft_isdigit.c.s
 
 libft/ft_isprint.o: libft/ft_isprint.c.o
@@ -968,7 +968,7 @@ libft/ft_isprint.o: libft/ft_isprint.c.o
 
 # target to build an object file
 libft/ft_isprint.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isprint.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isprint.c.o
 .PHONY : libft/ft_isprint.c.o
 
 libft/ft_isprint.i: libft/ft_isprint.c.i
@@ -977,7 +977,7 @@ libft/ft_isprint.i: libft/ft_isprint.c.i
 
 # target to preprocess a source file
 libft/ft_isprint.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isprint.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isprint.c.i
 .PHONY : libft/ft_isprint.c.i
 
 libft/ft_isprint.s: libft/ft_isprint.c.s
@@ -986,7 +986,7 @@ libft/ft_isprint.s: libft/ft_isprint.c.s
 
 # target to generate assembly for a file
 libft/ft_isprint.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isprint.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_isprint.c.s
 .PHONY : libft/ft_isprint.c.s
 
 libft/ft_itoa.o: libft/ft_itoa.c.o
@@ -995,7 +995,7 @@ libft/ft_itoa.o: libft/ft_itoa.c.o
 
 # target to build an object file
 libft/ft_itoa.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_itoa.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_itoa.c.o
 .PHONY : libft/ft_itoa.c.o
 
 libft/ft_itoa.i: libft/ft_itoa.c.i
@@ -1004,7 +1004,7 @@ libft/ft_itoa.i: libft/ft_itoa.c.i
 
 # target to preprocess a source file
 libft/ft_itoa.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_itoa.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_itoa.c.i
 .PHONY : libft/ft_itoa.c.i
 
 libft/ft_itoa.s: libft/ft_itoa.c.s
@@ -1013,7 +1013,7 @@ libft/ft_itoa.s: libft/ft_itoa.c.s
 
 # target to generate assembly for a file
 libft/ft_itoa.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_itoa.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_itoa.c.s
 .PHONY : libft/ft_itoa.c.s
 
 libft/ft_lstadd.o: libft/ft_lstadd.c.o
@@ -1022,7 +1022,7 @@ libft/ft_lstadd.o: libft/ft_lstadd.c.o
 
 # target to build an object file
 libft/ft_lstadd.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstadd.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstadd.c.o
 .PHONY : libft/ft_lstadd.c.o
 
 libft/ft_lstadd.i: libft/ft_lstadd.c.i
@@ -1031,7 +1031,7 @@ libft/ft_lstadd.i: libft/ft_lstadd.c.i
 
 # target to preprocess a source file
 libft/ft_lstadd.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstadd.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstadd.c.i
 .PHONY : libft/ft_lstadd.c.i
 
 libft/ft_lstadd.s: libft/ft_lstadd.c.s
@@ -1040,7 +1040,7 @@ libft/ft_lstadd.s: libft/ft_lstadd.c.s
 
 # target to generate assembly for a file
 libft/ft_lstadd.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstadd.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstadd.c.s
 .PHONY : libft/ft_lstadd.c.s
 
 libft/ft_lstdel.o: libft/ft_lstdel.c.o
@@ -1049,7 +1049,7 @@ libft/ft_lstdel.o: libft/ft_lstdel.c.o
 
 # target to build an object file
 libft/ft_lstdel.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdel.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdel.c.o
 .PHONY : libft/ft_lstdel.c.o
 
 libft/ft_lstdel.i: libft/ft_lstdel.c.i
@@ -1058,7 +1058,7 @@ libft/ft_lstdel.i: libft/ft_lstdel.c.i
 
 # target to preprocess a source file
 libft/ft_lstdel.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdel.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdel.c.i
 .PHONY : libft/ft_lstdel.c.i
 
 libft/ft_lstdel.s: libft/ft_lstdel.c.s
@@ -1067,7 +1067,7 @@ libft/ft_lstdel.s: libft/ft_lstdel.c.s
 
 # target to generate assembly for a file
 libft/ft_lstdel.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdel.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdel.c.s
 .PHONY : libft/ft_lstdel.c.s
 
 libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
@@ -1076,7 +1076,7 @@ libft/ft_lstdelone.o: libft/ft_lstdelone.c.o
 
 # target to build an object file
 libft/ft_lstdelone.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdelone.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdelone.c.o
 .PHONY : libft/ft_lstdelone.c.o
 
 libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
@@ -1085,7 +1085,7 @@ libft/ft_lstdelone.i: libft/ft_lstdelone.c.i
 
 # target to preprocess a source file
 libft/ft_lstdelone.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdelone.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdelone.c.i
 .PHONY : libft/ft_lstdelone.c.i
 
 libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
@@ -1094,7 +1094,7 @@ libft/ft_lstdelone.s: libft/ft_lstdelone.c.s
 
 # target to generate assembly for a file
 libft/ft_lstdelone.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdelone.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstdelone.c.s
 .PHONY : libft/ft_lstdelone.c.s
 
 libft/ft_lstiter.o: libft/ft_lstiter.c.o
@@ -1103,7 +1103,7 @@ libft/ft_lstiter.o: libft/ft_lstiter.c.o
 
 # target to build an object file
 libft/ft_lstiter.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstiter.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstiter.c.o
 .PHONY : libft/ft_lstiter.c.o
 
 libft/ft_lstiter.i: libft/ft_lstiter.c.i
@@ -1112,7 +1112,7 @@ libft/ft_lstiter.i: libft/ft_lstiter.c.i
 
 # target to preprocess a source file
 libft/ft_lstiter.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstiter.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstiter.c.i
 .PHONY : libft/ft_lstiter.c.i
 
 libft/ft_lstiter.s: libft/ft_lstiter.c.s
@@ -1121,7 +1121,7 @@ libft/ft_lstiter.s: libft/ft_lstiter.c.s
 
 # target to generate assembly for a file
 libft/ft_lstiter.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstiter.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstiter.c.s
 .PHONY : libft/ft_lstiter.c.s
 
 libft/ft_lstmap.o: libft/ft_lstmap.c.o
@@ -1130,7 +1130,7 @@ libft/ft_lstmap.o: libft/ft_lstmap.c.o
 
 # target to build an object file
 libft/ft_lstmap.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstmap.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstmap.c.o
 .PHONY : libft/ft_lstmap.c.o
 
 libft/ft_lstmap.i: libft/ft_lstmap.c.i
@@ -1139,7 +1139,7 @@ libft/ft_lstmap.i: libft/ft_lstmap.c.i
 
 # target to preprocess a source file
 libft/ft_lstmap.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstmap.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstmap.c.i
 .PHONY : libft/ft_lstmap.c.i
 
 libft/ft_lstmap.s: libft/ft_lstmap.c.s
@@ -1148,7 +1148,7 @@ libft/ft_lstmap.s: libft/ft_lstmap.c.s
 
 # target to generate assembly for a file
 libft/ft_lstmap.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstmap.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstmap.c.s
 .PHONY : libft/ft_lstmap.c.s
 
 libft/ft_lstnew.o: libft/ft_lstnew.c.o
@@ -1157,7 +1157,7 @@ libft/ft_lstnew.o: libft/ft_lstnew.c.o
 
 # target to build an object file
 libft/ft_lstnew.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstnew.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstnew.c.o
 .PHONY : libft/ft_lstnew.c.o
 
 libft/ft_lstnew.i: libft/ft_lstnew.c.i
@@ -1166,7 +1166,7 @@ libft/ft_lstnew.i: libft/ft_lstnew.c.i
 
 # target to preprocess a source file
 libft/ft_lstnew.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstnew.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstnew.c.i
 .PHONY : libft/ft_lstnew.c.i
 
 libft/ft_lstnew.s: libft/ft_lstnew.c.s
@@ -1175,7 +1175,7 @@ libft/ft_lstnew.s: libft/ft_lstnew.c.s
 
 # target to generate assembly for a file
 libft/ft_lstnew.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstnew.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstnew.c.s
 .PHONY : libft/ft_lstnew.c.s
 
 libft/ft_lstpushback.o: libft/ft_lstpushback.c.o
@@ -1184,7 +1184,7 @@ libft/ft_lstpushback.o: libft/ft_lstpushback.c.o
 
 # target to build an object file
 libft/ft_lstpushback.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstpushback.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstpushback.c.o
 .PHONY : libft/ft_lstpushback.c.o
 
 libft/ft_lstpushback.i: libft/ft_lstpushback.c.i
@@ -1193,7 +1193,7 @@ libft/ft_lstpushback.i: libft/ft_lstpushback.c.i
 
 # target to preprocess a source file
 libft/ft_lstpushback.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstpushback.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstpushback.c.i
 .PHONY : libft/ft_lstpushback.c.i
 
 libft/ft_lstpushback.s: libft/ft_lstpushback.c.s
@@ -1202,7 +1202,7 @@ libft/ft_lstpushback.s: libft/ft_lstpushback.c.s
 
 # target to generate assembly for a file
 libft/ft_lstpushback.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstpushback.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_lstpushback.c.s
 .PHONY : libft/ft_lstpushback.c.s
 
 libft/ft_memalloc.o: libft/ft_memalloc.c.o
@@ -1211,7 +1211,7 @@ libft/ft_memalloc.o: libft/ft_memalloc.c.o
 
 # target to build an object file
 libft/ft_memalloc.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memalloc.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memalloc.c.o
 .PHONY : libft/ft_memalloc.c.o
 
 libft/ft_memalloc.i: libft/ft_memalloc.c.i
@@ -1220,7 +1220,7 @@ libft/ft_memalloc.i: libft/ft_memalloc.c.i
 
 # target to preprocess a source file
 libft/ft_memalloc.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memalloc.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memalloc.c.i
 .PHONY : libft/ft_memalloc.c.i
 
 libft/ft_memalloc.s: libft/ft_memalloc.c.s
@@ -1229,7 +1229,7 @@ libft/ft_memalloc.s: libft/ft_memalloc.c.s
 
 # target to generate assembly for a file
 libft/ft_memalloc.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memalloc.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memalloc.c.s
 .PHONY : libft/ft_memalloc.c.s
 
 libft/ft_memccpy.o: libft/ft_memccpy.c.o
@@ -1238,7 +1238,7 @@ libft/ft_memccpy.o: libft/ft_memccpy.c.o
 
 # target to build an object file
 libft/ft_memccpy.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memccpy.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memccpy.c.o
 .PHONY : libft/ft_memccpy.c.o
 
 libft/ft_memccpy.i: libft/ft_memccpy.c.i
@@ -1247,7 +1247,7 @@ libft/ft_memccpy.i: libft/ft_memccpy.c.i
 
 # target to preprocess a source file
 libft/ft_memccpy.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memccpy.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memccpy.c.i
 .PHONY : libft/ft_memccpy.c.i
 
 libft/ft_memccpy.s: libft/ft_memccpy.c.s
@@ -1256,7 +1256,7 @@ libft/ft_memccpy.s: libft/ft_memccpy.c.s
 
 # target to generate assembly for a file
 libft/ft_memccpy.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memccpy.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memccpy.c.s
 .PHONY : libft/ft_memccpy.c.s
 
 libft/ft_memchr.o: libft/ft_memchr.c.o
@@ -1265,7 +1265,7 @@ libft/ft_memchr.o: libft/ft_memchr.c.o
 
 # target to build an object file
 libft/ft_memchr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memchr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memchr.c.o
 .PHONY : libft/ft_memchr.c.o
 
 libft/ft_memchr.i: libft/ft_memchr.c.i
@@ -1274,7 +1274,7 @@ libft/ft_memchr.i: libft/ft_memchr.c.i
 
 # target to preprocess a source file
 libft/ft_memchr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memchr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memchr.c.i
 .PHONY : libft/ft_memchr.c.i
 
 libft/ft_memchr.s: libft/ft_memchr.c.s
@@ -1283,7 +1283,7 @@ libft/ft_memchr.s: libft/ft_memchr.c.s
 
 # target to generate assembly for a file
 libft/ft_memchr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memchr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memchr.c.s
 .PHONY : libft/ft_memchr.c.s
 
 libft/ft_memcmp.o: libft/ft_memcmp.c.o
@@ -1292,7 +1292,7 @@ libft/ft_memcmp.o: libft/ft_memcmp.c.o
 
 # target to build an object file
 libft/ft_memcmp.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcmp.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcmp.c.o
 .PHONY : libft/ft_memcmp.c.o
 
 libft/ft_memcmp.i: libft/ft_memcmp.c.i
@@ -1301,7 +1301,7 @@ libft/ft_memcmp.i: libft/ft_memcmp.c.i
 
 # target to preprocess a source file
 libft/ft_memcmp.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcmp.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcmp.c.i
 .PHONY : libft/ft_memcmp.c.i
 
 libft/ft_memcmp.s: libft/ft_memcmp.c.s
@@ -1310,7 +1310,7 @@ libft/ft_memcmp.s: libft/ft_memcmp.c.s
 
 # target to generate assembly for a file
 libft/ft_memcmp.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcmp.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcmp.c.s
 .PHONY : libft/ft_memcmp.c.s
 
 libft/ft_memcpy.o: libft/ft_memcpy.c.o
@@ -1319,7 +1319,7 @@ libft/ft_memcpy.o: libft/ft_memcpy.c.o
 
 # target to build an object file
 libft/ft_memcpy.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcpy.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcpy.c.o
 .PHONY : libft/ft_memcpy.c.o
 
 libft/ft_memcpy.i: libft/ft_memcpy.c.i
@@ -1328,7 +1328,7 @@ libft/ft_memcpy.i: libft/ft_memcpy.c.i
 
 # target to preprocess a source file
 libft/ft_memcpy.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcpy.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcpy.c.i
 .PHONY : libft/ft_memcpy.c.i
 
 libft/ft_memcpy.s: libft/ft_memcpy.c.s
@@ -1337,7 +1337,7 @@ libft/ft_memcpy.s: libft/ft_memcpy.c.s
 
 # target to generate assembly for a file
 libft/ft_memcpy.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcpy.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memcpy.c.s
 .PHONY : libft/ft_memcpy.c.s
 
 libft/ft_memdel.o: libft/ft_memdel.c.o
@@ -1346,7 +1346,7 @@ libft/ft_memdel.o: libft/ft_memdel.c.o
 
 # target to build an object file
 libft/ft_memdel.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memdel.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memdel.c.o
 .PHONY : libft/ft_memdel.c.o
 
 libft/ft_memdel.i: libft/ft_memdel.c.i
@@ -1355,7 +1355,7 @@ libft/ft_memdel.i: libft/ft_memdel.c.i
 
 # target to preprocess a source file
 libft/ft_memdel.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memdel.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memdel.c.i
 .PHONY : libft/ft_memdel.c.i
 
 libft/ft_memdel.s: libft/ft_memdel.c.s
@@ -1364,7 +1364,7 @@ libft/ft_memdel.s: libft/ft_memdel.c.s
 
 # target to generate assembly for a file
 libft/ft_memdel.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memdel.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memdel.c.s
 .PHONY : libft/ft_memdel.c.s
 
 libft/ft_memmove.o: libft/ft_memmove.c.o
@@ -1373,7 +1373,7 @@ libft/ft_memmove.o: libft/ft_memmove.c.o
 
 # target to build an object file
 libft/ft_memmove.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memmove.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memmove.c.o
 .PHONY : libft/ft_memmove.c.o
 
 libft/ft_memmove.i: libft/ft_memmove.c.i
@@ -1382,7 +1382,7 @@ libft/ft_memmove.i: libft/ft_memmove.c.i
 
 # target to preprocess a source file
 libft/ft_memmove.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memmove.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memmove.c.i
 .PHONY : libft/ft_memmove.c.i
 
 libft/ft_memmove.s: libft/ft_memmove.c.s
@@ -1391,7 +1391,7 @@ libft/ft_memmove.s: libft/ft_memmove.c.s
 
 # target to generate assembly for a file
 libft/ft_memmove.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memmove.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memmove.c.s
 .PHONY : libft/ft_memmove.c.s
 
 libft/ft_memset.o: libft/ft_memset.c.o
@@ -1400,7 +1400,7 @@ libft/ft_memset.o: libft/ft_memset.c.o
 
 # target to build an object file
 libft/ft_memset.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memset.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memset.c.o
 .PHONY : libft/ft_memset.c.o
 
 libft/ft_memset.i: libft/ft_memset.c.i
@@ -1409,7 +1409,7 @@ libft/ft_memset.i: libft/ft_memset.c.i
 
 # target to preprocess a source file
 libft/ft_memset.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memset.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memset.c.i
 .PHONY : libft/ft_memset.c.i
 
 libft/ft_memset.s: libft/ft_memset.c.s
@@ -1418,7 +1418,7 @@ libft/ft_memset.s: libft/ft_memset.c.s
 
 # target to generate assembly for a file
 libft/ft_memset.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memset.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_memset.c.s
 .PHONY : libft/ft_memset.c.s
 
 libft/ft_pow.o: libft/ft_pow.c.o
@@ -1427,7 +1427,7 @@ libft/ft_pow.o: libft/ft_pow.c.o
 
 # target to build an object file
 libft/ft_pow.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_pow.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_pow.c.o
 .PHONY : libft/ft_pow.c.o
 
 libft/ft_pow.i: libft/ft_pow.c.i
@@ -1436,7 +1436,7 @@ libft/ft_pow.i: libft/ft_pow.c.i
 
 # target to preprocess a source file
 libft/ft_pow.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_pow.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_pow.c.i
 .PHONY : libft/ft_pow.c.i
 
 libft/ft_pow.s: libft/ft_pow.c.s
@@ -1445,7 +1445,7 @@ libft/ft_pow.s: libft/ft_pow.c.s
 
 # target to generate assembly for a file
 libft/ft_pow.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_pow.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_pow.c.s
 .PHONY : libft/ft_pow.c.s
 
 libft/ft_putchar.o: libft/ft_putchar.c.o
@@ -1454,7 +1454,7 @@ libft/ft_putchar.o: libft/ft_putchar.c.o
 
 # target to build an object file
 libft/ft_putchar.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar.c.o
 .PHONY : libft/ft_putchar.c.o
 
 libft/ft_putchar.i: libft/ft_putchar.c.i
@@ -1463,7 +1463,7 @@ libft/ft_putchar.i: libft/ft_putchar.c.i
 
 # target to preprocess a source file
 libft/ft_putchar.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar.c.i
 .PHONY : libft/ft_putchar.c.i
 
 libft/ft_putchar.s: libft/ft_putchar.c.s
@@ -1472,7 +1472,7 @@ libft/ft_putchar.s: libft/ft_putchar.c.s
 
 # target to generate assembly for a file
 libft/ft_putchar.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar.c.s
 .PHONY : libft/ft_putchar.c.s
 
 libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
@@ -1481,7 +1481,7 @@ libft/ft_putchar_fd.o: libft/ft_putchar_fd.c.o
 
 # target to build an object file
 libft/ft_putchar_fd.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar_fd.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar_fd.c.o
 .PHONY : libft/ft_putchar_fd.c.o
 
 libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
@@ -1490,7 +1490,7 @@ libft/ft_putchar_fd.i: libft/ft_putchar_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putchar_fd.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar_fd.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar_fd.c.i
 .PHONY : libft/ft_putchar_fd.c.i
 
 libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
@@ -1499,7 +1499,7 @@ libft/ft_putchar_fd.s: libft/ft_putchar_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putchar_fd.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar_fd.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putchar_fd.c.s
 .PHONY : libft/ft_putchar_fd.c.s
 
 libft/ft_putendl.o: libft/ft_putendl.c.o
@@ -1508,7 +1508,7 @@ libft/ft_putendl.o: libft/ft_putendl.c.o
 
 # target to build an object file
 libft/ft_putendl.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl.c.o
 .PHONY : libft/ft_putendl.c.o
 
 libft/ft_putendl.i: libft/ft_putendl.c.i
@@ -1517,7 +1517,7 @@ libft/ft_putendl.i: libft/ft_putendl.c.i
 
 # target to preprocess a source file
 libft/ft_putendl.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl.c.i
 .PHONY : libft/ft_putendl.c.i
 
 libft/ft_putendl.s: libft/ft_putendl.c.s
@@ -1526,7 +1526,7 @@ libft/ft_putendl.s: libft/ft_putendl.c.s
 
 # target to generate assembly for a file
 libft/ft_putendl.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl.c.s
 .PHONY : libft/ft_putendl.c.s
 
 libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
@@ -1535,7 +1535,7 @@ libft/ft_putendl_fd.o: libft/ft_putendl_fd.c.o
 
 # target to build an object file
 libft/ft_putendl_fd.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl_fd.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl_fd.c.o
 .PHONY : libft/ft_putendl_fd.c.o
 
 libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
@@ -1544,7 +1544,7 @@ libft/ft_putendl_fd.i: libft/ft_putendl_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putendl_fd.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl_fd.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl_fd.c.i
 .PHONY : libft/ft_putendl_fd.c.i
 
 libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
@@ -1553,7 +1553,7 @@ libft/ft_putendl_fd.s: libft/ft_putendl_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putendl_fd.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl_fd.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putendl_fd.c.s
 .PHONY : libft/ft_putendl_fd.c.s
 
 libft/ft_putnbr.o: libft/ft_putnbr.c.o
@@ -1562,7 +1562,7 @@ libft/ft_putnbr.o: libft/ft_putnbr.c.o
 
 # target to build an object file
 libft/ft_putnbr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr.c.o
 .PHONY : libft/ft_putnbr.c.o
 
 libft/ft_putnbr.i: libft/ft_putnbr.c.i
@@ -1571,7 +1571,7 @@ libft/ft_putnbr.i: libft/ft_putnbr.c.i
 
 # target to preprocess a source file
 libft/ft_putnbr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr.c.i
 .PHONY : libft/ft_putnbr.c.i
 
 libft/ft_putnbr.s: libft/ft_putnbr.c.s
@@ -1580,7 +1580,7 @@ libft/ft_putnbr.s: libft/ft_putnbr.c.s
 
 # target to generate assembly for a file
 libft/ft_putnbr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr.c.s
 .PHONY : libft/ft_putnbr.c.s
 
 libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
@@ -1589,7 +1589,7 @@ libft/ft_putnbr_fd.o: libft/ft_putnbr_fd.c.o
 
 # target to build an object file
 libft/ft_putnbr_fd.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr_fd.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr_fd.c.o
 .PHONY : libft/ft_putnbr_fd.c.o
 
 libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
@@ -1598,7 +1598,7 @@ libft/ft_putnbr_fd.i: libft/ft_putnbr_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putnbr_fd.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr_fd.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr_fd.c.i
 .PHONY : libft/ft_putnbr_fd.c.i
 
 libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
@@ -1607,7 +1607,7 @@ libft/ft_putnbr_fd.s: libft/ft_putnbr_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putnbr_fd.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr_fd.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putnbr_fd.c.s
 .PHONY : libft/ft_putnbr_fd.c.s
 
 libft/ft_putstr.o: libft/ft_putstr.c.o
@@ -1616,7 +1616,7 @@ libft/ft_putstr.o: libft/ft_putstr.c.o
 
 # target to build an object file
 libft/ft_putstr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr.c.o
 .PHONY : libft/ft_putstr.c.o
 
 libft/ft_putstr.i: libft/ft_putstr.c.i
@@ -1625,7 +1625,7 @@ libft/ft_putstr.i: libft/ft_putstr.c.i
 
 # target to preprocess a source file
 libft/ft_putstr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr.c.i
 .PHONY : libft/ft_putstr.c.i
 
 libft/ft_putstr.s: libft/ft_putstr.c.s
@@ -1634,7 +1634,7 @@ libft/ft_putstr.s: libft/ft_putstr.c.s
 
 # target to generate assembly for a file
 libft/ft_putstr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr.c.s
 .PHONY : libft/ft_putstr.c.s
 
 libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
@@ -1643,7 +1643,7 @@ libft/ft_putstr_fd.o: libft/ft_putstr_fd.c.o
 
 # target to build an object file
 libft/ft_putstr_fd.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr_fd.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr_fd.c.o
 .PHONY : libft/ft_putstr_fd.c.o
 
 libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
@@ -1652,7 +1652,7 @@ libft/ft_putstr_fd.i: libft/ft_putstr_fd.c.i
 
 # target to preprocess a source file
 libft/ft_putstr_fd.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr_fd.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr_fd.c.i
 .PHONY : libft/ft_putstr_fd.c.i
 
 libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
@@ -1661,7 +1661,7 @@ libft/ft_putstr_fd.s: libft/ft_putstr_fd.c.s
 
 # target to generate assembly for a file
 libft/ft_putstr_fd.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr_fd.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_putstr_fd.c.s
 .PHONY : libft/ft_putstr_fd.c.s
 
 libft/ft_strcat.o: libft/ft_strcat.c.o
@@ -1670,7 +1670,7 @@ libft/ft_strcat.o: libft/ft_strcat.c.o
 
 # target to build an object file
 libft/ft_strcat.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcat.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcat.c.o
 .PHONY : libft/ft_strcat.c.o
 
 libft/ft_strcat.i: libft/ft_strcat.c.i
@@ -1679,7 +1679,7 @@ libft/ft_strcat.i: libft/ft_strcat.c.i
 
 # target to preprocess a source file
 libft/ft_strcat.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcat.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcat.c.i
 .PHONY : libft/ft_strcat.c.i
 
 libft/ft_strcat.s: libft/ft_strcat.c.s
@@ -1688,7 +1688,7 @@ libft/ft_strcat.s: libft/ft_strcat.c.s
 
 # target to generate assembly for a file
 libft/ft_strcat.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcat.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcat.c.s
 .PHONY : libft/ft_strcat.c.s
 
 libft/ft_strchr.o: libft/ft_strchr.c.o
@@ -1697,7 +1697,7 @@ libft/ft_strchr.o: libft/ft_strchr.c.o
 
 # target to build an object file
 libft/ft_strchr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strchr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strchr.c.o
 .PHONY : libft/ft_strchr.c.o
 
 libft/ft_strchr.i: libft/ft_strchr.c.i
@@ -1706,7 +1706,7 @@ libft/ft_strchr.i: libft/ft_strchr.c.i
 
 # target to preprocess a source file
 libft/ft_strchr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strchr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strchr.c.i
 .PHONY : libft/ft_strchr.c.i
 
 libft/ft_strchr.s: libft/ft_strchr.c.s
@@ -1715,7 +1715,7 @@ libft/ft_strchr.s: libft/ft_strchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strchr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strchr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strchr.c.s
 .PHONY : libft/ft_strchr.c.s
 
 libft/ft_strclr.o: libft/ft_strclr.c.o
@@ -1724,7 +1724,7 @@ libft/ft_strclr.o: libft/ft_strclr.c.o
 
 # target to build an object file
 libft/ft_strclr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strclr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strclr.c.o
 .PHONY : libft/ft_strclr.c.o
 
 libft/ft_strclr.i: libft/ft_strclr.c.i
@@ -1733,7 +1733,7 @@ libft/ft_strclr.i: libft/ft_strclr.c.i
 
 # target to preprocess a source file
 libft/ft_strclr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strclr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strclr.c.i
 .PHONY : libft/ft_strclr.c.i
 
 libft/ft_strclr.s: libft/ft_strclr.c.s
@@ -1742,7 +1742,7 @@ libft/ft_strclr.s: libft/ft_strclr.c.s
 
 # target to generate assembly for a file
 libft/ft_strclr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strclr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strclr.c.s
 .PHONY : libft/ft_strclr.c.s
 
 libft/ft_strcmp.o: libft/ft_strcmp.c.o
@@ -1751,7 +1751,7 @@ libft/ft_strcmp.o: libft/ft_strcmp.c.o
 
 # target to build an object file
 libft/ft_strcmp.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcmp.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcmp.c.o
 .PHONY : libft/ft_strcmp.c.o
 
 libft/ft_strcmp.i: libft/ft_strcmp.c.i
@@ -1760,7 +1760,7 @@ libft/ft_strcmp.i: libft/ft_strcmp.c.i
 
 # target to preprocess a source file
 libft/ft_strcmp.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcmp.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcmp.c.i
 .PHONY : libft/ft_strcmp.c.i
 
 libft/ft_strcmp.s: libft/ft_strcmp.c.s
@@ -1769,7 +1769,7 @@ libft/ft_strcmp.s: libft/ft_strcmp.c.s
 
 # target to generate assembly for a file
 libft/ft_strcmp.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcmp.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcmp.c.s
 .PHONY : libft/ft_strcmp.c.s
 
 libft/ft_strcpy.o: libft/ft_strcpy.c.o
@@ -1778,7 +1778,7 @@ libft/ft_strcpy.o: libft/ft_strcpy.c.o
 
 # target to build an object file
 libft/ft_strcpy.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcpy.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcpy.c.o
 .PHONY : libft/ft_strcpy.c.o
 
 libft/ft_strcpy.i: libft/ft_strcpy.c.i
@@ -1787,7 +1787,7 @@ libft/ft_strcpy.i: libft/ft_strcpy.c.i
 
 # target to preprocess a source file
 libft/ft_strcpy.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcpy.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcpy.c.i
 .PHONY : libft/ft_strcpy.c.i
 
 libft/ft_strcpy.s: libft/ft_strcpy.c.s
@@ -1796,7 +1796,7 @@ libft/ft_strcpy.s: libft/ft_strcpy.c.s
 
 # target to generate assembly for a file
 libft/ft_strcpy.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcpy.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strcpy.c.s
 .PHONY : libft/ft_strcpy.c.s
 
 libft/ft_strdel.o: libft/ft_strdel.c.o
@@ -1805,7 +1805,7 @@ libft/ft_strdel.o: libft/ft_strdel.c.o
 
 # target to build an object file
 libft/ft_strdel.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdel.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdel.c.o
 .PHONY : libft/ft_strdel.c.o
 
 libft/ft_strdel.i: libft/ft_strdel.c.i
@@ -1814,7 +1814,7 @@ libft/ft_strdel.i: libft/ft_strdel.c.i
 
 # target to preprocess a source file
 libft/ft_strdel.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdel.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdel.c.i
 .PHONY : libft/ft_strdel.c.i
 
 libft/ft_strdel.s: libft/ft_strdel.c.s
@@ -1823,7 +1823,7 @@ libft/ft_strdel.s: libft/ft_strdel.c.s
 
 # target to generate assembly for a file
 libft/ft_strdel.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdel.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdel.c.s
 .PHONY : libft/ft_strdel.c.s
 
 libft/ft_strdup.o: libft/ft_strdup.c.o
@@ -1832,7 +1832,7 @@ libft/ft_strdup.o: libft/ft_strdup.c.o
 
 # target to build an object file
 libft/ft_strdup.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdup.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdup.c.o
 .PHONY : libft/ft_strdup.c.o
 
 libft/ft_strdup.i: libft/ft_strdup.c.i
@@ -1841,7 +1841,7 @@ libft/ft_strdup.i: libft/ft_strdup.c.i
 
 # target to preprocess a source file
 libft/ft_strdup.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdup.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdup.c.i
 .PHONY : libft/ft_strdup.c.i
 
 libft/ft_strdup.s: libft/ft_strdup.c.s
@@ -1850,7 +1850,7 @@ libft/ft_strdup.s: libft/ft_strdup.c.s
 
 # target to generate assembly for a file
 libft/ft_strdup.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdup.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strdup.c.s
 .PHONY : libft/ft_strdup.c.s
 
 libft/ft_strequ.o: libft/ft_strequ.c.o
@@ -1859,7 +1859,7 @@ libft/ft_strequ.o: libft/ft_strequ.c.o
 
 # target to build an object file
 libft/ft_strequ.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strequ.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strequ.c.o
 .PHONY : libft/ft_strequ.c.o
 
 libft/ft_strequ.i: libft/ft_strequ.c.i
@@ -1868,7 +1868,7 @@ libft/ft_strequ.i: libft/ft_strequ.c.i
 
 # target to preprocess a source file
 libft/ft_strequ.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strequ.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strequ.c.i
 .PHONY : libft/ft_strequ.c.i
 
 libft/ft_strequ.s: libft/ft_strequ.c.s
@@ -1877,7 +1877,7 @@ libft/ft_strequ.s: libft/ft_strequ.c.s
 
 # target to generate assembly for a file
 libft/ft_strequ.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strequ.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strequ.c.s
 .PHONY : libft/ft_strequ.c.s
 
 libft/ft_striter.o: libft/ft_striter.c.o
@@ -1886,7 +1886,7 @@ libft/ft_striter.o: libft/ft_striter.c.o
 
 # target to build an object file
 libft/ft_striter.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striter.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striter.c.o
 .PHONY : libft/ft_striter.c.o
 
 libft/ft_striter.i: libft/ft_striter.c.i
@@ -1895,7 +1895,7 @@ libft/ft_striter.i: libft/ft_striter.c.i
 
 # target to preprocess a source file
 libft/ft_striter.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striter.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striter.c.i
 .PHONY : libft/ft_striter.c.i
 
 libft/ft_striter.s: libft/ft_striter.c.s
@@ -1904,7 +1904,7 @@ libft/ft_striter.s: libft/ft_striter.c.s
 
 # target to generate assembly for a file
 libft/ft_striter.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striter.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striter.c.s
 .PHONY : libft/ft_striter.c.s
 
 libft/ft_striteri.o: libft/ft_striteri.c.o
@@ -1913,7 +1913,7 @@ libft/ft_striteri.o: libft/ft_striteri.c.o
 
 # target to build an object file
 libft/ft_striteri.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striteri.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striteri.c.o
 .PHONY : libft/ft_striteri.c.o
 
 libft/ft_striteri.i: libft/ft_striteri.c.i
@@ -1922,7 +1922,7 @@ libft/ft_striteri.i: libft/ft_striteri.c.i
 
 # target to preprocess a source file
 libft/ft_striteri.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striteri.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striteri.c.i
 .PHONY : libft/ft_striteri.c.i
 
 libft/ft_striteri.s: libft/ft_striteri.c.s
@@ -1931,7 +1931,7 @@ libft/ft_striteri.s: libft/ft_striteri.c.s
 
 # target to generate assembly for a file
 libft/ft_striteri.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striteri.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_striteri.c.s
 .PHONY : libft/ft_striteri.c.s
 
 libft/ft_strjoin.o: libft/ft_strjoin.c.o
@@ -1940,7 +1940,7 @@ libft/ft_strjoin.o: libft/ft_strjoin.c.o
 
 # target to build an object file
 libft/ft_strjoin.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strjoin.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strjoin.c.o
 .PHONY : libft/ft_strjoin.c.o
 
 libft/ft_strjoin.i: libft/ft_strjoin.c.i
@@ -1949,7 +1949,7 @@ libft/ft_strjoin.i: libft/ft_strjoin.c.i
 
 # target to preprocess a source file
 libft/ft_strjoin.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strjoin.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strjoin.c.i
 .PHONY : libft/ft_strjoin.c.i
 
 libft/ft_strjoin.s: libft/ft_strjoin.c.s
@@ -1958,7 +1958,7 @@ libft/ft_strjoin.s: libft/ft_strjoin.c.s
 
 # target to generate assembly for a file
 libft/ft_strjoin.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strjoin.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strjoin.c.s
 .PHONY : libft/ft_strjoin.c.s
 
 libft/ft_strlcat.o: libft/ft_strlcat.c.o
@@ -1967,7 +1967,7 @@ libft/ft_strlcat.o: libft/ft_strlcat.c.o
 
 # target to build an object file
 libft/ft_strlcat.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlcat.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlcat.c.o
 .PHONY : libft/ft_strlcat.c.o
 
 libft/ft_strlcat.i: libft/ft_strlcat.c.i
@@ -1976,7 +1976,7 @@ libft/ft_strlcat.i: libft/ft_strlcat.c.i
 
 # target to preprocess a source file
 libft/ft_strlcat.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlcat.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlcat.c.i
 .PHONY : libft/ft_strlcat.c.i
 
 libft/ft_strlcat.s: libft/ft_strlcat.c.s
@@ -1985,7 +1985,7 @@ libft/ft_strlcat.s: libft/ft_strlcat.c.s
 
 # target to generate assembly for a file
 libft/ft_strlcat.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlcat.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlcat.c.s
 .PHONY : libft/ft_strlcat.c.s
 
 libft/ft_strlen.o: libft/ft_strlen.c.o
@@ -1994,7 +1994,7 @@ libft/ft_strlen.o: libft/ft_strlen.c.o
 
 # target to build an object file
 libft/ft_strlen.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlen.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlen.c.o
 .PHONY : libft/ft_strlen.c.o
 
 libft/ft_strlen.i: libft/ft_strlen.c.i
@@ -2003,7 +2003,7 @@ libft/ft_strlen.i: libft/ft_strlen.c.i
 
 # target to preprocess a source file
 libft/ft_strlen.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlen.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlen.c.i
 .PHONY : libft/ft_strlen.c.i
 
 libft/ft_strlen.s: libft/ft_strlen.c.s
@@ -2012,7 +2012,7 @@ libft/ft_strlen.s: libft/ft_strlen.c.s
 
 # target to generate assembly for a file
 libft/ft_strlen.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlen.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strlen.c.s
 .PHONY : libft/ft_strlen.c.s
 
 libft/ft_strmap.o: libft/ft_strmap.c.o
@@ -2021,7 +2021,7 @@ libft/ft_strmap.o: libft/ft_strmap.c.o
 
 # target to build an object file
 libft/ft_strmap.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmap.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmap.c.o
 .PHONY : libft/ft_strmap.c.o
 
 libft/ft_strmap.i: libft/ft_strmap.c.i
@@ -2030,7 +2030,7 @@ libft/ft_strmap.i: libft/ft_strmap.c.i
 
 # target to preprocess a source file
 libft/ft_strmap.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmap.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmap.c.i
 .PHONY : libft/ft_strmap.c.i
 
 libft/ft_strmap.s: libft/ft_strmap.c.s
@@ -2039,7 +2039,7 @@ libft/ft_strmap.s: libft/ft_strmap.c.s
 
 # target to generate assembly for a file
 libft/ft_strmap.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmap.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmap.c.s
 .PHONY : libft/ft_strmap.c.s
 
 libft/ft_strmapi.o: libft/ft_strmapi.c.o
@@ -2048,7 +2048,7 @@ libft/ft_strmapi.o: libft/ft_strmapi.c.o
 
 # target to build an object file
 libft/ft_strmapi.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmapi.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmapi.c.o
 .PHONY : libft/ft_strmapi.c.o
 
 libft/ft_strmapi.i: libft/ft_strmapi.c.i
@@ -2057,7 +2057,7 @@ libft/ft_strmapi.i: libft/ft_strmapi.c.i
 
 # target to preprocess a source file
 libft/ft_strmapi.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmapi.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmapi.c.i
 .PHONY : libft/ft_strmapi.c.i
 
 libft/ft_strmapi.s: libft/ft_strmapi.c.s
@@ -2066,7 +2066,7 @@ libft/ft_strmapi.s: libft/ft_strmapi.c.s
 
 # target to generate assembly for a file
 libft/ft_strmapi.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmapi.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strmapi.c.s
 .PHONY : libft/ft_strmapi.c.s
 
 libft/ft_strncat.o: libft/ft_strncat.c.o
@@ -2075,7 +2075,7 @@ libft/ft_strncat.o: libft/ft_strncat.c.o
 
 # target to build an object file
 libft/ft_strncat.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncat.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncat.c.o
 .PHONY : libft/ft_strncat.c.o
 
 libft/ft_strncat.i: libft/ft_strncat.c.i
@@ -2084,7 +2084,7 @@ libft/ft_strncat.i: libft/ft_strncat.c.i
 
 # target to preprocess a source file
 libft/ft_strncat.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncat.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncat.c.i
 .PHONY : libft/ft_strncat.c.i
 
 libft/ft_strncat.s: libft/ft_strncat.c.s
@@ -2093,7 +2093,7 @@ libft/ft_strncat.s: libft/ft_strncat.c.s
 
 # target to generate assembly for a file
 libft/ft_strncat.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncat.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncat.c.s
 .PHONY : libft/ft_strncat.c.s
 
 libft/ft_strncmp.o: libft/ft_strncmp.c.o
@@ -2102,7 +2102,7 @@ libft/ft_strncmp.o: libft/ft_strncmp.c.o
 
 # target to build an object file
 libft/ft_strncmp.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncmp.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncmp.c.o
 .PHONY : libft/ft_strncmp.c.o
 
 libft/ft_strncmp.i: libft/ft_strncmp.c.i
@@ -2111,7 +2111,7 @@ libft/ft_strncmp.i: libft/ft_strncmp.c.i
 
 # target to preprocess a source file
 libft/ft_strncmp.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncmp.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncmp.c.i
 .PHONY : libft/ft_strncmp.c.i
 
 libft/ft_strncmp.s: libft/ft_strncmp.c.s
@@ -2120,7 +2120,7 @@ libft/ft_strncmp.s: libft/ft_strncmp.c.s
 
 # target to generate assembly for a file
 libft/ft_strncmp.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncmp.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncmp.c.s
 .PHONY : libft/ft_strncmp.c.s
 
 libft/ft_strncpy.o: libft/ft_strncpy.c.o
@@ -2129,7 +2129,7 @@ libft/ft_strncpy.o: libft/ft_strncpy.c.o
 
 # target to build an object file
 libft/ft_strncpy.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncpy.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncpy.c.o
 .PHONY : libft/ft_strncpy.c.o
 
 libft/ft_strncpy.i: libft/ft_strncpy.c.i
@@ -2138,7 +2138,7 @@ libft/ft_strncpy.i: libft/ft_strncpy.c.i
 
 # target to preprocess a source file
 libft/ft_strncpy.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncpy.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncpy.c.i
 .PHONY : libft/ft_strncpy.c.i
 
 libft/ft_strncpy.s: libft/ft_strncpy.c.s
@@ -2147,7 +2147,7 @@ libft/ft_strncpy.s: libft/ft_strncpy.c.s
 
 # target to generate assembly for a file
 libft/ft_strncpy.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncpy.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strncpy.c.s
 .PHONY : libft/ft_strncpy.c.s
 
 libft/ft_strnequ.o: libft/ft_strnequ.c.o
@@ -2156,7 +2156,7 @@ libft/ft_strnequ.o: libft/ft_strnequ.c.o
 
 # target to build an object file
 libft/ft_strnequ.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnequ.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnequ.c.o
 .PHONY : libft/ft_strnequ.c.o
 
 libft/ft_strnequ.i: libft/ft_strnequ.c.i
@@ -2165,7 +2165,7 @@ libft/ft_strnequ.i: libft/ft_strnequ.c.i
 
 # target to preprocess a source file
 libft/ft_strnequ.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnequ.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnequ.c.i
 .PHONY : libft/ft_strnequ.c.i
 
 libft/ft_strnequ.s: libft/ft_strnequ.c.s
@@ -2174,7 +2174,7 @@ libft/ft_strnequ.s: libft/ft_strnequ.c.s
 
 # target to generate assembly for a file
 libft/ft_strnequ.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnequ.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnequ.c.s
 .PHONY : libft/ft_strnequ.c.s
 
 libft/ft_strnew.o: libft/ft_strnew.c.o
@@ -2183,7 +2183,7 @@ libft/ft_strnew.o: libft/ft_strnew.c.o
 
 # target to build an object file
 libft/ft_strnew.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnew.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnew.c.o
 .PHONY : libft/ft_strnew.c.o
 
 libft/ft_strnew.i: libft/ft_strnew.c.i
@@ -2192,7 +2192,7 @@ libft/ft_strnew.i: libft/ft_strnew.c.i
 
 # target to preprocess a source file
 libft/ft_strnew.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnew.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnew.c.i
 .PHONY : libft/ft_strnew.c.i
 
 libft/ft_strnew.s: libft/ft_strnew.c.s
@@ -2201,7 +2201,7 @@ libft/ft_strnew.s: libft/ft_strnew.c.s
 
 # target to generate assembly for a file
 libft/ft_strnew.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnew.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnew.c.s
 .PHONY : libft/ft_strnew.c.s
 
 libft/ft_strnstr.o: libft/ft_strnstr.c.o
@@ -2210,7 +2210,7 @@ libft/ft_strnstr.o: libft/ft_strnstr.c.o
 
 # target to build an object file
 libft/ft_strnstr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnstr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnstr.c.o
 .PHONY : libft/ft_strnstr.c.o
 
 libft/ft_strnstr.i: libft/ft_strnstr.c.i
@@ -2219,7 +2219,7 @@ libft/ft_strnstr.i: libft/ft_strnstr.c.i
 
 # target to preprocess a source file
 libft/ft_strnstr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnstr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnstr.c.i
 .PHONY : libft/ft_strnstr.c.i
 
 libft/ft_strnstr.s: libft/ft_strnstr.c.s
@@ -2228,7 +2228,7 @@ libft/ft_strnstr.s: libft/ft_strnstr.c.s
 
 # target to generate assembly for a file
 libft/ft_strnstr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnstr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strnstr.c.s
 .PHONY : libft/ft_strnstr.c.s
 
 libft/ft_strrchr.o: libft/ft_strrchr.c.o
@@ -2237,7 +2237,7 @@ libft/ft_strrchr.o: libft/ft_strrchr.c.o
 
 # target to build an object file
 libft/ft_strrchr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strrchr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strrchr.c.o
 .PHONY : libft/ft_strrchr.c.o
 
 libft/ft_strrchr.i: libft/ft_strrchr.c.i
@@ -2246,7 +2246,7 @@ libft/ft_strrchr.i: libft/ft_strrchr.c.i
 
 # target to preprocess a source file
 libft/ft_strrchr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strrchr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strrchr.c.i
 .PHONY : libft/ft_strrchr.c.i
 
 libft/ft_strrchr.s: libft/ft_strrchr.c.s
@@ -2255,7 +2255,7 @@ libft/ft_strrchr.s: libft/ft_strrchr.c.s
 
 # target to generate assembly for a file
 libft/ft_strrchr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strrchr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strrchr.c.s
 .PHONY : libft/ft_strrchr.c.s
 
 libft/ft_strsplit.o: libft/ft_strsplit.c.o
@@ -2264,7 +2264,7 @@ libft/ft_strsplit.o: libft/ft_strsplit.c.o
 
 # target to build an object file
 libft/ft_strsplit.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsplit.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsplit.c.o
 .PHONY : libft/ft_strsplit.c.o
 
 libft/ft_strsplit.i: libft/ft_strsplit.c.i
@@ -2273,7 +2273,7 @@ libft/ft_strsplit.i: libft/ft_strsplit.c.i
 
 # target to preprocess a source file
 libft/ft_strsplit.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsplit.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsplit.c.i
 .PHONY : libft/ft_strsplit.c.i
 
 libft/ft_strsplit.s: libft/ft_strsplit.c.s
@@ -2282,7 +2282,7 @@ libft/ft_strsplit.s: libft/ft_strsplit.c.s
 
 # target to generate assembly for a file
 libft/ft_strsplit.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsplit.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsplit.c.s
 .PHONY : libft/ft_strsplit.c.s
 
 libft/ft_strstr.o: libft/ft_strstr.c.o
@@ -2291,7 +2291,7 @@ libft/ft_strstr.o: libft/ft_strstr.c.o
 
 # target to build an object file
 libft/ft_strstr.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strstr.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strstr.c.o
 .PHONY : libft/ft_strstr.c.o
 
 libft/ft_strstr.i: libft/ft_strstr.c.i
@@ -2300,7 +2300,7 @@ libft/ft_strstr.i: libft/ft_strstr.c.i
 
 # target to preprocess a source file
 libft/ft_strstr.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strstr.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strstr.c.i
 .PHONY : libft/ft_strstr.c.i
 
 libft/ft_strstr.s: libft/ft_strstr.c.s
@@ -2309,7 +2309,7 @@ libft/ft_strstr.s: libft/ft_strstr.c.s
 
 # target to generate assembly for a file
 libft/ft_strstr.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strstr.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strstr.c.s
 .PHONY : libft/ft_strstr.c.s
 
 libft/ft_strsub.o: libft/ft_strsub.c.o
@@ -2318,7 +2318,7 @@ libft/ft_strsub.o: libft/ft_strsub.c.o
 
 # target to build an object file
 libft/ft_strsub.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsub.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsub.c.o
 .PHONY : libft/ft_strsub.c.o
 
 libft/ft_strsub.i: libft/ft_strsub.c.i
@@ -2327,7 +2327,7 @@ libft/ft_strsub.i: libft/ft_strsub.c.i
 
 # target to preprocess a source file
 libft/ft_strsub.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsub.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsub.c.i
 .PHONY : libft/ft_strsub.c.i
 
 libft/ft_strsub.s: libft/ft_strsub.c.s
@@ -2336,7 +2336,7 @@ libft/ft_strsub.s: libft/ft_strsub.c.s
 
 # target to generate assembly for a file
 libft/ft_strsub.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsub.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strsub.c.s
 .PHONY : libft/ft_strsub.c.s
 
 libft/ft_strtrim.o: libft/ft_strtrim.c.o
@@ -2345,7 +2345,7 @@ libft/ft_strtrim.o: libft/ft_strtrim.c.o
 
 # target to build an object file
 libft/ft_strtrim.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrim.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrim.c.o
 .PHONY : libft/ft_strtrim.c.o
 
 libft/ft_strtrim.i: libft/ft_strtrim.c.i
@@ -2354,7 +2354,7 @@ libft/ft_strtrim.i: libft/ft_strtrim.c.i
 
 # target to preprocess a source file
 libft/ft_strtrim.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrim.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrim.c.i
 .PHONY : libft/ft_strtrim.c.i
 
 libft/ft_strtrim.s: libft/ft_strtrim.c.s
@@ -2363,7 +2363,7 @@ libft/ft_strtrim.s: libft/ft_strtrim.c.s
 
 # target to generate assembly for a file
 libft/ft_strtrim.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrim.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrim.c.s
 .PHONY : libft/ft_strtrim.c.s
 
 libft/ft_strtrimc.o: libft/ft_strtrimc.c.o
@@ -2372,7 +2372,7 @@ libft/ft_strtrimc.o: libft/ft_strtrimc.c.o
 
 # target to build an object file
 libft/ft_strtrimc.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrimc.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrimc.c.o
 .PHONY : libft/ft_strtrimc.c.o
 
 libft/ft_strtrimc.i: libft/ft_strtrimc.c.i
@@ -2381,7 +2381,7 @@ libft/ft_strtrimc.i: libft/ft_strtrimc.c.i
 
 # target to preprocess a source file
 libft/ft_strtrimc.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrimc.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrimc.c.i
 .PHONY : libft/ft_strtrimc.c.i
 
 libft/ft_strtrimc.s: libft/ft_strtrimc.c.s
@@ -2390,7 +2390,7 @@ libft/ft_strtrimc.s: libft/ft_strtrimc.c.s
 
 # target to generate assembly for a file
 libft/ft_strtrimc.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrimc.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_strtrimc.c.s
 .PHONY : libft/ft_strtrimc.c.s
 
 libft/ft_tolower.o: libft/ft_tolower.c.o
@@ -2399,7 +2399,7 @@ libft/ft_tolower.o: libft/ft_tolower.c.o
 
 # target to build an object file
 libft/ft_tolower.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_tolower.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_tolower.c.o
 .PHONY : libft/ft_tolower.c.o
 
 libft/ft_tolower.i: libft/ft_tolower.c.i
@@ -2408,7 +2408,7 @@ libft/ft_tolower.i: libft/ft_tolower.c.i
 
 # target to preprocess a source file
 libft/ft_tolower.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_tolower.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_tolower.c.i
 .PHONY : libft/ft_tolower.c.i
 
 libft/ft_tolower.s: libft/ft_tolower.c.s
@@ -2417,7 +2417,7 @@ libft/ft_tolower.s: libft/ft_tolower.c.s
 
 # target to generate assembly for a file
 libft/ft_tolower.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_tolower.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_tolower.c.s
 .PHONY : libft/ft_tolower.c.s
 
 libft/ft_toupper.o: libft/ft_toupper.c.o
@@ -2426,7 +2426,7 @@ libft/ft_toupper.o: libft/ft_toupper.c.o
 
 # target to build an object file
 libft/ft_toupper.c.o:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_toupper.c.o
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_toupper.c.o
 .PHONY : libft/ft_toupper.c.o
 
 libft/ft_toupper.i: libft/ft_toupper.c.i
@@ -2435,7 +2435,7 @@ libft/ft_toupper.i: libft/ft_toupper.c.i
 
 # target to preprocess a source file
 libft/ft_toupper.c.i:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_toupper.c.i
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_toupper.c.i
 .PHONY : libft/ft_toupper.c.i
 
 libft/ft_toupper.s: libft/ft_toupper.c.s
@@ -2444,7 +2444,7 @@ libft/ft_toupper.s: libft/ft_toupper.c.s
 
 # target to generate assembly for a file
 libft/ft_toupper.c.s:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_toupper.c.s
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/libft/ft_toupper.c.s
 .PHONY : libft/ft_toupper.c.s
 
 # Help Target
@@ -2725,6 +2725,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/achernys/corewar/CoreWar/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

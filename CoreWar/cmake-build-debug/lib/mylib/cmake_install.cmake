@@ -1,4 +1,4 @@
-# Install script for directory: /Users/achernys/corewar/CoreWar/lib/mylib
+# Install script for directory: /Users/dlewando/Corewar/corewar/CoreWar/lib/mylib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

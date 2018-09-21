@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/achernys/corewar/CoreWar/src/main.c" "/Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles/corewar.dir/src/main.c.o"
+  "/Users/dlewando/Corewar/corewar/CoreWar/src/main.c" "/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles/corewar.dir/src/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
@@ -15,7 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/achernys/corewar/CoreWar/cmake-build-debug/lib/mylib/CMakeFiles/mylib.dir/DependInfo.cmake"
+  "/Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/lib/mylib/CMakeFiles/mylib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
