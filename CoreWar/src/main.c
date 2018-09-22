@@ -102,5 +102,13 @@ int		main (int argc, char **argv)
 		close(fd);
 		exit(75);
 	}
+	unsigned int l;
+	unsigned int k;
+	short t;
+	t = -5;
+	l = (short)100000;
+	k = t;
+	k -= 3;
+	ft_printf("%hd", k);
 	return (0);
 }

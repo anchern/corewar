@@ -11,7 +11,10 @@ void	store_index_function(t_options *options, t_player *player,
 	if (options->option_number[1] == 1)
 		b = player->registry[options->reg[1] - 1];
 	else if (options->option_number[1] == 2)
+	{
+		options->dir[1] = (short)options->dir[1];
 		b = options->dir[1];
+	}
 	else if (options->option_number[1] == 3)
 	{
 		b = bytestoui(field, player->pc.pc_index +
@@ -20,7 +23,10 @@ void	store_index_function(t_options *options, t_player *player,
 	if (options->option_number[2] == 1)
 		c = player->registry[options->reg[2] - 1];
 	else if (options->option_number[2] == 2)
+	{
+		options->dir[2] = (short)options->dir[2];
 		c = options->dir[2];
+	}
 	uitobytes((unsigned)options->reg[0], field, player->pc.pc_index +
 	(short)((b + c) % IDX_MOD));
 }
@@ -41,9 +47,7 @@ void	fork_function(t_options *options, t_player *player)
 void	long_load_command(t_options *options, t_player *player, t_sell *field)
 {
 	if (options->option_number[0] == 2)
-	{
 		player->registry[options->reg[1] - 1] = options->dir[0];
-	}
 	else if (options->option_number[0] == 3)
 	{
 		player->registry[options->reg[1] - 1] = bytestoui(field,
@@ -66,7 +70,10 @@ void	long_load_index_function(t_options *options, t_player *player,
 	if (options->option_number[0] == 1)
 		a = player->registry[options->reg[0] - 1];
 	else if (options->option_number[0] == 2)
+	{
+		options->dir[0] = (short)options->dir[0];
 		a = options->dir[0];
+	}
 	else if (options->option_number[0] == 3)
 	{
 		a = bytestoui(field, player->pc.pc_index +
@@ -75,7 +82,10 @@ void	long_load_index_function(t_options *options, t_player *player,
 	if (options->option_number[1] == 1)
 		b = player->registry[options->reg[1] - 1];
 	else if (options->option_number[0] == 2)
+	{
+		options->dir[1] = (short)options->dir[1];
 		b = options->dir[1];
+	}
 	player->registry[options->reg[2] - 1] = bytestoui(field,
 			player->pc.pc_index + (short)((a + b) % FIELD_SIZE));
 	if (player->registry[options->reg[2] - 1] == 0)
