@@ -23,7 +23,6 @@
 typedef struct			s_pc
 {
 	short				pc_index;
-	unsigned int		global_i;
 	unsigned char		alive_label;
 	unsigned short		time_todo;
 	unsigned char		command;

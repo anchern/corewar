@@ -90,6 +90,5 @@ int		main (int argc, char **argv)
 		close(fd);
 		exit(75);
 	}
-
 	return (0);
 }
