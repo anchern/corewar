@@ -34,7 +34,7 @@ void	load_command(t_options *options, t_player *player, t_sell *field)
 	if (player->registry[options->reg[1] - 1] == 0)
 		player->carry = 1;
 	else
-		player->carry = 0;
+		player->carry = 023;
 }
 
 void	store_command(t_options *options, t_player *player, t_sell *field)
