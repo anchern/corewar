@@ -217,6 +217,33 @@ src/commands/commands6-10.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/commands/commands6-10.c.s
 .PHONY : src/commands/commands6-10.c.s
 
+src/iobytes.o: src/iobytes.c.o
+
+.PHONY : src/iobytes.o
+
+# target to build an object file
+src/iobytes.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/iobytes.c.o
+.PHONY : src/iobytes.c.o
+
+src/iobytes.i: src/iobytes.c.i
+
+.PHONY : src/iobytes.i
+
+# target to preprocess a source file
+src/iobytes.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/iobytes.c.i
+.PHONY : src/iobytes.c.i
+
+src/iobytes.s: src/iobytes.c.s
+
+.PHONY : src/iobytes.s
+
+# target to generate assembly for a file
+src/iobytes.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/iobytes.c.s
+.PHONY : src/iobytes.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -263,6 +290,9 @@ help:
 	@echo "... src/commands/commands6-10.o"
 	@echo "... src/commands/commands6-10.i"
 	@echo "... src/commands/commands6-10.s"
+	@echo "... src/iobytes.o"
+	@echo "... src/iobytes.i"
+	@echo "... src/iobytes.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

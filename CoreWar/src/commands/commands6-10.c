@@ -84,7 +84,7 @@ void	jump_function(t_options *options, t_player *player)
 		player->pc.pc_index += (options->dir[0] % IDX_MOD);
 }
 
-void	load_index_function(t_options *options, t_sell *field, t_player *player)
+void	load_index_function(t_options *options, t_player *player, t_sell *field)
 {
 	unsigned int a;
 	unsigned int b;

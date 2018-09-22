@@ -66,8 +66,21 @@ unsigned int			bytestoui(const t_sell *byte, short index);
 short					bytestos(const t_sell *byte, short index);
 void					uitobytes(unsigned value, t_sell *field, short index);
 void 					alive_command(t_options *options, t_player *player, int counter);
-void					load_command(t_options *options, t_sell *field, t_player *player);
-void					store_command(t_options *options, t_sell *field, t_player *player);
-void					add_command(t_options *options, t_player *player);
+void					load_command(t_options *options, t_player *player, t_sell *field);
+void					store_command(t_options *options, t_player *player, t_sell *field);
+void					addition_command(t_options *options, t_player *player);
+void					and_function(t_options *options, t_player *player);
+void					or_function(t_options *options, t_player *player)
+void					xor_function(t_options *options, t_player *player);
+void					jump_function(t_options *options, t_player *player);
+void					load_index_function(t_options *options, t_player *player, t_sell *field);
+void					store_index_function(t_options *options,
+							t_player *player, t_sell *field);
+void					fork_function(t_options *options, t_player *player);
+void					long_load_command(t_options *options, t_player *player,
+							t_sell *field);
+void					long_load_index_function(t_options *options,
+							t_player *player, t_sell *field);
+void					long_fork_function(t_options *options, t_player *player);
 
 #endif

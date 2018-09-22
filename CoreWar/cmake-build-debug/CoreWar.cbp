@@ -404,6 +404,9 @@
 		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands6-10.c">
 			<Option target="corewar"/>
 		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/iobytes.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/main.c">
 			<Option target="corewar"/>
 		</Unit>

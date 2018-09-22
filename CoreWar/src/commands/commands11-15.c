@@ -1,6 +1,7 @@
 #include "../../inc/vm.h"
 
-void	store_index_function(t_options *options, t_sell *field, t_player *player)
+void	store_index_function(t_options *options, t_player *player,
+		t_sell *field)
 {
 	unsigned int b;
 	unsigned int c;
@@ -37,7 +38,7 @@ void	fork_function(t_options *options, t_player *player)
 	player->pc = *new_pc;
 }
 
-void	long_load_command(t_options *options, t_sell *field, t_player *player)
+void	long_load_command(t_options *options, t_player *player, t_sell *field)
 {
 	if (options->option_number[0] == 2)
 	{
@@ -54,8 +55,8 @@ void	long_load_command(t_options *options, t_sell *field, t_player *player)
 		player->carry = 0;
 }
 
-void	long_load_index_function(t_options *options, t_sell *field,
-		t_player *player)
+void	long_load_index_function(t_options *options, t_player *player,
+		t_sell *field)
 {
 	unsigned int a;
 	unsigned int b;

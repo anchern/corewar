@@ -19,7 +19,7 @@ void 	alive_command(t_options *options, t_player *player, int counter)
 	}
 }
 
-void	load_command(t_options *options, t_sell *field, t_player *player)
+void	load_command(t_options *options, t_player *player, t_sell *field)
 {
 	if (options->option_number[0] == 2)
 	{
@@ -37,7 +37,7 @@ void	load_command(t_options *options, t_sell *field, t_player *player)
 		player->carry = 0;
 }
 
-void	store_command(t_options *options, t_sell *field, t_player *player)
+void	store_command(t_options *options, t_player *player, t_sell *field)
 {
 	if (options->option_number[1] == 3)
 	{
