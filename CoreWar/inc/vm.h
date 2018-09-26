@@ -31,7 +31,7 @@ typedef struct			s_pc
 
 typedef struct			s_player
 {
-	char 				player_number;
+	unsigned			player_number;
 	char 				carry;
 	int 				alive_counter;
 	int 				last_live;
@@ -66,29 +66,30 @@ unsigned int			bytestoui(const t_sell *byte, short index);
 short					bytestos(const t_sell *byte, short index);
 void					uitobytes(unsigned value, t_sell *field, short index);
 
-void 					alive_command(t_options *options, t_player *player,
+unsigned int			alive_command(t_options *options, t_player *player,
 										int counter);
-void					load_command(t_options *options, t_player *player,
+unsigned int			load_command(t_options *options, t_player *player,
 										t_sell *field);
-void					store_command(t_options *options, t_player *player,
+unsigned int			store_command(t_options *options, t_player *player,
 										t_sell *field);
-void					addition_command(t_options *options, t_player *player);
-void					and_function(t_options *options, t_player *player);
-void					or_function(t_options *options, t_player *player);
-void					xor_function(t_options *options, t_player *player);
-void					jump_function(t_options *options, t_player *player);
-void					load_index_function(t_options *options,
+unsigned int			addition_command(t_options *options, t_player *player);
+unsigned int			substraction_command(t_options *options, t_player *player);
+unsigned int			and_function(t_options *options, t_player *player);
+unsigned int			or_function(t_options *options, t_player *player);
+unsigned int			xor_function(t_options *options, t_player *player);
+unsigned int			jump_function(t_options *options, t_player *player);
+unsigned int			load_index_function(t_options *options,
 										t_player *player, t_sell *field);
-void					store_index_function(t_options *options,
+unsigned int			store_index_function(t_options *options,
 										t_player *player, t_sell *field);
-void					fork_function(t_options *options, t_player *player);
-void					long_load_command(t_options *options, t_player *player,
+unsigned int			fork_function(t_options *options, t_player *player);
+unsigned int			long_load_command(t_options *options, t_player *player,
 										t_sell *field);
-void					long_load_index_function(t_options *options,
+unsigned int			long_load_index_function(t_options *options,
 										t_player *player, t_sell *field);
-void					long_fork_function(t_options *options,
+unsigned int			long_fork_function(t_options *options,
 										t_player *player);
-void					add_command(t_options *options, t_player *player);
+unsigned int			add_command(t_options *options, t_player *player);
 short					true_value_pc_index(short pc_index);
 char					isrdi(unsigned char byte, char shift);
 char					save_reg(t_sell *field, t_options *opt, char opt_num);

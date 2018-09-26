@@ -87,28 +87,115 @@ int		read_header(t_game_info *game_info, header_t *header, char *filename)
 	return (fd);
 }
 
-int		main (int argc, char **argv)
+void	nulling_options(t_options *options)
 {
+	int i;
+
+	i = 0;
+	while (i < 3)
+	{
+		options->dir[i] = 0;
+		options->reg[i] = 0;
+		if (i < 2)
+			options->ind[i] = 0;
+		options->option_number[i] = 0;
+		i++;
+	}
+}
+
+
+int main()
+{
+
+
+
 	header_t	*header;
 	t_game_info	*game_info;
 	t_options	*options;
 	t_player	*player;
 	int			fd;
+	char dir_size;
+	char	value;
 
 	header = (header_t *)ft_memalloc(sizeof(header_t));
 	game_info = (t_game_info *)ft_memalloc(sizeof(t_game_info));
 	player = (t_player *)ft_memalloc(sizeof(t_player));
 	options = (t_options *)ft_memalloc(sizeof(t_options));
+
 	if (!(fd = read_header(game_info, header, "../files/helltrain.cor")))
 	{
 		close(fd);
 		exit(75);
 	}
-	if (r_rdi_rd_options(options, game_info->field, 1))
-		ft_printf("%x, %x, %x\n", options->reg[0], options->option_number[1] == 1 ?
-					options->reg[1] : options->option_number[1] == 2 ?
-					options->dir[1] : options->ind[1],
-					options->option_number[2] == 1 ? options->reg[2] :
-					options->dir[2]);
-	return (0);
+	nulling_options(options);
+
+	char (*options_array[])(t_options *options, t_sell *field, short pc_i, char dir_size) =
+			{
+				&d_options,
+				&di_r_options,
+				&r_ri_options,
+				&r_r_r_options,
+				&r_r_r_options,
+				&rdi_rdi_r_options,
+				&rdi_rdi_r_options,
+				&rdi_rdi_r_options,
+				&d_options,
+				&rdi_rd_r_options,
+				&r_rdi_rd_options,
+				&d_options,
+				&di_r_options,
+				&rdi_rd_r_options,
+				d_options
+			};
+	player->pc.pc_index = 0;
+	player->alive_counter = 0;
+	player->carry = 0;
+	player->last_live = 0;
+	player->player_number = (unsigned)-3;
+	player->next = NULL;
+	player->pc.next = NULL;
+	player->pc.alive_label = 0;
+	player->pc.time_todo = 0;
+
+
+	game_info->counter = 0;
+	game_info->cycle_delta_counter = 0;
+	game_info->max_checks_counter = 0;
+
+	player->pc.command = game_info->field[player->pc.pc_index].value;
+	value = player->pc.command;
+	if (value  == 1 && !(value < 1 || value > 16))
+		options_array[value - 1](options, game_info->field, player->pc.pc_index + (short)1, 4);
+	else if (!(value < 1 || value > 16))
+		options_array[value - 1](options, game_info->field, player->pc.pc_index + (short)1, 2);
+
+	unsigned int (*funtions_array[])(t_options *options, t_player *player, t_sell *field) =
+			{
+				&load_command,
+				&store_command,
+				&addition_command,
+				&substraction_command,
+				&and_function,
+				&or_function,
+				&xor_function,
+				&jump_function,
+				&load_index_function,
+				&store_index_function,
+				&fork_function,
+				&long_load_command,
+				&long_load_index_function,
+				&long_fork_function
+			};
+	if (value  == 1 && !(value < 1 || value > 16))
+		player->pc.pc_index += alive_command(options, player, game_info->counter);
+	else if (!(value < 1 || value > 16))
+	{
+		player->pc.pc_index += funtions_array[value - 2](options, player, game_info->field);
+	}
+	ft_printf("\n");
+	print_field(game_info);
+	ft_printf("\n");
+
+	ft_printf("%x", player->registry[1]);
+
 }
