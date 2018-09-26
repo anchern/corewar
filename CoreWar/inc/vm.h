@@ -6,7 +6,7 @@
 /*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/09/22 07:08:52 by achernys         ###   ########.fr       */
+/*   Updated: 2018/09/26 10:59:52 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,19 @@ char					save_reg(t_sell *field, t_options *opt, char opt_num);
 char					save_dir(t_sell *field, t_options *opt, char opt_num);
 char					save_ind(t_sell *field, t_options *opt, char opt_num);
 int						add_indent(char arg, int dir_size);
+char					d_options(t_options *options, t_sell *field, short pc_i,
+										char dir_size);
+char					di_r_options(t_options *opt, t_sell *field, short pc_i);
+char					r_ri_options(t_options *opt, t_sell *field, short pc_i);
+char					r_r_r_options(t_options *options, t_sell *field,
+										short pc_i);
+char					r_options(t_options *options, t_sell *field,
+										short pc_i);
+char					rdi_rdi_r_options(t_options *opt, t_sell *field,
+										short pc_i);
+char					rdi_rd_r_options(t_options *opt, t_sell *field,
+										short pc_i);
+char					r_rdi_rd_options(t_options *opt, t_sell *field,
+										short pc_i);
 
 #endif

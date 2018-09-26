@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/dlewando/Corewar/corewar/CoreWar
+CMAKE_SOURCE_DIR = /Users/achernys/corewar/CoreWar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/achernys/corewar/CoreWar/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles /Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dlewando/Corewar/corewar/CoreWar/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -135,6 +135,33 @@ mylib: cmake_check_build_system
 mylib/fast:
 	$(MAKE) -f lib/mylib/CMakeFiles/mylib.dir/build.make lib/mylib/CMakeFiles/mylib.dir/build
 .PHONY : mylib/fast
+
+src/additional_function.o: src/additional_function.c.o
+
+.PHONY : src/additional_function.o
+
+# target to build an object file
+src/additional_function.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/additional_function.c.o
+.PHONY : src/additional_function.c.o
+
+src/additional_function.i: src/additional_function.c.i
+
+.PHONY : src/additional_function.i
+
+# target to preprocess a source file
+src/additional_function.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/additional_function.c.i
+.PHONY : src/additional_function.c.i
+
+src/additional_function.s: src/additional_function.c.s
+
+.PHONY : src/additional_function.s
+
+# target to generate assembly for a file
+src/additional_function.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/additional_function.c.s
+.PHONY : src/additional_function.c.s
 
 src/commands/commands1-5.o: src/commands/commands1-5.c.o
 
@@ -271,6 +298,87 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/read_options/for_read_options.o: src/read_options/for_read_options.c.o
+
+.PHONY : src/read_options/for_read_options.o
+
+# target to build an object file
+src/read_options/for_read_options.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/for_read_options.c.o
+.PHONY : src/read_options/for_read_options.c.o
+
+src/read_options/for_read_options.i: src/read_options/for_read_options.c.i
+
+.PHONY : src/read_options/for_read_options.i
+
+# target to preprocess a source file
+src/read_options/for_read_options.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/for_read_options.c.i
+.PHONY : src/read_options/for_read_options.c.i
+
+src/read_options/for_read_options.s: src/read_options/for_read_options.c.s
+
+.PHONY : src/read_options/for_read_options.s
+
+# target to generate assembly for a file
+src/read_options/for_read_options.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/for_read_options.c.s
+.PHONY : src/read_options/for_read_options.c.s
+
+src/read_options/read_options1.o: src/read_options/read_options1.c.o
+
+.PHONY : src/read_options/read_options1.o
+
+# target to build an object file
+src/read_options/read_options1.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/read_options1.c.o
+.PHONY : src/read_options/read_options1.c.o
+
+src/read_options/read_options1.i: src/read_options/read_options1.c.i
+
+.PHONY : src/read_options/read_options1.i
+
+# target to preprocess a source file
+src/read_options/read_options1.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/read_options1.c.i
+.PHONY : src/read_options/read_options1.c.i
+
+src/read_options/read_options1.s: src/read_options/read_options1.c.s
+
+.PHONY : src/read_options/read_options1.s
+
+# target to generate assembly for a file
+src/read_options/read_options1.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/read_options1.c.s
+.PHONY : src/read_options/read_options1.c.s
+
+src/read_options/read_options2.o: src/read_options/read_options2.c.o
+
+.PHONY : src/read_options/read_options2.o
+
+# target to build an object file
+src/read_options/read_options2.c.o:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/read_options2.c.o
+.PHONY : src/read_options/read_options2.c.o
+
+src/read_options/read_options2.i: src/read_options/read_options2.c.i
+
+.PHONY : src/read_options/read_options2.i
+
+# target to preprocess a source file
+src/read_options/read_options2.c.i:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/read_options2.c.i
+.PHONY : src/read_options/read_options2.c.i
+
+src/read_options/read_options2.s: src/read_options/read_options2.c.s
+
+.PHONY : src/read_options/read_options2.s
+
+# target to generate assembly for a file
+src/read_options/read_options2.c.s:
+	$(MAKE) -f CMakeFiles/corewar.dir/build.make CMakeFiles/corewar.dir/src/read_options/read_options2.c.s
+.PHONY : src/read_options/read_options2.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -281,6 +389,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... corewar"
 	@echo "... mylib"
+	@echo "... src/additional_function.o"
+	@echo "... src/additional_function.i"
+	@echo "... src/additional_function.s"
 	@echo "... src/commands/commands1-5.o"
 	@echo "... src/commands/commands1-5.i"
 	@echo "... src/commands/commands1-5.s"
@@ -296,6 +407,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/read_options/for_read_options.o"
+	@echo "... src/read_options/for_read_options.i"
+	@echo "... src/read_options/for_read_options.s"
+	@echo "... src/read_options/read_options1.o"
+	@echo "... src/read_options/read_options1.i"
+	@echo "... src/read_options/read_options1.s"
+	@echo "... src/read_options/read_options2.o"
+	@echo "... src/read_options/read_options2.i"
+	@echo "... src/read_options/read_options2.s"
 .PHONY : help
 
 

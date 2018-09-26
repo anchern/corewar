@@ -6,7 +6,7 @@
 /*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 02:41:55 by achernys          #+#    #+#             */
-/*   Updated: 2018/09/22 02:41:55 by achernys         ###   ########.fr       */
+/*   Updated: 2018/09/26 11:49:00 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,18 +97,18 @@ int		main (int argc, char **argv)
 
 	header = (header_t *)ft_memalloc(sizeof(header_t));
 	game_info = (t_game_info *)ft_memalloc(sizeof(t_game_info));
+	player = (t_player *)ft_memalloc(sizeof(t_player));
+	options = (t_options *)ft_memalloc(sizeof(t_options));
 	if (!(fd = read_header(game_info, header, "../files/helltrain.cor")))
 	{
 		close(fd);
 		exit(75);
 	}
-	unsigned int l;
-	unsigned int k;
-	short t;
-	t = -5;
-	l = (short)100000;
-	k = t;
-	k -= 3;
-	ft_printf("%hd", k);
+	if (r_rdi_rd_options(options, game_info->field, 1))
+		ft_printf("%x, %x, %x\n", options->reg[0], options->option_number[1] == 1 ?
+					options->reg[1] : options->option_number[1] == 2 ?
+					options->dir[1] : options->ind[1],
+					options->option_number[2] == 1 ? options->reg[2] :
+					options->dir[2]);
 	return (0);
 }
