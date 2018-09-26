@@ -6,7 +6,7 @@
 /*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 02:41:36 by achernys          #+#    #+#             */
-/*   Updated: 2018/09/22 06:42:34 by achernys         ###   ########.fr       */
+/*   Updated: 2018/09/26 11:58:37 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	d_options(t_options *options, t_sell *field, short pc_i, char dir_size)
 char	di_r_options(t_options *opt, t_sell *field, short pc_i)
 {
 	pc_i = true_value_pc_index(pc_i);
-	if (field[pc_i].value << 2 >> 6 != 1 || (field[pc_i].value >> 6 != 2 &&
+	if ((field[pc_i].value >> 4 & 3) != 1 || (field[pc_i].value >> 6 != 2 &&
 										field[pc_i].value >> 6 != 3))
 		return (0);
 	if (field[pc_i].value >> 6 == 2)
@@ -47,8 +47,8 @@ char	di_r_options(t_options *opt, t_sell *field, short pc_i)
 char	r_ri_options(t_options *opt, t_sell *field, short pc_i)
 {
 	pc_i = true_value_pc_index(pc_i);
-	if (field[pc_i].value >> 6 != 1 || (field[pc_i].value << 2 >> 6 != 1 &&
-										field[pc_i].value << 2 >> 6 != 3))
+	if (field[pc_i].value >> 6 != 1 || ((field[pc_i].value >> 4 & 3) != 1 &&
+										(field[pc_i].value >> 4 & 3) != 3))
 		return (0);
 	opt->option_number[0] = 1;
 	opt->reg[0] = field[pc_i + 1].value > 16 ? 0 : field[pc_i + 1].value;
@@ -70,8 +70,8 @@ char	r_ri_options(t_options *opt, t_sell *field, short pc_i)
 char	r_r_r_options(t_options *options, t_sell *field, short pc_i)
 {
 	pc_i = true_value_pc_index(pc_i);
-	if (field[pc_i].value >> 6 != 1 || field[pc_i].value << 2 >> 6 != 1 ||
-										field[pc_i].value << 4 >> 6 != 1)
+	if (field[pc_i].value >> 6 != 1 || (field[pc_i].value >> 4 & 3) != 1 ||
+			(field[pc_i].value >> 2 & 3) != 1)
 		return (0);
 	options->reg[0] = field[pc_i + 1].value > 16 ? 0 : field[pc_i + 1].value;
 	options->reg[1] = field[pc_i + 2].value > 16 ? 0 : field[pc_i + 2].value;
