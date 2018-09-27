@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/Users/achernys/corewar/CoreWar/inc/op.h
+/Users/dlewando/Corewar/corewar/CoreWar/inc/op.h
 
-/Users/achernys/corewar/CoreWar/inc/vm.h
+/Users/dlewando/Corewar/corewar/CoreWar/inc/vm.h
 ../lib/mylib/ft_printf.h
-/Users/achernys/corewar/CoreWar/lib/mylib/ft_printf.h
+/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_printf.h
 ../inc/op.h
-/Users/achernys/corewar/CoreWar/inc/op.h
+/Users/dlewando/Corewar/corewar/CoreWar/inc/op.h
 fcntl.h
 -
 
-/Users/achernys/corewar/CoreWar/lib/mylib/ft_printf.h
+/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_printf.h
 libft/libft.h
-/Users/achernys/corewar/CoreWar/lib/mylib/libft/libft.h
+/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h
 stdarg.h
 -
 math.h
 -
 
-/Users/achernys/corewar/CoreWar/lib/mylib/libft/libft.h
+/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h
 string.h
 -
 stdlib.h
@@ -32,15 +32,7 @@ stdlib.h
 unistd.h
 -
 
-/Users/achernys/corewar/CoreWar/src/commands/commands1-5.c
-../../inc/vm.h
-/Users/achernys/corewar/CoreWar/inc/vm.h
-
-/Users/achernys/corewar/CoreWar/src/iobytes.c
+/Users/dlewando/Corewar/corewar/CoreWar/src/main.c
 ../inc/vm.h
-/Users/achernys/corewar/CoreWar/inc/vm.h
-
-/Users/achernys/corewar/CoreWar/src/main.c
-../inc/vm.h
-/Users/achernys/corewar/CoreWar/inc/vm.h
+/Users/dlewando/Corewar/corewar/CoreWar/inc/vm.h
 

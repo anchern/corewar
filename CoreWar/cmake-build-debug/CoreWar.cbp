@@ -395,6 +395,9 @@
 		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h">
 			<Option target="mylib"/>
 		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/additional_function.c">
+			<Option target="corewar"/>
+		</Unit>
 		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/commands/commands1-5.c">
 			<Option target="corewar"/>
 		</Unit>
@@ -408,6 +411,15 @@
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/main.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/read_options/for_read_options.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/read_options/read_options1.c">
+			<Option target="corewar"/>
+		</Unit>
+		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/src/read_options/read_options2.c">
 			<Option target="corewar"/>
 		</Unit>
 		<Unit filename="/Users/dlewando/Corewar/corewar/CoreWar/CMakeLists.txt">
