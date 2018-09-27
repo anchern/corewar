@@ -50,7 +50,7 @@ unsigned int	store_command(t_options *options, t_player *player, t_sell *field)
 {
 	unsigned int	result;
 
-	result = 1;
+	result = 3;
 	if (options->option_number[1] == 3)
 	{
 		uitobytes(player->registry[options->reg[0] - 1], field,
