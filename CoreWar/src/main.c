@@ -196,6 +196,6 @@ int main()
 	print_field(game_info);
 	ft_printf("\n");
 
-	ft_printf("%x", player->registry[1]);
+	ft_printf("%x", player->pc.pc_index);
 
 }
