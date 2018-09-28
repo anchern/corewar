@@ -105,15 +105,15 @@ void	nulling_options(t_options *options)
 
 void	nulling_player_and_gameinfo(t_player *player, t_game_info *game_info)
 {
-	player->pc.pc_index = 0;
+	player->pc->pc_index = 0;
 	player->alive_counter = 0;
 	player->carry = 0;
 	player->last_live = 0;
 	player->player_number = 0;
 	player->next = NULL;
-	player->pc.next = NULL;
-	player->pc.alive_label = 0;
-	player->pc.time_todo = 0;
+	player->pc->next = NULL;
+	player->pc->alive_label = 0;
+	player->pc->time_todo = 0;
 	game_info->counter = 0;
 	game_info->cycle_delta_counter = 0;
 	game_info->max_checks_counter = 0;
@@ -122,14 +122,15 @@ void	nulling_player_and_gameinfo(t_player *player, t_game_info *game_info)
 
 t_player	*init_player(t_player *player)
 {
-	if (!(player = (t_player *)ft_memalloc(sizeof(t_player))))
+	if (!(player = (t_player *)ft_memalloc(sizeof(t_player))) ||
+		!(player->pc = (t_pc *)ft_memalloc(sizeof(t_pc))))
 		exit(1337);
 	return (player);
 }
 
 t_options	*init_options(t_options *options)
 {
-	if (!(	options = (t_options *)ft_memalloc(sizeof(t_options))))
+	if (!(options = (t_options *)ft_memalloc(sizeof(t_options))))
 		exit(1337);
 	return (options);
 }
@@ -176,20 +177,20 @@ void	*init_options_array(t_arrays **arrays)
 
 void	*init_function_array(t_arrays **arrays)
 {
-	(*arrays)->funtions_array[0] = &load_command;
-	(*arrays)->funtions_array[1] = &store_command;
-	(*arrays)->funtions_array[2] = &addition_command;
-	(*arrays)->funtions_array[3] = &substraction_command;
-	(*arrays)->funtions_array[4] = &and_function;
-	(*arrays)->funtions_array[5] = &or_function;
-	(*arrays)->funtions_array[6] = &xor_function;
-	(*arrays)->funtions_array[7] = &jump_function;
-	(*arrays)->funtions_array[8] = &load_index_function;
-	(*arrays)->funtions_array[9] = &store_index_function;
-	(*arrays)->funtions_array[10] = &fork_function;
-	(*arrays)->funtions_array[11] = &long_load_command;
-	(*arrays)->funtions_array[12] = &long_load_index_function;
-	(*arrays)->funtions_array[13] = &long_fork_function;
+	(*arrays)->functions_array[0] = &load_command;
+	(*arrays)->functions_array[1] = &store_command;
+	(*arrays)->functions_array[2] = &addition_command;
+	(*arrays)->functions_array[3] = &substraction_command;
+	(*arrays)->functions_array[4] = &and_function;
+	(*arrays)->functions_array[5] = &or_function;
+	(*arrays)->functions_array[6] = &xor_function;
+	(*arrays)->functions_array[7] = &jump_function;
+	(*arrays)->functions_array[8] = &load_index_function;
+	(*arrays)->functions_array[9] = &store_index_function;
+	(*arrays)->functions_array[10] = &fork_function;
+	(*arrays)->functions_array[11] = &long_load_command;
+	(*arrays)->functions_array[12] = &long_load_index_function;
+	(*arrays)->functions_array[13] = &long_fork_function;
 }
 
 void	nulling_header(header_t *header)
@@ -198,14 +199,48 @@ void	nulling_header(header_t *header)
 	header->prog_size = 0;
 }
 
+void	init_time_to_do_list(unsigned short (*to_do_list))
+{
+	(to_do_list[0]) = (short)10;
+	(to_do_list[1]) = (short)5;
+	(to_do_list[2]) = (short)5;
+	(to_do_list[3]) = (short)10;
+	(to_do_list[4]) = (short)10;
+	(to_do_list[5]) = (short)6;
+	(to_do_list[6]) = (short)6;
+	(to_do_list[7]) = (short)6;
+	(to_do_list[8]) = (short)20;
+	(to_do_list[9]) = (short)25;
+	(to_do_list[10]) = (short)25;
+	(to_do_list[11]) = (short)800;
+	(to_do_list[12]) = (short)10;
+	(to_do_list[13]) = (short)50;
+	(to_do_list[14]) = (short)1000;
+}
+
 
 int main()
 {
 	t_data_prog *data_prog;
 	int			fd;
 	char dir_size;
-	char	value;
+	unsigned char	value;
+	int 	cycle_to_die;
+	int 	cycle_todie;
+	unsigned short	*to_do_list;
+	t_pc	*pc_tmp;
+	t_pc	*pc_tmp1;
+	char tmp;
+	int i;
 
+	i = 0;
+	to_do_list = (unsigned short *)ft_memalloc(sizeof(unsigned short));
+	pc_tmp = (t_pc *)ft_memalloc(sizeof(t_pc));
+	pc_tmp1 = (t_pc *)ft_memalloc(sizeof(t_pc));
+	init_time_to_do_list(to_do_list);
+	data_prog = (t_data_prog *)ft_memalloc(sizeof(t_data_prog));
+
+	cycle_to_die = CYCLE_TO_DIE;
 	data_prog->game_info = init_game_info(data_prog->game_info);
 	data_prog->options = init_options(data_prog->options);
 	data_prog->player = init_player(data_prog->player);
@@ -225,28 +260,160 @@ int main()
 	init_options_array(&data_prog->arrays);
 	init_function_array(&data_prog->arrays);
 
-	data_prog->player->pc.command =
-			data_prog->game_info->field[data_prog->player->pc.pc_index].value;
-	value = data_prog->player->pc.command;
-	if (value  == 1 && !(value < 1 || value > 16))
-		data_prog->arrays->options_array[value - 1](data_prog->options,
-	data_prog->game_info->field, data_prog->player->pc.pc_index + (short)1, 4);
-	else if (!(value < 1 || value > 16))
-		data_prog->arrays->options_array[value - 1](data_prog->options,
-	data_prog->game_info->field, data_prog->player->pc.pc_index + (short)1, 2);
-	if (value  == 1 && !(value < 1 || value > 16))
-		data_prog->player->pc.pc_index += alive_command(data_prog->options,
-				data_prog->player, data_prog->game_info->counter);
-	else if (!(value < 1 || value > 16))
+	data_prog->player->player_number = (unsigned)-4;
+	while (i < 15)
 	{
-		data_prog->player->pc.pc_index +=
-		data_prog->arrays->funtions_array[value - 2](data_prog->options,
-		data_prog->player, data_prog->game_info->field);
+		data_prog->player->registry[0] = (unsigned)-1;
+		i++;
 	}
+
+	data_prog->player->pc = (t_pc *)ft_memalloc(sizeof(t_pc));
+	data_prog->player->pc->pc_index = (short)0;
+	nulling_options(data_prog->options);
+
+
+	nulling_options(data_prog->options);
+
+	value = data_prog->game_info->field[data_prog->player->pc->pc_index].value;
+	//TODO : написать для всех игроков
+	while (cycle_to_die > 0)
+	{
+		cycle_todie = 0;
+
+		while(cycle_todie < cycle_to_die)
+		{
+//			ft_printf("index %d command %d  todo %d  value %x\n",data_prog->player->pc->pc_index, data_prog->player->pc->command, data_prog->player->pc->time_todo, data_prog->game_info->field[data_prog->player->pc->pc_index].value);
+			pc_tmp1 = data_prog->player->pc;
+			while (data_prog->player->pc != NULL)
+			{
+				value = data_prog->game_info->field[data_prog->player->pc->pc_index].value;
+
+				if (data_prog->player->pc->time_todo == 0 && data_prog->player->pc->command == 0)
+				{
+					if (value  == 1 && !(value < 1 || value > 16))
+						(tmp = data_prog->arrays->options_array[(value) - 1](data_prog->options, data_prog->game_info->field, data_prog->player->pc->pc_index + (short)1, 4)); // TODO : посмотреть что возвращает . Если 1 то все ок если 0 то  сместить каретку на некст индекс
+					else if (!(value < 1 || value > 16))
+						(tmp = data_prog->arrays->options_array[(value) - 1](data_prog->options, data_prog->game_info->field, data_prog->player->pc->pc_index + (short)1, 2));
+
+					if (tmp == 1)
+					{
+						data_prog->player->pc->command = value;
+						data_prog->player->pc->time_todo = to_do_list[value - 1];
+					}
+					if (value > 16 || value == 0)
+						data_prog->player->pc->pc_index++;
+				}
+				if (data_prog->player->pc->time_todo == 0 && data_prog->player->pc->command != 0)
+				{
+					if (value  == 1 && !(value < 1 || value > 16))
+						data_prog->player->pc->pc_index += alive_command(data_prog->options,
+																		 data_prog->player, data_prog->game_info->counter);
+					else if (!(value < 1 || value > 16))
+					{
+						data_prog->player->pc->pc_index +=
+								data_prog->arrays->functions_array[value - 2](data_prog->options,
+																			  data_prog->player, data_prog->game_info->field);
+					}
+					data_prog->player->pc->command = 0;
+					data_prog->player->pc->time_todo = 0;
+					nulling_options(data_prog->options);
+				}
+				if (data_prog->player->pc->time_todo == 0 && data_prog->player->pc->command == 0)
+				{
+					if (value  == 1 && !(value < 1 || value > 16))
+						(tmp = data_prog->arrays->options_array[(value) - 1](data_prog->options, data_prog->game_info->field, data_prog->player->pc->pc_index + (short)1, 4)); // TODO : посмотреть что возвращает . Если 1 то все ок если 0 то  сместить каретку на некст индекс
+					else if (!(value < 1 || value > 16))
+						(tmp = data_prog->arrays->options_array[(value) - 1](data_prog->options, data_prog->game_info->field, data_prog->player->pc->pc_index + (short)1, 2));
+
+					if (tmp == 1)
+					{
+						data_prog->player->pc->command = value;
+						data_prog->player->pc->time_todo = to_do_list[value - 1];
+					}
+					if (value > 16 || value == 0)
+						data_prog->player->pc->pc_index++;
+				}
+
+				data_prog->player->pc = data_prog->player->pc->next;
+			}
+			data_prog->player->pc = pc_tmp1;
+			cycle_todie++;
+			data_prog->game_info->counter++;
+			data_prog->player->pc->time_todo--;
+		}
+
+		data_prog->game_info->max_checks_counter++;
+		if (data_prog->player->alive_counter != -1)
+		{
+			if (data_prog->game_info->counter - data_prog->player->last_live >
+				CYCLE_TO_DIE)
+				data_prog->player->alive_counter = -1;
+			if (data_prog->player->alive_counter > 21)
+			{
+				data_prog->game_info->max_checks_counter = 0;
+				cycle_to_die = cycle_to_die - CYCLE_DELTA;
+			}
+		}
+		if (data_prog->game_info->max_checks_counter == 9)
+			cycle_to_die = cycle_to_die - CYCLE_DELTA;
+		pc_tmp1 = data_prog->player->pc;
+
+		while (data_prog->player->pc->next != NULL)
+		{
+			if (data_prog->player->pc->alive_label == 0)
+			{
+				pc_tmp = data_prog->player->pc;
+				data_prog->player->pc = data_prog->player->pc->next;
+				free(pc_tmp);
+			}
+			if (data_prog->player->pc->next->alive_label == 0)
+			{
+				pc_tmp = data_prog->player->pc->next;
+				data_prog->player->pc->next = data_prog->player->pc->next->next;
+				free(pc_tmp);
+			}
+			data_prog->player->pc = data_prog->player->pc->next;
+		}
+		data_prog->player->pc = pc_tmp1;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//	data_prog->player->pc->command =
+//			data_prog->game_info->field[data_prog->player->pc->pc_index].value;
+//	value = data_prog->game_info->field[data_prog->player->pc->pc_index].value;
+//	if (value  == 1 && !(value < 1 || value > 16))
+//		data_prog->arrays->options_array[value - 1](data_prog->options,
+//	data_prog->game_info->field, data_prog->player->pc->pc_index + (short)1, 4);
+//	else if (!(value < 1 || value > 16))
+//		data_prog->arrays->options_array[value - 1](data_prog->options,
+//	data_prog->game_info->field, data_prog->player->pc->pc_index + (short)1, 2);
+//	if (value  == 1 && !(value < 1 || value > 16))
+//		data_prog->player->pc->pc_index += alive_command(data_prog->options,
+//				data_prog->player, data_prog->game_info->counter);
+//	else if (!(value < 1 || value > 16))
+//	{
+//		data_prog->player->pc->pc_index +=
+//		data_prog->arrays->functions_array[value - 2](data_prog->options,
+//		data_prog->player, data_prog->game_info->field);
+//	}
 	ft_printf("\n");
 	print_field(data_prog->game_info);
 	ft_printf("\n");
 
-	ft_printf("%x", data_prog->player->pc.pc_index);
+//	ft_printf("%x", data_prog->player->pc->pc_index);
 
 }

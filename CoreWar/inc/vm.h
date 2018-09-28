@@ -36,7 +36,7 @@ typedef struct			s_player
 	int 				alive_counter;
 	int 				last_live;
 	unsigned int 		registry[REG_NUMBER];
-	t_pc				pc;
+	struct s_pc 		*pc;
 	struct	s_player 	*next;
 }						t_player;
 
@@ -65,7 +65,7 @@ typedef struct			s_options
 typedef struct 			s_arrays
 {
 	char				(*options_array[15])(t_options *options, t_sell *field, short pc_i, char dir_size);
-	unsigned int		(*funtions_array[14])(t_options *options, t_player *player, t_sell *field);
+	unsigned int		(*functions_array[14])(t_options *options, t_player *player, t_sell *field);
 }						t_arrays;
 
 typedef struct			s_data_prog
