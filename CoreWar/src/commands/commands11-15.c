@@ -9,8 +9,8 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 
 	c = 0;
 	b = 0;
-	result = 3; 
-	
+	result = 3;
+
 	if (options->option_number[1] == 1)
 	{
 		result++;
@@ -53,7 +53,7 @@ unsigned int	fork_function(t_options *options, t_player *player)
 	new_pc->time_todo = 0;
 	new_pc->command = 0;
 	new_pc->pc_index = player->pc->pc_index + (short)(options->dir[0] % IDX_MOD);
-	new_pc->next = player->pc;
+	new_pc->next = (player->pc);
 	player->pc = new_pc;
 	return (3);
 }
@@ -138,7 +138,7 @@ unsigned int	long_fork_function(t_options *options, t_player *player)
 	new_pc->time_todo = 0;
 	new_pc->command = 0;
 	new_pc->pc_index = player->pc->pc_index + (short)(options->dir[0]);
-	new_pc->next = player->pc;
+	new_pc->next = (player->pc);
 	player->pc = new_pc;
 	return (3);
 }
