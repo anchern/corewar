@@ -5,7 +5,7 @@ unsigned int	alive_command(t_options *options, t_player *player, int counter)
 	t_player *player_tmp;
 
 	player_tmp = player;
-	player->pc.alive_label = 1;
+	player->pc->alive_label = 1;
 	if (options->dir[0] > (unsigned)-4 && options->dir[0] < (unsigned)-1)
 		return (1);
 	while (player_tmp != NULL)
@@ -35,7 +35,7 @@ unsigned int	load_command(t_options *options, t_player *player, t_sell *field)
 		result = 5;
 		options->ind[0] = (short)(options->ind[0] % IDX_MOD);
 		player->registry[options->reg[1] - 1] = bytestoui(field,
-				player->pc.pc_index + options->ind[0]);
+				player->pc->pc_index + options->ind[0]);
 	}
 	if (player->registry[options->reg[1] - 1] == 0)
 		player->carry = 1;
@@ -54,7 +54,7 @@ unsigned int	store_command(t_options *options, t_player *player, t_sell *field)
 	if (options->option_number[1] == 3)
 	{
 		uitobytes(player->registry[options->reg[0] - 1], field,
-			player->pc.pc_index + (short)(options->ind[1] % IDX_MOD));
+			player->pc->pc_index + (short)(options->ind[1] % IDX_MOD));
 		result = 5;
 	}
 	if (options->option_number[1] == 1)

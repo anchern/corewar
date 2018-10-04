@@ -6,7 +6,7 @@
 /*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/09/26 10:59:52 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/03 19:29:44 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include "../lib/mylib/ft_printf.h"
 # include "../inc/op.h"
+# include "errors.h"
 # include <fcntl.h>
 
 # define FIELD_SIZE 4096
@@ -31,12 +32,13 @@ typedef struct			s_pc
 
 typedef struct			s_player
 {
+	header_t			*header;
 	unsigned			player_number;
 	char 				carry;
 	int 				alive_counter;
 	int 				last_live;
 	unsigned int 		registry[REG_NUMBER];
-	t_pc				pc;
+	t_pc				*pc;
 	struct	s_player 	*next;
 }						t_player;
 
@@ -70,7 +72,6 @@ typedef struct 			s_arrays
 
 typedef struct			s_data_prog
 {
-	header_t	*header;
 	t_game_info	*game_info;
 	t_options	*options;
 	t_player	*player;
@@ -125,5 +126,9 @@ char					rdi_rd_r_options(t_options *opt, t_sell *field,
 										short pc_i);
 char					r_rdi_rd_options(t_options *opt, t_sell *field,
 										short pc_i);
+
+void					set_players(t_data_prog *data_prog, int start_arg,
+										int argc, char **argv);
+
 
 #endif

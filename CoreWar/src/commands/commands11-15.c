@@ -25,7 +25,7 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 	else if (options->option_number[1] == 3)
 	{
 		result += 2;
-		b = bytestoui(field, player->pc.pc_index +
+		b = bytestoui(field, player->pc->pc_index +
 							 (short)(options->ind[1] % IDX_MOD));
 	}
 	if (options->option_number[2] == 1)
@@ -39,7 +39,7 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 		options->dir[2] = (short)options->dir[2];
 		c = options->dir[2];
 	}
-	uitobytes(player->registry[options->reg[0] - 1], field, player->pc.pc_index +
+	uitobytes(player->registry[options->reg[0] - 1], field, player->pc->pc_index +
 	(short)((b + c) % IDX_MOD));
 	return (result);
 }
@@ -49,12 +49,12 @@ unsigned int	fork_function(t_options *options, t_player *player)
 	t_pc *new_pc;
 
 	new_pc = (t_pc *)ft_memalloc(sizeof(t_pc));
-	new_pc->alive_label = player->pc.alive_label;
+	new_pc->alive_label = player->pc->alive_label;
 	new_pc->time_todo = 0;
 	new_pc->command = 0;
-	new_pc->pc_index = player->pc.pc_index + (short)(options->dir[0] % IDX_MOD);
-	new_pc->next = &(player->pc);
-	player->pc = *new_pc;
+	new_pc->pc_index = player->pc->pc_index + (short)(options->dir[0] % IDX_MOD);
+	new_pc->next = player->pc;
+	player->pc = new_pc;
 	return (3);
 }
 
@@ -72,7 +72,7 @@ unsigned int	long_load_command(t_options *options, t_player *player, t_sell *fie
 	{
 		result += 2;
 		player->registry[options->reg[1] - 1] = bytestoui(field,
-				player->pc.pc_index + options->ind[0]);
+				player->pc->pc_index + options->ind[0]);
 	}
 	if (player->registry[options->reg[1] - 1] == 0)
 		player->carry = 1;
@@ -105,7 +105,7 @@ unsigned int	long_load_index_function(t_options *options, t_player *player,
 	else if (options->option_number[0] == 3)
 	{
 		result += 2;
-		a = bytestoui(field, player->pc.pc_index +
+		a = bytestoui(field, player->pc->pc_index +
 							 (short)(options->ind[0] % IDX_MOD));
 	}
 	if (options->option_number[1] == 1)
@@ -120,7 +120,7 @@ unsigned int	long_load_index_function(t_options *options, t_player *player,
 		b = options->dir[1];
 	}
 	player->registry[options->reg[2] - 1] = bytestoui(field,
-			player->pc.pc_index + (short)((a + b) % FIELD_SIZE));
+			player->pc->pc_index + (short)((a + b) % FIELD_SIZE));
 	if (player->registry[options->reg[2] - 1] == 0)
 		player->carry = 1;
 	else
@@ -134,11 +134,11 @@ unsigned int	long_fork_function(t_options *options, t_player *player)
 	t_pc *new_pc;
 
 	new_pc = (t_pc *)ft_memalloc(sizeof(t_pc));
-	new_pc->alive_label = player->pc.alive_label;
+	new_pc->alive_label = player->pc->alive_label;
 	new_pc->time_todo = 0;
 	new_pc->command = 0;
-	new_pc->pc_index = player->pc.pc_index + (short)(options->dir[0]);
-	new_pc->next = &(player->pc);
-	player->pc = *new_pc;
+	new_pc->pc_index = player->pc->pc_index + (short)(options->dir[0]);
+	new_pc->next = player->pc;
+	player->pc = new_pc;
 	return (3);
 }

@@ -172,7 +172,7 @@ unsigned int	load_index_function(t_options *options, t_player *player, t_sell *f
 	else if (options->option_number[0] == 3)
 	{
 		result += 2;
-		a = bytestoui(field, player->pc.pc_index +
+		a = bytestoui(field, player->pc->pc_index +
 			(short)(options->ind[0] % IDX_MOD));
 	}
 	if (options->option_number[1] == 1)
@@ -187,6 +187,6 @@ unsigned int	load_index_function(t_options *options, t_player *player, t_sell *f
 		b = options->dir[1];
 	}
 	player->registry[options->reg[2] - 1] = bytestoui(field,
-			player->pc.pc_index + (short)((a + b) % IDX_MOD));
+			player->pc->pc_index + (short)((a + b) % IDX_MOD));
 	return (result);
 }
