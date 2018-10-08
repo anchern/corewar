@@ -13,7 +13,7 @@ t_arrays	*init_arrays(t_arrays *arrays);
 void		init_options_array(t_arrays **arrays);
 void		init_function_array(t_arrays **arrays);
 void		nulling_header(header_t *header);
-t_pc		*init_pc(t_pc *pc);
+t_pc		*init_pc(void);
 void		nulling_pc(t_pc *pc, short pc_index);
 void		nulling_options(t_options *options);
 #endif

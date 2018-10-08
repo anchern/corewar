@@ -21,7 +21,7 @@ void	save_in_var(unsigned int *var, unsigned char *arr)
 }
 
 void	copy_field(t_game_info *game_info, unsigned char *field, int field_size,
-				   unsigned short start_position)
+				   short start_position)
 {
 	int				i;
 
@@ -32,6 +32,7 @@ void	copy_field(t_game_info *game_info, unsigned char *field, int field_size,
 		i++;
 	}
 }
+
 
 
 
@@ -128,16 +129,9 @@ void		check_players_numbers(t_player *player, char quantity,
 
 void		set_registry(t_player *player)
 {
-	char i;
-
-	i = 0;
 	if (player == 0)
 		return ;
-	while (i < REG_NUMBER)
-	{
-		player->registry[i] = player->player_number;
-		i++;
-	}
+	player->registry[0] = player->player_number;
 	set_registry(player->next);
 }
 
@@ -148,8 +142,7 @@ void		set_start_pc_index(t_player *player, char quantity)
 	start_index = 0;
 	while (player != NULL)
 	{
-		player->pc = init_pc(player->pc);
-		nulling_pc(player->pc, start_index);
+		player->pc->pc_index = start_index;
 		start_index += FIELD_SIZE / quantity;
 		player = player->next;
 	}
@@ -181,6 +174,8 @@ void		set_players(t_data_prog *data_prog, int start_arg, int argc, char **argv)
 		}
 		if (!ft_strcmp(argv[start_arg], "-n"))
 		{
+			if (start_arg + 1 == argc)
+				exit(ARG_ERR);
 			current_player->player_number = (unsigned)ft_atoi(argv[++start_arg]);
 			if (!is_valid_number(data_prog->player, current_player))
 				current_player->player_number = get_free_number(free_numbers);

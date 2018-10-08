@@ -32,7 +32,7 @@ char	di_r_options(t_options *opt, t_sell *field, short pc_i)
 		opt->option_number[0] = 2;
 		opt->dir[0] = bytestoui(field, pc_i + 1);
 		opt->option_number[1] = 1;
-		opt->reg[1] = field[pc_i + 3].value > 16 ? 0 : field[pc_i + 3].value;
+		opt->reg[1] = field[pc_i + 5].value > 16 ? 0 : field[pc_i + 5].value;
 	}
 	else if (field[pc_i].value >> 6 == 3)
 	{
@@ -52,7 +52,7 @@ char	r_ri_options(t_options *opt, t_sell *field, short pc_i)
 		return (0);
 	opt->option_number[0] = 1;
 	opt->reg[0] = field[pc_i + 1].value > 16 ? 0 : field[pc_i + 1].value;
-	if (field[pc_i].value << 2 >> 6 == 3)
+	if ((field[pc_i].value >> 4 & 3) == 3)
 	{
 		opt->option_number[1] = 3;
 		opt->ind[1] = bytestos(field, pc_i + 2);

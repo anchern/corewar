@@ -57,7 +57,7 @@ void	nulling_player_and_gameinfo(t_player *player, t_game_info *game_info)
 		player->next = NULL;
 		player->header = init_header(player->header);
 		nulling_header(player->header);
-		player->pc = init_pc(player->pc);
+		player->pc = init_pc();
 		nulling_pc(player->pc, 0);
 
 	}
@@ -105,24 +105,26 @@ void	init_options_array(t_arrays **arrays)
 
 void	init_function_array(t_arrays **arrays)
 {
-	(*arrays)->funtions_array[0] = &load_command;
-	(*arrays)->funtions_array[1] = &store_command;
-	(*arrays)->funtions_array[2] = &addition_command;
-	(*arrays)->funtions_array[3] = &substraction_command;
-	(*arrays)->funtions_array[4] = &and_function;
-	(*arrays)->funtions_array[5] = &or_function;
-	(*arrays)->funtions_array[6] = &xor_function;
-	(*arrays)->funtions_array[7] = &jump_function;
-	(*arrays)->funtions_array[8] = &load_index_function;
-	(*arrays)->funtions_array[9] = &store_index_function;
-	(*arrays)->funtions_array[10] = &fork_function;
-	(*arrays)->funtions_array[11] = &long_load_command;
-	(*arrays)->funtions_array[12] = &long_load_index_function;
-	(*arrays)->funtions_array[13] = &long_fork_function;
+	(*arrays)->functions_array[0] = &load_command;
+	(*arrays)->functions_array[1] = &store_command;
+	(*arrays)->functions_array[2] = &addition_command;
+	(*arrays)->functions_array[3] = &substraction_command;
+	(*arrays)->functions_array[4] = &and_function;
+	(*arrays)->functions_array[5] = &or_function;
+	(*arrays)->functions_array[6] = &xor_function;
+	(*arrays)->functions_array[7] = &jump_function;
+	(*arrays)->functions_array[8] = &load_index_function;
+	(*arrays)->functions_array[9] = &store_index_function;
+	(*arrays)->functions_array[10] = &fork_function;
+	(*arrays)->functions_array[11] = &long_load_command;
+	(*arrays)->functions_array[12] = &long_load_index_function;
+	(*arrays)->functions_array[13] = &long_fork_function;
 }
 
-t_pc	*init_pc(t_pc *pc)
+t_pc	*init_pc(void)
 {
+	t_pc *pc;
+
 	if (!(pc = (t_pc *)malloc(sizeof(t_pc))))
 		exit(INIT_ERR);
 	return (pc);

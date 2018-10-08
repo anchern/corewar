@@ -67,15 +67,16 @@ typedef struct			s_options
 typedef struct 			s_arrays
 {
 	char				(*options_array[15])(t_options *options, t_sell *field, short pc_i, char dir_size);
-	unsigned int		(*funtions_array[14])(t_options *options, t_player *player, t_sell *field);
+	unsigned int		(*functions_array[14])(t_options *options, t_player *player, t_sell *field);
 }						t_arrays;
 
 typedef struct			s_data_prog
 {
-	t_game_info	*game_info;
-	t_options	*options;
-	t_player	*player;
-	t_arrays	*arrays;
+	t_game_info		*game_info;
+	t_options		*options;
+	t_player		*player;
+	t_arrays		*arrays;
+	unsigned short 	to_do_list[15];
 }						t_data_prog;
 
 unsigned int			bytestoui(const t_sell *byte, short index);

@@ -17,6 +17,7 @@
 # define FILE_ERR 71
 # define FILE_INFORM_ERR 72
 # define INIT_ERR 73
+# define ARG_ERR 74
 
 void	too_many_players_err();
 void	file_error(char *path);

@@ -1,4 +1,4 @@
-#include "../../inc/vm.h"
+#include "../../inc/vm_init.h"
 
 unsigned int	store_index_function(t_options *options, t_player *player,
 		t_sell *field)
@@ -44,17 +44,25 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 	return (result);
 }
 
+void			push_back(t_pc *start, t_pc *new_elem)
+{
+	if (start->next == 0)
+	{
+		start->next = new_elem;
+		return ;
+	}
+	push_back(start->next, new_elem);
+}
+
 unsigned int	fork_function(t_options *options, t_player *player)
 {
 	t_pc *new_pc;
 
-	new_pc = (t_pc *)ft_memalloc(sizeof(t_pc));
+	new_pc = init_pc();
+	nulling_pc(new_pc, player->pc->pc_index + (short)(options->dir[0] % IDX_MOD));
 	new_pc->alive_label = player->pc->alive_label;
-	new_pc->time_todo = 0;
-	new_pc->command = 0;
-	new_pc->pc_index = player->pc->pc_index + (short)(options->dir[0] % IDX_MOD);
-	new_pc->next = (player->pc);
-	player->pc = new_pc;
+	new_pc->next = 0;
+	push_back(player->pc, new_pc);
 	return (3);
 }
 

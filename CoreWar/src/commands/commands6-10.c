@@ -144,7 +144,7 @@ unsigned int	xor_function(t_options *options, t_player *player)
 unsigned int	jump_function(t_options *options, t_player *player)
 {
 	if (player->carry == 1)
-		return  ((options->dir[0] % IDX_MOD));
+		return  (unsigned)((int)options->dir[0] % IDX_MOD);
 	else
 		return (1);
 }
