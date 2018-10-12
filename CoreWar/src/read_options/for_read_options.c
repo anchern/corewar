@@ -14,7 +14,7 @@
 
 char	isrdi(unsigned char byte, char shift)
 {
-	if ((byte >> shift & 1) == 1 || (byte >> shift & 2) == 2 ||
+	if ((byte >> shift & 3) == 1 || (byte >> shift & 3) == 2 ||
 		(byte >> shift & 3) == 3)
 		return (1);
 	return (0);

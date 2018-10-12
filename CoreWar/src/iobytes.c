@@ -22,7 +22,7 @@ unsigned int	bytestoui(const t_sell *byte, short index)
 	result = 0;
 	result = (result | byte[index].value) << 8;
 	result = (result | byte[(index + 1) >= FIELD_SIZE ? (index + 1) % FIELD_SIZE
-														: index + 1].value) << 8;
+													: index + 1].value) << 8;
 	result = (result | byte[(index + 2) >= FIELD_SIZE ? (index + 2) % FIELD_SIZE
 													  : index + 2].value) << 8;
 	result = result | byte[(index + 3) >= FIELD_SIZE ? (index + 3) % FIELD_SIZE

@@ -6,7 +6,7 @@
 /*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 18:25:49 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/03 20:07:58 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/08 22:28:37 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	init_options_array(t_arrays **arrays)
 	(*arrays)->options_array[12] = &di_r_options;
 	(*arrays)->options_array[13] = &rdi_rd_r_options;
 	(*arrays)->options_array[14] = &d_options;
+	(*arrays)->options_array[15] = &r_options;
 }
 
 void	init_function_array(t_arrays **arrays)
@@ -134,6 +135,8 @@ void	nulling_pc(t_pc *pc, short pc_index)
 {
 	pc->next = 0;
 	pc->pc_index = pc_index;
+	pc->options = init_options(pc->options);
+	nulling_options(pc->options);
 	pc->command = 0;
 	pc->alive_label = 0;
 	pc->time_todo = 0;
@@ -153,4 +156,39 @@ void	nulling_options(t_options *options)
 		options->option_number[i] = 0;
 		i++;
 	}
+}
+
+void	init_time_to_do_list(unsigned short *to_do_list)
+{
+	to_do_list[0] = (unsigned short)10;
+	to_do_list[1] = (unsigned short)5;
+	to_do_list[2] = (unsigned short)5;
+	to_do_list[3] = (unsigned short)10;
+	to_do_list[4] = (unsigned short)10;
+	to_do_list[5] = (unsigned short)6;
+	to_do_list[6] = (unsigned short)6;
+	to_do_list[7] = (unsigned short)6;
+	to_do_list[8] = (unsigned short)20;
+	to_do_list[9] = (unsigned short)25;
+	to_do_list[10] = (unsigned short)25;
+	to_do_list[11] = (unsigned short)800;
+	to_do_list[12] = (unsigned short)10;
+	to_do_list[13] = (unsigned short)50;
+	to_do_list[14] = (unsigned short)1000;
+}
+
+t_data_prog	*data_prog_init(void)
+{
+	t_data_prog *data_prog;
+
+	if (!(data_prog = (t_data_prog *)ft_memalloc(sizeof(t_data_prog))))
+		exit(INIT_ERR);
+	init_time_to_do_list(data_prog->to_do_list);
+	data_prog->game_info = init_game_info();
+	data_prog->player = init_player();
+	data_prog->arrays = init_arrays(data_prog->arrays);
+	nulling_player_and_gameinfo(data_prog->player, data_prog->game_info);
+	init_options_array(&data_prog->arrays);
+	init_function_array(&data_prog->arrays);
+	return (data_prog);
 }

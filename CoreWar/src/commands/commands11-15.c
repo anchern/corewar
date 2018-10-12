@@ -7,10 +7,7 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 	unsigned int c;
 	unsigned int result;
 
-	c = 0;
-	b = 0;
 	result = 3;
-
 	if (options->option_number[1] == 1)
 	{
 		result++;
@@ -28,6 +25,8 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 		b = bytestoui(field, player->pc->pc_index +
 							 (short)(options->ind[1] % IDX_MOD));
 	}
+	else
+		return (1);
 	if (options->option_number[2] == 1)
 	{
 		result++;
@@ -39,8 +38,11 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 		options->dir[2] = (short)options->dir[2];
 		c = options->dir[2];
 	}
+	else
+		return (1);
+
 	uitobytes(player->registry[options->reg[0] - 1], field, player->pc->pc_index +
-	(short)((b + c) % IDX_MOD));
+							(short)((short)(b + c) % IDX_MOD));
 	return (result);
 }
 
@@ -59,7 +61,7 @@ unsigned int	fork_function(t_options *options, t_player *player)
 	t_pc *new_pc;
 
 	new_pc = init_pc();
-	nulling_pc(new_pc, player->pc->pc_index + (short)(options->dir[0] % IDX_MOD));
+	nulling_pc(new_pc, true_value_pc_index(player->pc->pc_index + (short)((short)options->dir[0] % IDX_MOD)));
 	new_pc->alive_label = player->pc->alive_label;
 	new_pc->next = 0;
 	push_back(player->pc, new_pc);
@@ -128,7 +130,7 @@ unsigned int	long_load_index_function(t_options *options, t_player *player,
 		b = options->dir[1];
 	}
 	player->registry[options->reg[2] - 1] = bytestoui(field,
-			player->pc->pc_index + (short)((a + b) % FIELD_SIZE));
+			player->pc->pc_index + (short)((short)(a + b) % FIELD_SIZE));
 	if (player->registry[options->reg[2] - 1] == 0)
 		player->carry = 1;
 	else
@@ -141,12 +143,10 @@ unsigned int	long_fork_function(t_options *options, t_player *player)
 {
 	t_pc *new_pc;
 
-	new_pc = (t_pc *)ft_memalloc(sizeof(t_pc));
+	new_pc = init_pc();
+	nulling_pc(new_pc, true_value_pc_index(player->pc->pc_index + (short)options->dir[0]));
 	new_pc->alive_label = player->pc->alive_label;
-	new_pc->time_todo = 0;
-	new_pc->command = 0;
-	new_pc->pc_index = player->pc->pc_index + (short)(options->dir[0]);
-	new_pc->next = (player->pc);
-	player->pc = new_pc;
+	new_pc->next = 0;
+	push_back(player->pc, new_pc);
 	return (3);
 }

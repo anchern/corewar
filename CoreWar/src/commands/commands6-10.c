@@ -144,9 +144,11 @@ unsigned int	xor_function(t_options *options, t_player *player)
 unsigned int	jump_function(t_options *options, t_player *player)
 {
 	if (player->carry == 1)
-		return  (unsigned)((int)options->dir[0] % IDX_MOD);
+	{
+		return (unsigned)((short)options->dir[0] % IDX_MOD);
+	}
 	else
-		return (1);
+		return (3);
 }
 
 unsigned int	load_index_function(t_options *options, t_player *player, t_sell *field)
@@ -187,6 +189,6 @@ unsigned int	load_index_function(t_options *options, t_player *player, t_sell *f
 		b = options->dir[1];
 	}
 	player->registry[options->reg[2] - 1] = bytestoui(field,
-			player->pc->pc_index + (short)((a + b) % IDX_MOD));
+			player->pc->pc_index + (short)((short)(a + b) % IDX_MOD));
 	return (result);
 }

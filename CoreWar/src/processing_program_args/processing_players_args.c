@@ -33,10 +33,6 @@ void	copy_field(t_game_info *game_info, unsigned char *field, int field_size,
 	}
 }
 
-
-
-
-
 int		read_header(t_game_info *game_info, header_t *header, char *filename,
 					   short start_position)
 {
@@ -52,6 +48,8 @@ int		read_header(t_game_info *game_info, header_t *header, char *filename,
 	if (read(fd,buf, 4) < 4)
 		return (fd);
 	save_in_var(&header->magic, buf);
+	if (header->magic != COREWAR_EXEC_MAGIC)
+		return (fd);
 	if (read(fd, buf, PROG_NAME_LENGTH) < PROG_NAME_LENGTH)
 		return (fd);
 	ft_strcpy(header->prog_name, (char *)buf);

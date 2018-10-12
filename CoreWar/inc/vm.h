@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vm.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/03 19:29:44 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/12 18:50:58 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,19 @@
 # include <fcntl.h>
 
 # define FIELD_SIZE 4096
+# define FALSE 0
+# define TRUE 1
+# define FIRST_CODE(x) (x >> 6 & 3)
+# define MIDDLE_CODE(x) (x >> 4 & 3)
+# define LAST_CODE(x) (x >> 2 & 3)
+
+typedef struct			s_options
+{
+	char 				reg[3];
+	unsigned int		dir[3];
+	short				ind[2];
+	char				option_number[3];
+}						t_options;
 
 typedef struct			s_pc
 {
@@ -27,6 +40,7 @@ typedef struct			s_pc
 	unsigned char		alive_label;
 	unsigned short		time_todo;
 	unsigned char		command;
+	t_options		*options;
 	struct s_pc 		*next;
 }						t_pc;
 
@@ -56,14 +70,6 @@ typedef struct			s_game_info
 	t_sell				field[FIELD_SIZE];
 }						t_game_info;
 
-typedef struct			s_options
-{
-	char 				reg[3];
-	unsigned int		dir[3];
-	short				ind[2];
-	char				option_number[3];
-}						t_options;
-
 typedef struct 			s_arrays
 {
 	char				(*options_array[15])(t_options *options, t_sell *field, short pc_i, char dir_size);
@@ -73,8 +79,8 @@ typedef struct 			s_arrays
 typedef struct			s_data_prog
 {
 	t_game_info		*game_info;
-	t_options		*options;
 	t_player		*player;
+	t_player		*first_player;
 	t_arrays		*arrays;
 	unsigned short 	to_do_list[15];
 }						t_data_prog;
@@ -83,8 +89,8 @@ unsigned int			bytestoui(const t_sell *byte, short index);
 short					bytestos(const t_sell *byte, short index);
 void					uitobytes(unsigned value, t_sell *field, short index);
 
-unsigned int			alive_command(t_options *options, t_player *player,
-										int counter);
+unsigned int			alive_command(t_options *options,
+										t_data_prog *data_prog, int counter);
 unsigned int			load_command(t_options *options, t_player *player,
 										t_sell *field);
 unsigned int			store_command(t_options *options, t_player *player,
@@ -106,7 +112,6 @@ unsigned int			long_load_index_function(t_options *options,
 										t_player *player, t_sell *field);
 unsigned int			long_fork_function(t_options *options,
 										t_player *player);
-unsigned int			add_command(t_options *options, t_player *player);
 short					true_value_pc_index(short pc_index);
 char					isrdi(unsigned char byte, char shift);
 char					save_reg(t_sell *field, t_options *opt, char opt_num);
@@ -130,6 +135,10 @@ char					r_rdi_rd_options(t_options *opt, t_sell *field,
 
 void					set_players(t_data_prog *data_prog, int start_arg,
 										int argc, char **argv);
+void					goround_players(t_data_prog *data_prog);
+void					current_cycle_to_die(t_data_prog *data_prog);
 
-
+void					print_field(t_game_info *game_info, t_pc *pc);
+char					get_indent_pc(unsigned char codage_octal,
+										char dir_size);
 #endif

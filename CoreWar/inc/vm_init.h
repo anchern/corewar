@@ -16,4 +16,6 @@ void		nulling_header(header_t *header);
 t_pc		*init_pc(void);
 void		nulling_pc(t_pc *pc, short pc_index);
 void		nulling_options(t_options *options);
+void		init_time_to_do_list(unsigned short *to_do_list);
+t_data_prog	*data_prog_init(void);
 #endif
