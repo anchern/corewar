@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   for_read_options.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 06:38:57 by achernys          #+#    #+#             */
-/*   Updated: 2018/09/22 06:41:31 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/12 23:13:02 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	save_ind(t_sell *field, t_options *opt, char opt_num)
 }
 
 
-int		add_indent(char arg, int dir_size)
+char		add_indent(char arg, int dir_size)
 {
 	if (arg == 1)
 		return (1);

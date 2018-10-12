@@ -6,7 +6,7 @@
 /*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 02:41:55 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/12 18:25:58 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/13 00:49:02 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,11 @@ void	print_field(t_game_info *game_info, t_pc *pc)
 	ft_printf("%9c", ' ');
 	for (int i = 0; i < 64; i++)
 	{
-		ft_printf("%02d ", i);
+		ft_printf("%02x ", i);
 	}
+	ft_printf("\n");
+	for (int i = 0; i < 64 * 3 + 8; i++)
+		ft_printf("-");
 	ft_printf("\n");
 	print_pc(game_info, pc);
 	ft_printf("0x0000 : ");

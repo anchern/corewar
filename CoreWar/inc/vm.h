@@ -6,7 +6,7 @@
 /*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/12 18:50:58 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/12 23:57:29 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ typedef struct			s_pc
 	unsigned char		alive_label;
 	unsigned short		time_todo;
 	unsigned char		command;
+	unsigned char		jump;
+	char 				label;
 	t_options		*options;
 	struct s_pc 		*next;
 }						t_pc;
@@ -53,6 +55,7 @@ typedef struct			s_player
 	int 				last_live;
 	unsigned int 		registry[REG_NUMBER];
 	t_pc				*pc;
+	t_pc				*first_pc;
 	struct	s_player 	*next;
 }						t_player;
 
@@ -117,7 +120,7 @@ char					isrdi(unsigned char byte, char shift);
 char					save_reg(t_sell *field, t_options *opt, char opt_num);
 char					save_dir(t_sell *field, t_options *opt, char opt_num);
 char					save_ind(t_sell *field, t_options *opt, char opt_num);
-int						add_indent(char arg, int dir_size);
+char					add_indent(char arg, int dir_size);
 char					d_options(t_options *options, t_sell *field, short pc_i,
 										char dir_size);
 char					di_r_options(t_options *opt, t_sell *field, short pc_i);

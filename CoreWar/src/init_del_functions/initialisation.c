@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialisation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 18:25:49 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/08 22:28:37 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/12 23:57:29 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	nulling_player_and_gameinfo(t_player *player, t_game_info *game_info)
 		nulling_header(player->header);
 		player->pc = init_pc();
 		nulling_pc(player->pc, 0);
+		player->first_pc = player->pc;
 
 	}
 	if (game_info != 0)
@@ -134,6 +135,7 @@ t_pc	*init_pc(void)
 void	nulling_pc(t_pc *pc, short pc_index)
 {
 	pc->next = 0;
+	pc->jump = 0;
 	pc->pc_index = pc_index;
 	pc->options = init_options(pc->options);
 	nulling_options(pc->options);

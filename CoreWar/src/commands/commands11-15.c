@@ -46,16 +46,6 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 	return (result);
 }
 
-void			push_back(t_pc *start, t_pc *new_elem)
-{
-	if (start->next == 0)
-	{
-		start->next = new_elem;
-		return ;
-	}
-	push_back(start->next, new_elem);
-}
-
 unsigned int	fork_function(t_options *options, t_player *player)
 {
 	t_pc *new_pc;
@@ -64,7 +54,8 @@ unsigned int	fork_function(t_options *options, t_player *player)
 	nulling_pc(new_pc, true_value_pc_index(player->pc->pc_index + (short)((short)options->dir[0] % IDX_MOD)));
 	new_pc->alive_label = player->pc->alive_label;
 	new_pc->next = 0;
-	push_back(player->pc, new_pc);
+	new_pc = player->first_pc;
+	player->first_pc = new_pc;
 	return (3);
 }
 
