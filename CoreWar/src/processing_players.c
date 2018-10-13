@@ -6,7 +6,7 @@
 /*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 17:53:07 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/13 03:31:42 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/10/13 03:58:22 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,11 +133,7 @@ void	nulling_pc_label(t_pc *pc)
 
 static void	goround_pc(t_data_prog *data_prog)
 {
-	t_pc	*last_pc_p;
-	char	flag;
-
 	data_prog->player->first_pc = data_prog->player->pc;
-	last_pc_p = data_prog->player->pc;
 	nulling_pc_label(data_prog->player->pc);
 	while(1)
 	{
