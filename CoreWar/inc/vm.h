@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vm.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/12 23:57:29 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/13 03:18:06 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct			s_pc
 	unsigned char		command;
 	unsigned char		jump;
 	char 				label;
+	unsigned int 		registry[REG_NUMBER];
 	t_options		*options;
 	struct s_pc 		*next;
 }						t_pc;
@@ -144,4 +145,5 @@ void					current_cycle_to_die(t_data_prog *data_prog);
 void					print_field(t_game_info *game_info, t_pc *pc);
 char					get_indent_pc(unsigned char codage_octal,
 										char dir_size);
+void					copy_registry(t_pc *new_pc, t_pc *pc);
 #endif

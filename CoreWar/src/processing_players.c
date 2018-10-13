@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   processing_players.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 17:53:07 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/13 01:35:26 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/13 03:18:44 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/vm_init.h"
+
+void	copy_registry(t_pc *new_pc, t_pc *pc)
+{
+	int i;
+
+	i = 0;
+	while (i < 16)
+	{
+		new_pc->registry[i] = pc->registry[i];
+		i++;
+	}
+}
 
 static void	get_command(t_data_prog *data_prog)
 {
@@ -39,6 +51,7 @@ static void	get_command(t_data_prog *data_prog)
 	{
 		data_prog->player->pc->command = value;
 		data_prog->player->pc->time_todo = data_prog->to_do_list[value - 1];
+
 	}
 	else
 	{
@@ -100,7 +113,7 @@ static void	processing_pc(t_data_prog *data_prog)
 		}
 		else
 			execute_command(data_prog);
-		ft_printf("%x %x %i %i command: %x\t\t\treg: %x\n", save_pc, data_prog->player->pc->pc_index, data_prog->player->pc->pc_index - save_pc, data_prog->game_info->counter, data_prog->game_info->field[save_pc].value, data_prog->player->registry[1]);
+		ft_printf("%x %x %i %i command: %x\t\t\treg: %x\n", save_pc, data_prog->player->pc->pc_index, data_prog->player->pc->pc_index - save_pc, data_prog->game_info->counter, data_prog->game_info->field[save_pc].value, data_prog->player->pc->registry[1]);
 		data_prog->player->pc->time_todo = 0;
 		get_command(data_prog);
 	}
@@ -109,32 +122,34 @@ static void	processing_pc(t_data_prog *data_prog)
 	data_prog->player->pc->pc_index =
 			true_value_pc_index(data_prog->player->pc->pc_index);
 }
-//
-//void	nulling_pc_label(t_pc *pc)
-//{
-//
-//}
+
+void	nulling_pc_label(t_pc *pc)
+{
+	while (pc != NULL)
+	{
+		pc->label = 0;
+		pc = pc->next;
+	}
+}
 
 static void	goround_pc(t_data_prog *data_prog)
 {
-	int		i;
 	t_pc	*last_pc_p;
 	char	flag;
 
-	i = 0;
 	data_prog->player->first_pc = data_prog->player->pc;
 	last_pc_p = data_prog->player->pc;
-	while (data_prog->player->pc != 0)
+	nulling_pc_label(data_prog->player->pc);
+	while(1)
 	{
-		processing_pc(data_prog);
-		data_prog->player->pc = data_prog->player->pc->next;
-		i++;
-	}
-	while (1)
-	{
-
-		if (data_prog->player->first_pc == last_pc_p)
+		if (data_prog->player->pc->label == 1)
 			break ;
+		while (data_prog->player->pc != 0 && data_prog->player->pc->label == 0)
+		{
+			processing_pc(data_prog);
+			data_prog->player->pc->label = 1;
+			data_prog->player->pc = data_prog->player->pc->next;
+		}
 		data_prog->player->pc = data_prog->player->first_pc;
 	}
 }

@@ -129,7 +129,7 @@ void		set_registry(t_player *player)
 {
 	if (player == 0)
 		return ;
-	player->registry[0] = player->player_number;
+	player->pc->registry[0] = player->player_number;
 	set_registry(player->next);
 }
 

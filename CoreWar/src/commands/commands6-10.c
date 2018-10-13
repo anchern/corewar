@@ -12,7 +12,7 @@ unsigned int	and_function(t_options *options, t_player *player)
 	if (options->option_number[0] == 1)
 	{
 		result++;
-		a = player->registry[options->reg[0] - 1];
+		a = player->pc->registry[options->reg[0] - 1];
 	}
 	else if (options->option_number[0] == 2)
 	{
@@ -27,7 +27,7 @@ unsigned int	and_function(t_options *options, t_player *player)
 	if (options->option_number[1] == 1)
 	{
 		result++;
-		a = player->registry[options->reg[1] - 1];
+		a = player->pc->registry[options->reg[1] - 1];
 	}
 	else if (options->option_number[0] == 2)
 	{
@@ -39,8 +39,8 @@ unsigned int	and_function(t_options *options, t_player *player)
 		result += 2;
 		a = (unsigned int) (options->ind[1]);
 	}
-	player->registry[options->reg[2] - 1] = a & b;
-	if (player->registry[options->reg[2] - 1] == 0)
+	player->pc->registry[options->reg[2] - 1] = a & b;
+	if (player->pc->registry[options->reg[2] - 1] == 0)
 		player->carry = 1;
 	else
 		player->carry = 0;
@@ -59,7 +59,7 @@ unsigned int	or_function(t_options *options, t_player *player)
 	if (options->option_number[0] == 1)
 	{
 		result++;
-		a = player->registry[options->reg[0] - 1];
+		a = player->pc->registry[options->reg[0] - 1];
 	}
 	else if (options->option_number[0] == 2)
 	{
@@ -74,7 +74,7 @@ unsigned int	or_function(t_options *options, t_player *player)
 	if (options->option_number[1] == 1)
 	{
 		result++;
-		a = player->registry[options->reg[1] - 1];
+		a = player->pc->registry[options->reg[1] - 1];
 	}
 	else if (options->option_number[0] == 2)
 	{
@@ -86,8 +86,8 @@ unsigned int	or_function(t_options *options, t_player *player)
 		result += 2;
 		a = (unsigned int) (options->ind[1]);
 	}
-	player->registry[options->reg[2] - 1] = a | b;
-	if (player->registry[options->reg[2] - 1] == 0)
+	player->pc->registry[options->reg[2] - 1] = a | b;
+	if (player->pc->registry[options->reg[2] - 1] == 0)
 		player->carry = 1;
 	else
 		player->carry = 0;
@@ -106,7 +106,7 @@ unsigned int	xor_function(t_options *options, t_player *player)
 	if (options->option_number[0] == 1)
 	{
 		result++;
-		a = player->registry[options->reg[0] - 1];
+		a = player->pc->registry[options->reg[0] - 1];
 	}
 	else if (options->option_number[0] == 2)
 	{
@@ -121,7 +121,7 @@ unsigned int	xor_function(t_options *options, t_player *player)
 	if (options->option_number[1] == 1)
 	{
 		result++;
-		a = player->registry[options->reg[1] - 1];
+		a = player->pc->registry[options->reg[1] - 1];
 	}
 	else if (options->option_number[0] == 2)
 	{
@@ -133,8 +133,8 @@ unsigned int	xor_function(t_options *options, t_player *player)
 		result += 2;
 		a = (unsigned int) (options->ind[1]);
 	}
-	player->registry[options->reg[2] - 1] = a ^ b;
-	if (player->registry[options->reg[2] - 1] == 0)
+	player->pc->registry[options->reg[2] - 1] = a ^ b;
+	if (player->pc->registry[options->reg[2] - 1] == 0)
 		player->carry = 1;
 	else
 		player->carry = 0;
@@ -163,7 +163,7 @@ unsigned int	load_index_function(t_options *options, t_player *player, t_sell *f
 	if (options->option_number[0] == 1)
 	{
 		result++;
-		a = player->registry[options->reg[0] - 1];
+		a = player->pc->registry[options->reg[0] - 1];
 	}
 	else if (options->option_number[0] == 2)
 	{
@@ -180,7 +180,7 @@ unsigned int	load_index_function(t_options *options, t_player *player, t_sell *f
 	if (options->option_number[1] == 1)
 	{
 		result++;
-		b = player->registry[options->reg[1] - 1];
+		b = player->pc->registry[options->reg[1] - 1];
 	}
 	else if (options->option_number[0] == 2)
 	{
@@ -188,7 +188,7 @@ unsigned int	load_index_function(t_options *options, t_player *player, t_sell *f
 		options->dir[1] = (short)options->dir[1];
 		b = options->dir[1];
 	}
-	player->registry[options->reg[2] - 1] = bytestoui(field,
+	player->pc->registry[options->reg[2] - 1] = bytestoui(field,
 			player->pc->pc_index + (short)((short)(a + b) % IDX_MOD));
 	return (result);
 }
