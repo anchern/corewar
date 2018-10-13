@@ -6,7 +6,7 @@
 /*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 17:53:07 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/13 03:18:44 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/10/13 03:31:42 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static void	get_command(t_data_prog *data_prog)
 	{
 		data_prog->player->pc->command = value;
 		data_prog->player->pc->time_todo = data_prog->to_do_list[value - 1];
-
 	}
 	else
 	{
@@ -76,7 +75,7 @@ static void	execute_command(t_data_prog *data_prog)
 	{
 		if (value == 16)
 		{
-			ft_printf("Aff: %c\n", data_prog->player->registry[data_prog->player->pc->options->reg[0]]);
+			ft_printf("Aff: %c\n", data_prog->player->pc->registry[data_prog->player->pc->options->reg[0]]);
 			data_prog->player->pc->pc_index += 3;
 		}
 		else if (value == 9)

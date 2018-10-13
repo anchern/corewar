@@ -41,9 +41,9 @@ unsigned int	and_function(t_options *options, t_player *player)
 	}
 	player->pc->registry[options->reg[2] - 1] = a & b;
 	if (player->pc->registry[options->reg[2] - 1] == 0)
-		player->carry = 1;
+		player->pc->carry = 1;
 	else
-		player->carry = 0;
+		player->pc->carry = 0;
 	return (result);
 }
 
@@ -88,9 +88,9 @@ unsigned int	or_function(t_options *options, t_player *player)
 	}
 	player->pc->registry[options->reg[2] - 1] = a | b;
 	if (player->pc->registry[options->reg[2] - 1] == 0)
-		player->carry = 1;
+		player->pc->carry = 1;
 	else
-		player->carry = 0;
+		player->pc->carry = 0;
 	return (result);
 }
 
@@ -135,15 +135,15 @@ unsigned int	xor_function(t_options *options, t_player *player)
 	}
 	player->pc->registry[options->reg[2] - 1] = a ^ b;
 	if (player->pc->registry[options->reg[2] - 1] == 0)
-		player->carry = 1;
+		player->pc->carry = 1;
 	else
-		player->carry = 0;
+		player->pc->carry = 0;
 	return (result);
 }
 
 unsigned int	jump_function(t_options *options, t_player *player)
 {
-	if (player->carry == 1)
+	if (player->pc->carry == 1)
 	{
 		return (unsigned)((short)options->dir[0] % IDX_MOD);
 	}

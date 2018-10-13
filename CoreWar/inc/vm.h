@@ -6,7 +6,7 @@
 /*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/13 03:18:06 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/10/13 03:58:04 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct			s_pc
 	unsigned char		command;
 	unsigned char		jump;
 	char 				label;
+	char				carry;
 	unsigned int 		registry[REG_NUMBER];
 	t_options		*options;
 	struct s_pc 		*next;
@@ -51,10 +52,8 @@ typedef struct			s_player
 {
 	header_t			*header;
 	unsigned			player_number;
-	char 				carry;
 	int 				alive_counter;
 	int 				last_live;
-	unsigned int 		registry[REG_NUMBER];
 	t_pc				*pc;
 	t_pc				*first_pc;
 	struct	s_player 	*next;

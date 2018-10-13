@@ -36,9 +36,9 @@ unsigned int	load_command(t_options *options, t_player *player, t_sell *field)
 				player->pc->pc_index + options->ind[0]);
 	}
 	if (player->pc->registry[options->reg[1] - 1] == 0)
-		player->carry = 1;
+		player->pc->carry = 1;
 	else
-		player->carry = 0;
+		player->pc->carry = 0;
 	return (result);
 }
 
@@ -69,9 +69,9 @@ unsigned int	 addition_command(t_options *options, t_player *player)
 	player->pc->registry[options->reg[2]] = player->pc->registry[options->reg[0]]
 			+ player->pc->registry[options->reg[1]];
 	if (player->pc->registry[options->reg[2]] == 0)
-		player->carry = 1;
+		player->pc->carry = 1;
 	else
-		player->carry = 0;
+		player->pc->carry = 0;
 	return (5);
 }
 
@@ -80,8 +80,8 @@ unsigned int	substraction_command(t_options *options, t_player *player)
 	player->pc->registry[options->reg[2]] = player->pc->registry[options->reg[0]]
 										- player->pc->registry[options->reg[1]];
 	if (player->pc->registry[options->reg[2]] == 0)
-		player->carry = 1;
+		player->pc->carry = 1;
 	else
-		player->carry = 0;
+		player->pc->carry = 0;
 	return (5);
 }

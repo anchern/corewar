@@ -78,9 +78,9 @@ unsigned int	long_load_command(t_options *options, t_player *player, t_sell *fie
 				player->pc->pc_index + options->ind[0]);
 	}
 	if (player->pc->registry[options->reg[1] - 1] == 0)
-		player->carry = 1;
+		player->pc->carry = 1;
 	else
-		player->carry = 0;
+		player->pc->carry = 0;
 	return (result);
 }
 
@@ -125,9 +125,9 @@ unsigned int	long_load_index_function(t_options *options, t_player *player,
 	player->pc->registry[options->reg[2] - 1] = bytestoui(field,
 			player->pc->pc_index + (short)((short)(a + b) % FIELD_SIZE));
 	if (player->pc->registry[options->reg[2] - 1] == 0)
-		player->carry = 1;
+		player->pc->carry = 1;
 	else
-		player->carry = 0;
+		player->pc->carry = 0;
 	return (result);
 }
 

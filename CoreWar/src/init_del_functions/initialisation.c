@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialisation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/03 18:25:49 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/12 23:57:29 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/13 03:31:42 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	nulling_player_and_gameinfo(t_player *player, t_game_info *game_info)
 	if (player != 0)
 	{
 		player->alive_counter = 0;
-		player->carry = 0;
 		player->last_live = 0;
 		player->player_number = 0;
 		player->next = NULL;
@@ -134,6 +133,15 @@ t_pc	*init_pc(void)
 
 void	nulling_pc(t_pc *pc, short pc_index)
 {
+	int i;
+
+	i = 0;
+	while (i < 16)
+	{
+		pc->registry[i] = 0;
+		i++;
+	}
+	pc->carry = 0;
 	pc->next = 0;
 	pc->jump = 0;
 	pc->pc_index = pc_index;
@@ -142,6 +150,7 @@ void	nulling_pc(t_pc *pc, short pc_index)
 	pc->command = 0;
 	pc->alive_label = 0;
 	pc->time_todo = 0;
+
 }
 
 void	nulling_options(t_options *options)
