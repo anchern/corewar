@@ -100,9 +100,9 @@ unsigned int			store_command(t_options *options, t_player *player,
 										t_sell *field);
 unsigned int			addition_command(t_options *options, t_player *player);
 unsigned int			substraction_command(t_options *options, t_player *player);
-unsigned int			and_function(t_options *options, t_player *player);
-unsigned int			or_function(t_options *options, t_player *player);
-unsigned int			xor_function(t_options *options, t_player *player);
+unsigned int			and_function(t_options *options, t_player *player, t_sell *field);
+unsigned int			or_function(t_options *options, t_player *player, t_sell *field);
+unsigned int			xor_function(t_options *options, t_player *player, t_sell *field);
 unsigned int			jump_function(t_options *options, t_player *player);
 unsigned int			load_index_function(t_options *options,
 										t_player *player, t_sell *field);

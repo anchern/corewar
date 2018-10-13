@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   processing_players.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 17:53:07 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/13 03:58:22 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/10/13 08:30:16 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,42 +22,6 @@ void	copy_registry(t_pc *new_pc, t_pc *pc)
 		new_pc->registry[i] = pc->registry[i];
 		i++;
 	}
-}
-
-static void	get_command(t_data_prog *data_prog)
-{
-	unsigned char value;
-	char tmp;
-
-	value = data_prog->game_info->field[data_prog->player->pc->pc_index].value;
-	if (value == 1)
-	{
-		tmp = data_prog->arrays->options_array[value - 1](data_prog->player->pc->options,
-				data_prog->game_info->field,
-				data_prog->player->pc->pc_index + (short)1, 4);
-	}
-	else if (value > 1 && value <= 16)
-	{
-		tmp = data_prog->arrays->options_array[value - 1](data_prog->player->pc->options,
-				data_prog->game_info->field,
-				data_prog->player->pc->pc_index + (short)1, 2);
-	}
-	else
-	{
-		data_prog->player->pc->pc_index++;
-		return ;
-	}
-	if (tmp == -1)
-	{
-		data_prog->player->pc->command = value;
-		data_prog->player->pc->time_todo = data_prog->to_do_list[value - 1];
-	}
-	else
-	{
-		data_prog->player->pc->jump = (unsigned char)(tmp + 2);
-		data_prog->player->pc->time_todo = data_prog->to_do_list[value - 1];
-	}
-	data_prog->player->pc->time_todo--;
 }
 
 static void	execute_command(t_data_prog *data_prog)
@@ -96,25 +60,74 @@ static void	execute_command(t_data_prog *data_prog)
 	data_prog->player->pc->command = 0;
 }
 
+static void	set_options(t_data_prog *data_prog)
+{
+	unsigned char value;
+	char tmp;
+
+	value = data_prog->player->pc->command;
+	if (value == 1)
+	{
+		tmp = data_prog->arrays->options_array[value - 1](data_prog->player->pc->options,
+				data_prog->game_info->field,
+				data_prog->player->pc->pc_index + (short)1, 4);
+	}
+	else if (value > 1 && value <= 16)
+	{
+		tmp = data_prog->arrays->options_array[value - 1](data_prog->player->pc->options,
+				data_prog->game_info->field,
+				data_prog->player->pc->pc_index + (short)1, 2);
+	}
+	else
+		tmp = 0;
+	if (tmp == -1)
+		execute_command(data_prog);
+	else
+		data_prog->player->pc->pc_index += (unsigned char)(tmp + 2);
+
+}
+
+void get_command(t_data_prog *data_prog)
+{
+	if (data_prog->game_info->field[data_prog->player->pc->pc_index].value > 0 &&
+		data_prog->game_info->field[data_prog->player->pc->pc_index].value < 17)
+	{
+		data_prog->player->pc->command =
+				data_prog->game_info->field[data_prog->player->pc->pc_index].value;
+		data_prog->player->pc->time_todo =
+				data_prog->to_do_list[
+						data_prog->game_info->field[data_prog->player->pc->pc_index].value -
+						1] - (short)1;
+	}
+	else
+		data_prog->player->pc->pc_index++;
+}
+
 static void	processing_pc(t_data_prog *data_prog)
 {
 	short	save_pc;
+	char tmp = 0;
 
 	save_pc = data_prog->player->pc->pc_index;
 	if (data_prog->player->pc->command == 0)
 		get_command(data_prog);
 	else if (data_prog->player->pc->time_todo == 0)
 	{
-		if (data_prog->player->pc->jump != 0)
-		{
-			data_prog->player->pc->pc_index += data_prog->player->pc->jump;
-			data_prog->player->pc->jump = 0;
-		}
-		else
-			execute_command(data_prog);
-		ft_printf("%x %x %i %i command: %x\t\t\treg: %x\n", save_pc, data_prog->player->pc->pc_index, data_prog->player->pc->pc_index - save_pc, data_prog->game_info->counter, data_prog->game_info->field[save_pc].value, data_prog->player->pc->registry[1]);
-		data_prog->player->pc->time_todo = 0;
+		if (data_prog->player->pc->command == 9)
+			tmp = 1;
+//		if (tmp != 1)
+			ft_printf("command: %x\t\t\t", data_prog->player->pc->command);
+		set_options(data_prog);
 		get_command(data_prog);
+//		if (tmp != 1)
+//		{
+			ft_printf("%#06x -> %#06x %i %i ", save_pc,
+					  data_prog->player->pc->pc_index,
+					  data_prog->player->pc->pc_index - save_pc,
+					  data_prog->game_info->counter);
+			ft_printf("reg: %x %x\n", data_prog->player->pc->registry[1],
+					  data_prog->player->pc->registry[2]);
+//		}
 	}
 	else
 		data_prog->player->pc->time_todo--;
@@ -147,6 +160,11 @@ static void	goround_pc(t_data_prog *data_prog)
 		}
 		data_prog->player->pc = data_prog->player->first_pc;
 	}
+//	if (data_prog->game_info->counter == 380)
+//	{
+//		print_field(data_prog->game_info, 0);
+//		exit(79);
+//	}
 }
 
 void		goround_players(t_data_prog *data_prog)

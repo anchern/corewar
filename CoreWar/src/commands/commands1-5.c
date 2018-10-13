@@ -57,8 +57,8 @@ unsigned int	store_command(t_options *options, t_player *player, t_sell *field)
 	}
 	else if (options->option_number[1] == 1)
 	{
-		player->pc->registry[options->reg[0] - 1] =
-				player->pc->registry[options->reg[1] - 1];
+		player->pc->registry[options->reg[1] - 1] =
+				player->pc->registry[options->reg[0] - 1];
 		result = 4;
 	}
 	return (result);
@@ -66,9 +66,9 @@ unsigned int	store_command(t_options *options, t_player *player, t_sell *field)
 
 unsigned int	 addition_command(t_options *options, t_player *player)
 {
-	player->pc->registry[options->reg[2]] = player->pc->registry[options->reg[0]]
-			+ player->pc->registry[options->reg[1]];
-	if (player->pc->registry[options->reg[2]] == 0)
+	player->pc->registry[options->reg[2] - 1] = player->pc->registry[options->reg[0] - 1]
+			+ player->pc->registry[options->reg[1] - 1];
+	if (player->pc->registry[options->reg[2] - 1] == 0)
 		player->pc->carry = 1;
 	else
 		player->pc->carry = 0;
@@ -77,9 +77,9 @@ unsigned int	 addition_command(t_options *options, t_player *player)
 
 unsigned int	substraction_command(t_options *options, t_player *player)
 {
-	player->pc->registry[options->reg[2]] = player->pc->registry[options->reg[0]]
-										- player->pc->registry[options->reg[1]];
-	if (player->pc->registry[options->reg[2]] == 0)
+	player->pc->registry[options->reg[2] - 1] = player->pc->registry[options->reg[0] - 1]
+										- player->pc->registry[options->reg[1] - 1];
+	if (player->pc->registry[options->reg[2] - 1] == 0)
 		player->pc->carry = 1;
 	else
 		player->pc->carry = 0;

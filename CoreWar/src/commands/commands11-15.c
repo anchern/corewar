@@ -40,7 +40,6 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 	}
 	else
 		return (1);
-
 	uitobytes(player->pc->registry[options->reg[0] - 1], field, player->pc->pc_index +
 							(short)((short)(b + c) % IDX_MOD));
 	return (result);
@@ -63,19 +62,19 @@ unsigned int	fork_function(t_options *options, t_player *player)
 
 unsigned int	long_load_command(t_options *options, t_player *player, t_sell *field)
 {
-	unsigned int result;
+	unsigned int	result;
 
 	result = 1;
 	if (options->option_number[0] == 2)
 	{
-		result += 4;
+		result = 7;
 		player->pc->registry[options->reg[1] - 1] = options->dir[0];
 	}
 	else if (options->option_number[0] == 3)
 	{
-		result += 2;
+		result = 5;
 		player->pc->registry[options->reg[1] - 1] = bytestoui(field,
-				player->pc->pc_index + options->ind[0]);
+															  player->pc->pc_index + options->ind[0]);
 	}
 	if (player->pc->registry[options->reg[1] - 1] == 0)
 		player->pc->carry = 1;
@@ -84,16 +83,16 @@ unsigned int	long_load_command(t_options *options, t_player *player, t_sell *fie
 	return (result);
 }
 
-unsigned int	long_load_index_function(t_options *options, t_player *player,
-		t_sell *field)
+
+unsigned int	long_load_index_function(t_options *options, t_player *player, t_sell *field)
 {
-	unsigned int a;
-	unsigned int b;
-	unsigned int result;
+	unsigned int 	a;
+	unsigned int 	b;
+	unsigned int	result;
 
 	a = 0;
 	b = 0;
-	result = 1;
+	result = 3;
 	if (options->option_number[0] == 1)
 	{
 		result++;
@@ -123,13 +122,10 @@ unsigned int	long_load_index_function(t_options *options, t_player *player,
 		b = options->dir[1];
 	}
 	player->pc->registry[options->reg[2] - 1] = bytestoui(field,
-			player->pc->pc_index + (short)((short)(a + b) % FIELD_SIZE));
-	if (player->pc->registry[options->reg[2] - 1] == 0)
-		player->pc->carry = 1;
-	else
-		player->pc->carry = 0;
+														  player->pc->pc_index + ((short)(a + b)));
 	return (result);
 }
+
 
 
 unsigned int	long_fork_function(t_options *options, t_player *player)
