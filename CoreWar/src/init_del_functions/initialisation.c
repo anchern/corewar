@@ -186,6 +186,7 @@ void	init_time_to_do_list(unsigned short *to_do_list)
 	to_do_list[12] = (unsigned short)10;
 	to_do_list[13] = (unsigned short)50;
 	to_do_list[14] = (unsigned short)1000;
+	to_do_list[15] = (unsigned short)2;
 }
 
 t_data_prog	*data_prog_init(void)

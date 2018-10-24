@@ -43,7 +43,6 @@ unsigned int	load_command(t_options *options, t_player *player, t_sell *field)
 }
 
 
-
 unsigned int	store_command(t_options *options, t_player *player, t_sell *field)
 {
 	unsigned int	result;

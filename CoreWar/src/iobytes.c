@@ -48,13 +48,13 @@ void			uitobytes(unsigned value, t_sell *field, short index)
 	if (index < 0)
 		index += FIELD_SIZE;
 	field[(index + 3) >= FIELD_SIZE ? (index + 3) % FIELD_SIZE :
-			index + 3].value = (unsigned char) value;
+			index + 3].value = (unsigned char)value;
 	value >>= 8;
 	field[(index + 2) >= FIELD_SIZE ? (index + 2) % FIELD_SIZE :
-			index + 2].value = (unsigned char) value;
+			index + 2].value = (unsigned char)value;
 	value >>= 8;
 	field[(index + 1) >= FIELD_SIZE ? (index + 1) % FIELD_SIZE :
-			index + 1].value = (unsigned char) value;
+			index + 1].value = (unsigned char)value;
 	value >>= 8;
-	field[index].value = (unsigned char) value;
+	field[index].value = (unsigned char)value;
 }

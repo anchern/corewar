@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vm.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: dlewando <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/13 03:58:04 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/10/24 04:10:21 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ typedef struct			s_game_info
 
 typedef struct 			s_arrays
 {
-	char				(*options_array[15])(t_options *options, t_sell *field, short pc_i, char dir_size);
+	char				(*options_array[16])(t_options *options, t_sell
+	*field, short pc_i, char dir_size);
 	unsigned int		(*functions_array[14])(t_options *options, t_player *player, t_sell *field);
 }						t_arrays;
 
@@ -85,7 +86,7 @@ typedef struct			s_data_prog
 	t_player		*player;
 	t_player		*first_player;
 	t_arrays		*arrays;
-	unsigned short 	to_do_list[15];
+	unsigned short 	to_do_list[16];
 }						t_data_prog;
 
 unsigned int			bytestoui(const t_sell *byte, short index);

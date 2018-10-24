@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   processing_players.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlewando <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 17:53:07 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/13 08:30:16 by achernys         ###   ########.fr       */
+/*   Updated: 2018/10/24 11:55:19 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,19 @@ static void	execute_command(t_data_prog *data_prog)
 	{
 		if (value == 16)
 		{
-			ft_printf("Aff: %c\n", data_prog->player->pc->registry[data_prog->player->pc->options->reg[0]]);
+			ft_printf("Aff: %c\n", (data_prog->player->pc->registry[data_prog
+			->player->pc->options->reg[0]] % 256));
 			data_prog->player->pc->pc_index += 3;
+
 		}
 		else if (value == 9)
 		{
-			data_prog->player->pc->pc_index +=
-					(short)(data_prog->arrays->functions_array[value - 2](
-							data_prog->player->pc->options, data_prog->player,
-							data_prog->game_info->field));
-			data_prog->player->pc->pc_index = true_value_pc_index(data_prog->player->pc->pc_index);
+			if (data_prog->player->pc->carry == 1)
+				data_prog->player->pc->pc_index +=
+					(short)((short)(data_prog->player->pc->options->dir[0]) %
+					IDX_MOD);
+			else
+				data_prog->player->pc->pc_index += 3;
 		}
 		else
 			data_prog->player->pc->pc_index +=
@@ -56,6 +59,7 @@ static void	execute_command(t_data_prog *data_prog)
 							data_prog->player->pc->options, data_prog->player,
 							data_prog->game_info->field));
 	}
+	data_prog->player->pc->pc_index = true_value_pc_index(data_prog->player->pc->pc_index);
 	nulling_options(data_prog->player->pc->options);
 	data_prog->player->pc->command = 0;
 }
@@ -83,7 +87,10 @@ static void	set_options(t_data_prog *data_prog)
 	if (tmp == -1)
 		execute_command(data_prog);
 	else
+	{
 		data_prog->player->pc->pc_index += (unsigned char)(tmp + 2);
+		data_prog->player->pc->command = 0;
+	}
 
 }
 
@@ -115,19 +122,27 @@ static void	processing_pc(t_data_prog *data_prog)
 	{
 		if (data_prog->player->pc->command == 9)
 			tmp = 1;
-//		if (tmp != 1)
-			ft_printf("command: %x\t\t\t", data_prog->player->pc->command);
+//		if (tmp == 1 && data_prog->player->pc->carry == 1)
+//			;
+//		else
+//			ft_printf("command: %x\t\t\t", data_prog->player->pc->command);
 		set_options(data_prog);
+		if (tmp == 1 && data_prog->player->pc->carry == 1)
+		{
+
+		} else
+		{
+//			ft_printf("%#06x -> %#06x\n", save_pc,
+//					  data_prog->player->pc->pc_index);
+//			ft_printf("%#06x -> %#06x %i %i ", save_pc,
+//					  data_prog->player->pc->pc_index,
+//					  data_prog->player->pc->pc_index - save_pc,
+//					  data_prog->game_info->counter);
+//			ft_printf("reg: %x %x\n", data_prog->player->pc->registry[1],
+//					  data_prog->player->pc->registry[2]);
+		}
 		get_command(data_prog);
-//		if (tmp != 1)
-//		{
-			ft_printf("%#06x -> %#06x %i %i ", save_pc,
-					  data_prog->player->pc->pc_index,
-					  data_prog->player->pc->pc_index - save_pc,
-					  data_prog->game_info->counter);
-			ft_printf("reg: %x %x\n", data_prog->player->pc->registry[1],
-					  data_prog->player->pc->registry[2]);
-//		}
+
 	}
 	else
 		data_prog->player->pc->time_todo--;
@@ -160,7 +175,7 @@ static void	goround_pc(t_data_prog *data_prog)
 		}
 		data_prog->player->pc = data_prog->player->first_pc;
 	}
-//	if (data_prog->game_info->counter == 380)
+//	if (data_prog->game_info->counter == 2534)
 //	{
 //		print_field(data_prog->game_info, 0);
 //		exit(79);
