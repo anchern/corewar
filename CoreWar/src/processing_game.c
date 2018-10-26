@@ -6,7 +6,7 @@
 /*   By: dlewando <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 14:27:44 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/24 13:40:02 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/10/25 19:06:21 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,50 +47,57 @@ int			pc_number(t_pc *pc)
 		return (0);
 	return (pc_number(pc->next) + 1);
 }
-//TODO: ПОФИКСИТЬ УДАЛЕНИЕ PC (ТЕРЯЕТ ЖИВЫЕ КАРЕТКИ)
+
 void		death_pc_delete(t_data_prog *data_prog)
 {
 	t_pc	*first_pc;
 	t_pc	*removable_pc;
 	t_pc	*tmp_pc;
+	t_pc	*save_previous;
+	char	flag;
 
+	save_previous = 0;
 	first_pc = data_prog->player->pc;
 	tmp_pc = data_prog->player->pc;
+	if (tmp_pc->alive_label == 1)
+		flag = 1;
+	else
+		flag = 0;
 	while (first_pc != 0)
 	{
+		if (save_previous != 0 && flag == 0)
+		{
+			tmp_pc = save_previous;
+			flag = 1;
+		}
 		if (first_pc->alive_label == 0)
 		{
 			removable_pc = first_pc;
 			first_pc = first_pc->next;
-			tmp_pc = first_pc;
+			if (save_previous != 0)
+				save_previous->next = first_pc;
 			free(removable_pc);
 			removable_pc = 0;
 		}
-//		else if (first_pc->next != 0 && first_pc->next->alive_label == 0)
-//		{
-//			removable_pc = first_pc->next;
-//			first_pc->next = first_pc->next->next;
-//			free(removable_pc);
-//			removable_pc = 0;
-//		}
 		if (first_pc != 0 && first_pc->alive_label == 1)
+		{
+			save_previous = first_pc;
 			first_pc = first_pc->next;
+		}
 	}
+	if (flag == 0 && save_previous != 0)
+		tmp_pc = save_previous;
+	else if (flag == 0)
+		tmp_pc = 0;
 	data_prog->player->pc = tmp_pc;
-//	if (data_prog->player->pc != 0 && data_prog->player->pc->next == 0 &&
-//	data_prog->player->pc->alive_label == 0)
-//	{
-//		free(data_prog->player->pc);
-//		data_prog->player->pc = 0;
-//	}
 }
 
-void		nulling_alive_pc(t_pc *pc)
+void		nulling_alive_pc(t_pc *pc, t_data_prog *data_prog)
 {
 	if (pc == 0)
 		return ;
 	pc->alive_label = 0;
-	nulling_alive_pc(pc->next);
+	nulling_alive_pc(pc->next, data_prog);
 }
 
 void		current_cycle_to_die(t_data_prog *data_prog)
@@ -102,7 +109,7 @@ void		current_cycle_to_die(t_data_prog *data_prog)
 	while (cycle_to_die > 0 && exist_pc(data_prog->player))
 	{
 		current_i = 0;
-		while (current_i <= cycle_to_die)
+		while (current_i < cycle_to_die)
 		{
 			goround_players(data_prog);
 			current_i++;
@@ -113,7 +120,7 @@ void		current_cycle_to_die(t_data_prog *data_prog)
 		death_pc_delete(data_prog);
 		while (data_prog->player != 0)
 		{
-			nulling_alive_pc(data_prog->player->pc);
+			nulling_alive_pc(data_prog->player->pc, data_prog);
 			data_prog->player->alive_counter = 0;
 			data_prog->player = data_prog->player->next;
 		}

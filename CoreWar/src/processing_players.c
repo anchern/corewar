@@ -6,7 +6,7 @@
 /*   By: dlewando <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 17:53:07 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/24 11:55:19 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/10/27 00:49:07 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,10 @@ static void	processing_pc(t_data_prog *data_prog)
 	{
 		if (data_prog->player->pc->command == 9)
 			tmp = 1;
-//		if (tmp == 1 && data_prog->player->pc->carry == 1)
-//			;
-//		else
-//			ft_printf("command: %x\t\t\t", data_prog->player->pc->command);
+		if (tmp == 1 && data_prog->player->pc->carry == 1)
+			;
+		else
+			ft_printf("command: %x\t\t\t", data_prog->player->pc->command);
 		set_options(data_prog);
 		if (tmp == 1 && data_prog->player->pc->carry == 1)
 		{
@@ -134,12 +134,12 @@ static void	processing_pc(t_data_prog *data_prog)
 		{
 //			ft_printf("%#06x -> %#06x\n", save_pc,
 //					  data_prog->player->pc->pc_index);
-//			ft_printf("%#06x -> %#06x %i %i ", save_pc,
-//					  data_prog->player->pc->pc_index,
-//					  data_prog->player->pc->pc_index - save_pc,
-//					  data_prog->game_info->counter);
-//			ft_printf("reg: %x %x\n", data_prog->player->pc->registry[1],
-//					  data_prog->player->pc->registry[2]);
+			ft_printf("%#06x -> %#06x %i %i ", save_pc,
+					  data_prog->player->pc->pc_index,
+					  data_prog->player->pc->pc_index - save_pc,
+					  data_prog->game_info->counter);
+			ft_printf("reg: %x %x\n", data_prog->player->pc->registry[1],
+					  data_prog->player->pc->registry[2]);
 		}
 		get_command(data_prog);
 
@@ -175,11 +175,11 @@ static void	goround_pc(t_data_prog *data_prog)
 		}
 		data_prog->player->pc = data_prog->player->first_pc;
 	}
-//	if (data_prog->game_info->counter == 2534)
-//	{
-//		print_field(data_prog->game_info, 0);
-//		exit(79);
-//	}
+	if (data_prog->game_info->counter == 8910)
+	{
+		print_field(data_prog->game_info, 0);
+		exit(79);
+	}
 }
 
 void		goround_players(t_data_prog *data_prog)
