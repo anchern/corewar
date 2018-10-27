@@ -42,6 +42,7 @@ unsigned int	store_index_function(t_options *options, t_player *player,
 		return (1);
 	uitobytes(player->pc->registry[options->reg[0] - 1], field, player->pc->pc_index +
 							(short)((short)(b + c) % IDX_MOD));
+//	ft_printf("\n!%#06x = %08x, reg #%i!\n",true_value_pc_index(player->pc->pc_index + (short)((short)(b + c) % IDX_MOD)), player->pc->registry[options->reg[0] - 1], options->reg[0]);
 	return (result);
 }
 

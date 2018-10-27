@@ -46,13 +46,17 @@ unsigned int	load_command(t_options *options, t_player *player, t_sell *field)
 unsigned int	store_command(t_options *options, t_player *player, t_sell *field)
 {
 	unsigned int	result;
+	static char counter;
 
 	result = 1;
+	counter = 0;
 	if (options->option_number[1] == 3)
 	{
+//		ft_printf("\n!%#06x = %08x -> ", true_value_pc_index(player->pc->pc_index + (short)(options->ind[1] % IDX_MOD)), bytestoui(field, true_value_pc_index(player->pc->pc_index + (short)(options->ind[1] % IDX_MOD))));
 		uitobytes(player->pc->registry[options->reg[0] - 1], field,
 			player->pc->pc_index + (short)(options->ind[1] % IDX_MOD));
 		result = 5;
+//		ft_printf("%08x, reg #%i!\n", player->pc->registry[options->reg[0] - 1], options->reg[0]);
 	}
 	else if (options->option_number[1] == 1)
 	{

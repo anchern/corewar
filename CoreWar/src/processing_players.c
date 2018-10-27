@@ -125,12 +125,17 @@ static void	processing_pc(t_data_prog *data_prog)
 		if (tmp == 1 && data_prog->player->pc->carry == 1)
 			;
 		else
+		{
+			if (data_prog->player->pc->command == 9)
+				ft_printf("carry = %d ", data_prog->player->pc->carry);
 			ft_printf("command: %x\t\t\t", data_prog->player->pc->command);
+		}
 		set_options(data_prog);
 		if (tmp == 1 && data_prog->player->pc->carry == 1)
 		{
 
-		} else
+		}
+		else
 		{
 //			ft_printf("%#06x -> %#06x\n", save_pc,
 //					  data_prog->player->pc->pc_index);
@@ -175,7 +180,7 @@ static void	goround_pc(t_data_prog *data_prog)
 		}
 		data_prog->player->pc = data_prog->player->first_pc;
 	}
-	if (data_prog->game_info->counter == 8910)
+	if (data_prog->game_info->counter == 8000)
 	{
 		print_field(data_prog->game_info, 0);
 		exit(79);
