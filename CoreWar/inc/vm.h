@@ -40,13 +40,11 @@ typedef struct			s_pc
 	unsigned char		alive_label;
 	unsigned short		time_todo;
 	unsigned char		command;
-	unsigned char		command_wait;
-	unsigned char		jump;
+	unsigned char		action;
 	int 				pc_number;
-	char 				label;
 	char				carry;
 	unsigned int 		registry[REG_NUMBER];
-	t_options		*options;
+	t_options			*options;
 	struct s_pc 		*next;
 }						t_pc;
 
@@ -56,9 +54,7 @@ typedef struct			s_player
 	unsigned			player_number;
 	int 				alive_counter;
 	int 				last_live;
-	int 				pc_number;
-	t_pc				*pc;
-	t_pc				*first_pc;
+	char				*file_name;
 	struct	s_player 	*next;
 }						t_player;
 
@@ -71,54 +67,49 @@ typedef struct			s_sell
 typedef struct			s_game_info
 {
 	int					counter;
-	unsigned short		cycle_delta_counter;
 	unsigned short		max_checks_counter;
+	int					stop_game;
 	t_sell				field[FIELD_SIZE];
 }						t_game_info;
-
-typedef struct 			s_arrays
-{
-	char				(*options_array[16])(t_options *options, t_sell
-	*field, short pc_i, char dir_size);
-	unsigned int		(*functions_array[14])(t_options *options, t_player *player, t_sell *field);
-}						t_arrays;
 
 typedef struct			s_data_prog
 {
 	t_game_info		*game_info;
 	t_player		*player;
+	int 			pc_number;
+	t_pc			*first_pc;
+	t_pc			*pc;
 	t_player		*first_player;
-	t_arrays		*arrays;
+	struct s_arrays	*arrays;
 	unsigned short 	to_do_list[16];
-}						t_data_prog;
+}					t_data_prog;
+
+typedef struct 			s_arrays
+{
+	char				(*options_array[16])(t_options *options, t_sell
+	*field, short pc_i, char dir_size);
+	unsigned int		(*functions_array[14])(t_data_prog *data_prog);
+}						t_arrays;
 
 unsigned int			bytestoui(const t_sell *byte, short index);
 short					bytestos(const t_sell *byte, short index);
 void					uitobytes(unsigned value, t_sell *field, short index);
 
-unsigned int			alive_command(t_options *options,
-										t_data_prog *data_prog, int counter);
-unsigned int			load_command(t_options *options, t_player *player,
-										t_sell *field);
-unsigned int			store_command(t_options *options, t_player *player,
-										t_sell *field);
-unsigned int			addition_command(t_options *options, t_player *player);
-unsigned int			substraction_command(t_options *options, t_player *player);
-unsigned int			and_function(t_options *options, t_player *player, t_sell *field);
-unsigned int			or_function(t_options *options, t_player *player, t_sell *field);
-unsigned int			xor_function(t_options *options, t_player *player, t_sell *field);
-unsigned int			jump_function(t_options *options, t_player *player);
-unsigned int			load_index_function(t_options *options,
-										t_player *player, t_sell *field);
-unsigned int			store_index_function(t_options *options,
-										t_player *player, t_sell *field);
-unsigned int			fork_function(t_options *options, t_player *player);
-unsigned int			long_load_command(t_options *options, t_player *player,
-										t_sell *field);
-unsigned int			long_load_index_function(t_options *options,
-										t_player *player, t_sell *field);
-unsigned int			long_fork_function(t_options *options,
-										t_player *player);
+unsigned int			alive_command(t_data_prog *data_prog);
+unsigned int			load_command(t_data_prog *data_prog);
+unsigned int			store_command(t_data_prog *data_prog);
+unsigned int			addition_command(t_data_prog *data_prog);
+unsigned int			substraction_command(t_data_prog *data_prog);
+unsigned int			and_function(t_data_prog *data_prog);
+unsigned int			or_function(t_data_prog *data_prog);
+unsigned int			xor_function(t_data_prog *data_prog);
+//unsigned int			jump_function(t_data_prog *data_prog);
+unsigned int			load_index_function(t_data_prog *data_prog);
+unsigned int			store_index_function(t_data_prog *data_prog);
+unsigned int			fork_function(t_data_prog *data_prog);
+unsigned int			long_load_command(t_data_prog *data_prog);
+unsigned int			long_load_index_function(t_data_prog *data_prog);
+unsigned int			long_fork_function(t_data_prog *data_prog);
 short					true_value_pc_index(short pc_index);
 char					isrdi(unsigned char byte, char shift);
 char					save_reg(t_sell *field, t_options *opt, char opt_num);
@@ -149,5 +140,7 @@ void					print_field(t_game_info *game_info, t_pc *pc);
 char					get_indent_pc(unsigned char codage_octal,
 										char dir_size);
 void					copy_registry(t_pc *new_pc, t_pc *pc);
-void					processing_pc(t_data_prog *data_prog);
+void					goround_pc(t_data_prog *data_prog);
+void					free_memory(t_data_prog *data_prog);
+
 #endif

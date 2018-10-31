@@ -53,22 +53,16 @@ void	nulling_player_and_gameinfo(t_player *player, t_game_info *game_info)
 		player->alive_counter = 0;
 		player->last_live = 0;
 		player->player_number = 0;
-		player->pc_number = 1;
+		player->file_name = 0;
 		player->next = NULL;
 		player->header = init_header(player->header);
 		nulling_header(player->header);
-		player->pc = init_pc();
-		player->pc->pc_number = 1;
-		nulling_pc(player->pc, 0);
-		player->first_pc = player->pc;
-
 	}
 	if (game_info != 0)
 	{
 		game_info->counter = 0;
-		game_info->cycle_delta_counter = 0;
 		game_info->max_checks_counter = 0;
-		game_info->cycle_delta_counter = 0;
+		game_info->stop_game = -1;
 	}
 }
 
@@ -115,7 +109,7 @@ void	init_function_array(t_arrays **arrays)
 	(*arrays)->functions_array[4] = &and_function;
 	(*arrays)->functions_array[5] = &or_function;
 	(*arrays)->functions_array[6] = &xor_function;
-	(*arrays)->functions_array[7] = &jump_function;
+	(*arrays)->functions_array[7] = 0;
 	(*arrays)->functions_array[8] = &load_index_function;
 	(*arrays)->functions_array[9] = &store_index_function;
 	(*arrays)->functions_array[10] = &fork_function;
@@ -145,7 +139,7 @@ void	nulling_pc(t_pc *pc, short pc_index)
 	}
 	pc->carry = 0;
 	pc->next = 0;
-	pc->jump = 0;
+	pc->action = 0;
 	pc->pc_index = pc_index;
 	pc->options = init_options(pc->options);
 	nulling_options(pc->options);
@@ -153,6 +147,7 @@ void	nulling_pc(t_pc *pc, short pc_index)
 	pc->alive_label = 0;
 	pc->time_todo = 0;
 	pc->command_wait = 0;
+	pc->pc_number = 0;
 
 }
 
@@ -172,7 +167,7 @@ void	nulling_options(t_options *options)
 	}
 }
 
-void	init_time_to_do_list(unsigned short *to_do_list)
+void		init_time_to_do_list(unsigned short *to_do_list)
 {
 	to_do_list[0] = (unsigned short)10;
 	to_do_list[1] = (unsigned short)5;
@@ -205,5 +200,23 @@ t_data_prog	*data_prog_init(void)
 	nulling_player_and_gameinfo(data_prog->player, data_prog->game_info);
 	init_options_array(&data_prog->arrays);
 	init_function_array(&data_prog->arrays);
+	data_prog->first_pc = 0;
+	data_prog->pc = init_pc();
+	nulling_pc(data_prog->pc, 0);
+	data_prog->pc->pc_number = 1;
+	data_prog->pc_number = 1;
+
 	return (data_prog);
 }
+//
+//t_exe_pc	*exe_pc_init(t_pc *pc)
+//{
+//	t_exe_pc	*exe_pc;
+//
+//	if (!(exe_pc = (t_exe_pc *)ft_memalloc(sizeof(t_exe_pc))))
+//		exit(INIT_ERR);
+//	exe_pc->pc = pc;
+//	exe_pc->pc_number = pc->pc_number;
+//	exe_pc->next = NULL;
+//	return (exe_pc);
+//}

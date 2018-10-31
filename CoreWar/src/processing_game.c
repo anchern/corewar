@@ -12,28 +12,28 @@
 
 #include "../inc/vm_init.h"
 
-static char	exist_pc(t_player *player)
-{
-	if (player == 0)
-		return (FALSE);
-	if (player->pc != 0)
-		return (TRUE);
-	return (exist_pc(player->next));
-}
-
 void		cycle_to_die_reduce(t_data_prog *data_prog, int *cycle_to_die)
 {
-	if (data_prog->player->alive_counter != -1)
+	int	sum;
+
+	sum = 0;
+	while (data_prog->player != 0)
 	{
-		if (data_prog->game_info->counter - data_prog->player->last_live >
-			*cycle_to_die)
-			data_prog->player->alive_counter = -1;
-		if (data_prog->player->alive_counter >= NBR_LIVE)
+		if (data_prog->player->alive_counter != -1)
 		{
-			data_prog->game_info->max_checks_counter = 0;
-			*cycle_to_die = *cycle_to_die - CYCLE_DELTA;
+			if (data_prog->game_info->counter - data_prog->player->last_live >
+				*cycle_to_die)
+				data_prog->player->alive_counter = -1;
+			sum += data_prog->player->alive_counter;
 		}
+		data_prog->player = data_prog->player->next;
 	}
+	if (sum >= NBR_LIVE)
+	{
+		data_prog->game_info->max_checks_counter = 0;
+		*cycle_to_die = *cycle_to_die - CYCLE_DELTA;
+	}
+	data_prog->player = data_prog->first_player;
 	if (data_prog->game_info->max_checks_counter == MAX_CHECKS)
 	{
 		*cycle_to_die = *cycle_to_die - CYCLE_DELTA;
@@ -57,8 +57,8 @@ void		death_pc_delete(t_data_prog *data_prog)
 	char	flag;
 
 	save_previous = 0;
-	first_pc = data_prog->player->pc;
-	tmp_pc = data_prog->player->pc;
+	first_pc = data_prog->pc;
+	tmp_pc = data_prog->pc;
 	if (tmp_pc->alive_label == 1)
 		flag = 1;
 	else
@@ -89,7 +89,7 @@ void		death_pc_delete(t_data_prog *data_prog)
 		tmp_pc = save_previous;
 	else if (flag == 0)
 		tmp_pc = 0;
-	data_prog->player->pc = tmp_pc;
+	data_prog->pc = tmp_pc;
 }
 
 void		nulling_alive_pc(t_pc *pc, t_data_prog *data_prog)
@@ -102,35 +102,34 @@ void		nulling_alive_pc(t_pc *pc, t_data_prog *data_prog)
 
 void		current_cycle_to_die(t_data_prog *data_prog)
 {
-	int		cycle_to_die;
-	int		current_i;
+	int			cycle_to_die;
+	int			current_i;
 
 	cycle_to_die = CYCLE_TO_DIE;
-	while (cycle_to_die > 0 && exist_pc(data_prog->player))
+	while (cycle_to_die > 0 && data_prog->pc != 0)
 	{
 		current_i = 0;
 		while (current_i < cycle_to_die)
 		{
 			current_i++;
 			data_prog->game_info->counter++;
-			goround_players(data_prog);
-			if (data_prog->game_info->counter == 22745)
+			goround_pc(data_prog);
+			if (data_prog->game_info->counter == data_prog->game_info->stop_game)
 			{
 				print_field(data_prog->game_info, 0);
-				exit(79);
+				free_memory(data_prog);
+				exit(0);
 			}
 		}
 		data_prog->game_info->max_checks_counter++;
 		cycle_to_die_reduce(data_prog, &cycle_to_die);
 		death_pc_delete(data_prog);
+		nulling_alive_pc(data_prog->pc, data_prog);
 		while (data_prog->player != 0)
 		{
-			nulling_alive_pc(data_prog->player->pc, data_prog);
 			data_prog->player->alive_counter = 0;
 			data_prog->player = data_prog->player->next;
 		}
 		data_prog->player = data_prog->first_player;
 	}
-	ft_putendl("");
-	print_field(data_prog->game_info, data_prog->player->pc);
 }

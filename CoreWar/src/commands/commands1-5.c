@@ -1,16 +1,16 @@
 #include "../../inc/vm.h"
 
-unsigned int	alive_command(t_options *options, t_data_prog *data_prog, int counter)
+unsigned int	alive_command(t_data_prog *data_prog)
 {
 	t_player *player_tmp;
 
 	player_tmp = data_prog->first_player;
-	data_prog->player->pc->alive_label = 1;
+	data_prog->pc->alive_label = 1;
 	while (player_tmp != NULL)
 	{
-		if (player_tmp->player_number == options->dir[0])
+		if (player_tmp->player_number == data_prog->pc->options->dir[0])
 		{
-			player_tmp->last_live = counter;
+			player_tmp->last_live = data_prog->game_info->counter;
 			player_tmp->alive_counter++;
 		}
 		player_tmp = player_tmp->next;
@@ -18,73 +18,71 @@ unsigned int	alive_command(t_options *options, t_data_prog *data_prog, int count
 	return (5);
 }
 
-unsigned int	load_command(t_options *options, t_player *player, t_sell *field)
+unsigned int	load_command(t_data_prog *data_prog)
 {
 	unsigned int	result;
 
 	result = 1;
-	if (options->option_number[0] == 2)
+	if (data_prog->pc->options->option_number[0] == 2)
 	{
 		result = 7;
-		player->pc->registry[options->reg[1] - 1] = options->dir[0];
+		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] = data_prog->pc->options->dir[0];
 	}
-	else if (options->option_number[0] == 3)
+	else if (data_prog->pc->options->option_number[0] == 3)
 	{
 		result = 5;
-		options->ind[0] = (short)(options->ind[0] % IDX_MOD);
-		player->pc->registry[options->reg[1] - 1] = bytestoui(field,
-				player->pc->pc_index + options->ind[0]);
+		data_prog->pc->options->ind[0] = (short)(data_prog->pc->options->ind[0] % IDX_MOD);
+		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] = bytestoui(data_prog->game_info->field,
+				data_prog->pc->pc_index + data_prog->pc->options->ind[0]);
 	}
-	if (player->pc->registry[options->reg[1] - 1] == 0)
-		player->pc->carry = 1;
+	if (data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] == 0)
+		data_prog->pc->carry = 1;
 	else
-		player->pc->carry = 0;
+		data_prog->pc->carry = 0;
 	return (result);
 }
 
 
-unsigned int	store_command(t_options *options, t_player *player, t_sell *field)
+unsigned int	store_command(t_data_prog *data_prog)
 {
 	unsigned int	result;
 	static char counter;
 
 	result = 1;
 	counter = 0;
-	if (options->option_number[1] == 3)
+	if (data_prog->pc->options->option_number[1] == 3)
 	{
-//		ft_printf("\n!%#06x = %08x -> ", true_value_pc_index(player->pc->pc_index + (short)(options->ind[1] % IDX_MOD)), bytestoui(field, true_value_pc_index(player->pc->pc_index + (short)(options->ind[1] % IDX_MOD))));
-		uitobytes(player->pc->registry[options->reg[0] - 1], field,
-			player->pc->pc_index + (short)(options->ind[1] % IDX_MOD));
+		uitobytes(data_prog->pc->registry[data_prog->pc->options->reg[0] - 1], data_prog->game_info->field,
+			data_prog->pc->pc_index + (short)(data_prog->pc->options->ind[1] % IDX_MOD));
 		result = 5;
-//		ft_printf("%08x, reg #%i!\n", player->pc->registry[options->reg[0] - 1], options->reg[0]);
 	}
-	else if (options->option_number[1] == 1)
+	else if (data_prog->pc->options->option_number[1] == 1)
 	{
-		player->pc->registry[options->reg[1] - 1] =
-				player->pc->registry[options->reg[0] - 1];
+		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] =
+				data_prog->pc->registry[data_prog->pc->options->reg[0] - 1];
 		result = 4;
 	}
 	return (result);
 }
 
-unsigned int	 addition_command(t_options *options, t_player *player)
+unsigned int	 addition_command(t_data_prog *data_prog)
 {
-	player->pc->registry[options->reg[2] - 1] = player->pc->registry[options->reg[0] - 1]
-			+ player->pc->registry[options->reg[1] - 1];
-	if (player->pc->registry[options->reg[2] - 1] == 0)
-		player->pc->carry = 1;
+	data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] = data_prog->pc->registry[data_prog->pc->options->reg[0] - 1]
+			+ data_prog->pc->registry[data_prog->pc->options->reg[1] - 1];
+	if (data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] == 0)
+		data_prog->pc->carry = 1;
 	else
-		player->pc->carry = 0;
+		data_prog->pc->carry = 0;
 	return (5);
 }
 
-unsigned int	substraction_command(t_options *options, t_player *player)
+unsigned int	substraction_command(t_data_prog *data_prog)
 {
-	player->pc->registry[options->reg[2] - 1] = player->pc->registry[options->reg[0] - 1]
-										- player->pc->registry[options->reg[1] - 1];
-	if (player->pc->registry[options->reg[2] - 1] == 0)
-		player->pc->carry = 1;
+	data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] = data_prog->pc->registry[data_prog->pc->options->reg[0] - 1]
+										- data_prog->pc->registry[data_prog->pc->options->reg[1] - 1];
+	if (data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] == 0)
+		data_prog->pc->carry = 1;
 	else
-		player->pc->carry = 0;
+		data_prog->pc->carry = 0;
 	return (5);
 }

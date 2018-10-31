@@ -119,42 +119,44 @@ void		check_players_numbers(t_player *player, char quantity,
 {
 	while (player != NULL)
 	{
-		if ((int)player->player_number > (int)quantity)
+		if (player->player_number < (unsigned)-quantity || player->player_number == 0)
 			player->player_number = get_free_number(free_numbers);
 		player = player->next;
 	}
 }
 
-void		set_registry(t_player *player)
+void		set_registry(t_pc *pc, unsigned int num)
 {
-	if (player == 0)
+	if (pc == 0)
 		return ;
-	player->pc->registry[0] = player->player_number;
-	set_registry(player->next);
+	pc->registry[0] = num;
+	set_registry(pc->next, num + 1);
 }
 
-void		set_start_pc_index(t_player *player, char quantity)
+void		set_start_pc_index(t_pc *pc, char quantity, char i)
 {
-	short	start_index;
 
-	start_index = 0;
-	while (player != NULL)
+	if (pc->next == 0)
 	{
-		player->pc->pc_index = start_index;
-		start_index += FIELD_SIZE / quantity;
-		player = player->next;
+		pc->pc_index = 0;
+		return ;
 	}
+	pc->pc_index = (short)(FIELD_SIZE / quantity * i);
+	set_start_pc_index(pc->next, quantity, i - (char)1);
 }
 
 void		set_players(t_data_prog *data_prog, int start_arg, int argc, char **argv)
 {
-	int			fd;
-	unsigned	free_numbers[MAX_PLAYERS];
-	t_player	*current_player;
-	t_player	*new_player;
-	char		quantity_players;
-	int			file_names_number[4];
-	char		quantity_files;
+	int				fd;
+	unsigned		free_numbers[MAX_PLAYERS];
+	t_player		*current_player;
+	t_player		*new_player;
+	t_pc			*new_pc;
+	char			quantity_players;
+	int				file_names_number[4];
+	char			quantity_files;
+	unsigned int	player_number;
+
 
 	set_start_numbers(free_numbers);
 	current_player = data_prog->player;
@@ -167,37 +169,55 @@ void		set_players(t_data_prog *data_prog, int start_arg, int argc, char **argv)
 			new_player = init_player();
 			nulling_player_and_gameinfo(new_player, 0);
 			new_player->next = current_player;
-			data_prog->player = new_player;
 			current_player = new_player;
+			data_prog->player = new_player;
+			new_pc = init_pc();
+			nulling_pc(new_pc, 0);
+			new_pc->pc_number = ++data_prog->pc_number;
+			if (data_prog->pc == 0)
+				data_prog->pc = new_pc;
+			else
+			{
+				new_pc->next = data_prog->pc;
+				data_prog->pc = new_pc;
+			}
 		}
 		if (!ft_strcmp(argv[start_arg], "-n"))
 		{
 			if (start_arg + 1 == argc)
 				exit(ARG_ERR);
-			current_player->player_number = (unsigned)ft_atoi(argv[++start_arg]);
+			current_player->player_number = (unsigned)-ft_atoi(argv[++start_arg]);
 			if (!is_valid_number(data_prog->player, current_player))
 				current_player->player_number = get_free_number(free_numbers);
+			free_numbers[-(int)current_player->player_number - 1] = 0;
 			start_arg++;
 		}
 		else
 			current_player->player_number = get_free_number(free_numbers);
-		file_names_number[quantity_files++] = start_arg++;
+		current_player->file_name = argv[start_arg++];
 		quantity_players++;
 	}
 	check_players_numbers(data_prog->player, quantity_players, free_numbers);
-	set_registry(data_prog->player);
-	set_start_pc_index(data_prog->player, quantity_players);
-	current_player = data_prog->player;
-	quantity_files = 0;
-	while (current_player != 0)
+	set_registry(data_prog->pc, (unsigned int)-quantity_players);
+	set_start_pc_index(data_prog->pc, quantity_players, (char)(quantity_players - 1));
+	player_number = (unsigned)-quantity_players;
+	data_prog->first_pc = data_prog->pc;
+	while (current_player != NULL)
 	{
-		if ((fd = read_header(data_prog->game_info, current_player->header,
-							  argv[file_names_number[quantity_files]],
-							  current_player->pc->pc_index))) {
-			close(fd);
-			exit(FILE_INFORM_ERR);
+		if (current_player->player_number == player_number)
+		{
+			if ((fd = read_header(data_prog->game_info, current_player->header,
+								  current_player->file_name,
+								  data_prog->pc->pc_index))) {
+				close(fd);
+				exit(FILE_INFORM_ERR);
+			}
+			player_number++;
+			current_player = data_prog->player;
+			data_prog->pc = data_prog->pc->next;
 		}
-		quantity_files++;
-		current_player = current_player->next;
+		else
+			current_player = current_player->next;
 	}
+	data_prog->pc = data_prog->first_pc;
 }
