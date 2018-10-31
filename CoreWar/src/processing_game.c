@@ -28,13 +28,13 @@ void		cycle_to_die_reduce(t_data_prog *data_prog, int *cycle_to_die)
 		if (data_prog->game_info->counter - data_prog->player->last_live >
 			*cycle_to_die)
 			data_prog->player->alive_counter = -1;
-		if (data_prog->player->alive_counter > 21)
+		if (data_prog->player->alive_counter >= NBR_LIVE)
 		{
 			data_prog->game_info->max_checks_counter = 0;
 			*cycle_to_die = *cycle_to_die - CYCLE_DELTA;
 		}
 	}
-	if (data_prog->game_info->max_checks_counter == 10)
+	if (data_prog->game_info->max_checks_counter == MAX_CHECKS)
 	{
 		*cycle_to_die = *cycle_to_die - CYCLE_DELTA;
 		data_prog->game_info->max_checks_counter = 0;
@@ -111,9 +111,14 @@ void		current_cycle_to_die(t_data_prog *data_prog)
 		current_i = 0;
 		while (current_i < cycle_to_die)
 		{
-			goround_players(data_prog);
 			current_i++;
 			data_prog->game_info->counter++;
+			goround_players(data_prog);
+			if (data_prog->game_info->counter == 22745)
+			{
+				print_field(data_prog->game_info, 0);
+				exit(79);
+			}
 		}
 		data_prog->game_info->max_checks_counter++;
 		cycle_to_die_reduce(data_prog, &cycle_to_die);

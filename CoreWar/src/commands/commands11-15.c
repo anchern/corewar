@@ -54,6 +54,8 @@ unsigned int	fork_function(t_options *options, t_player *player)
 	nulling_pc(new_pc, true_value_pc_index(player->pc->pc_index + (short)((short)options->dir[0] % IDX_MOD)));
 	new_pc->alive_label = player->pc->alive_label;
 	new_pc->label = 0;
+	new_pc->command_wait = 1;
+	new_pc->pc_number  = ++player->pc_number;
 	new_pc->carry = player->pc->carry;
 	copy_registry(new_pc, player->pc);
 	new_pc->next = player->first_pc;
@@ -141,7 +143,9 @@ unsigned int	long_fork_function(t_options *options, t_player *player)
 	nulling_pc(new_pc, true_value_pc_index(player->pc->pc_index + (short)options->dir[0]));
 	new_pc->alive_label = player->pc->alive_label;
 	new_pc->label = 0;
+	new_pc->command_wait = 1;
 	new_pc->carry = player->pc->carry;
+	new_pc->pc_number  = ++player->pc_number;
 	copy_registry(new_pc, player->pc);
 	new_pc->next = player->first_pc;
 	player->first_pc = new_pc;

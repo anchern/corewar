@@ -68,6 +68,9 @@ static void	set_options(t_data_prog *data_prog)
 {
 	unsigned char value;
 	char tmp;
+	short	save_pc;
+	short	save_cmd;
+
 
 	value = data_prog->player->pc->command;
 	if (value == 1)
@@ -85,7 +88,26 @@ static void	set_options(t_data_prog *data_prog)
 	else
 		tmp = 0;
 	if (tmp == -1)
+	{
+		save_pc = data_prog->player->pc->pc_index;
+		save_cmd = data_prog->player->pc->command;
 		execute_command(data_prog);
+//		if (value == 9 && data_prog->player->pc->carry == 1)
+//			;
+////			ft_printf("P %4i | ", data_prog->player->pc->pc_number);
+//		else
+//		{
+////			if (data_prog->player->pc->command == 9)
+////				ft_printf("carry = %d ", data_prog->player->pc->carry);
+//			ft_printf("P %4i\tcommand: %x\t\t\t", data_prog->player->pc->pc_number, save_cmd);
+//			ft_printf("%#06x -> %#06x %i %i ", save_pc,
+//					  data_prog->player->pc->pc_index,
+//					  data_prog->player->pc->pc_index - save_pc,
+//					  data_prog->game_info->counter);
+//			ft_printf("reg: %x %x\n", data_prog->player->pc->registry[1],
+//					  data_prog->player->pc->registry[2]);
+//		}
+	}
 	else
 	{
 		data_prog->player->pc->pc_index += (unsigned char)(tmp + 2);
@@ -104,36 +126,41 @@ void get_command(t_data_prog *data_prog)
 		data_prog->player->pc->time_todo =
 				data_prog->to_do_list[
 						data_prog->game_info->field[data_prog->player->pc->pc_index].value -
-						1] - (short)1;
+						1] - 1;
 	}
 	else
 		data_prog->player->pc->pc_index++;
+
+	data_prog->player->pc->pc_index =
+			true_value_pc_index(data_prog->player->pc->pc_index);
 }
 
-static void	processing_pc(t_data_prog *data_prog)
+void	processing_pc(t_data_prog *data_prog)
 {
 	short	save_pc;
 	char tmp = 0;
 
 	save_pc = data_prog->player->pc->pc_index;
-	if (data_prog->player->pc->command == 0)
-		get_command(data_prog);
-	else if (data_prog->player->pc->time_todo == 0)
+	data_prog->player->pc->time_todo--;
+	if (data_prog->player->pc->time_todo == 0)
 	{
 		if (data_prog->player->pc->command == 9)
 			tmp = 1;
 		if (tmp == 1 && data_prog->player->pc->carry == 1)
-			;
+		{
+//			ft_printf("P %4i | ", data_prog->player->pc->pc_number);
+		}
 		else
 		{
 			if (data_prog->player->pc->command == 9)
 				ft_printf("carry = %d ", data_prog->player->pc->carry);
-			ft_printf("command: %x\t\t\t", data_prog->player->pc->command);
+			ft_printf("P %4i\tcommand: %x\t\t\t", data_prog->player->pc->pc_number, data_prog->player->pc->command);
 		}
 		set_options(data_prog);
+		data_prog->player->pc->command_wait = 1;
 		if (tmp == 1 && data_prog->player->pc->carry == 1)
 		{
-
+//			ft_printf("zjmp %i OK\n", data_prog->player->pc->pc_index - save_pc);
 		}
 		else
 		{
@@ -146,54 +173,46 @@ static void	processing_pc(t_data_prog *data_prog)
 			ft_printf("reg: %x %x\n", data_prog->player->pc->registry[1],
 					  data_prog->player->pc->registry[2]);
 		}
-		get_command(data_prog);
-
 	}
-	else
-		data_prog->player->pc->time_todo--;
 	data_prog->player->pc->pc_index =
 			true_value_pc_index(data_prog->player->pc->pc_index);
-}
-
-void	nulling_pc_label(t_pc *pc)
-{
-	while (pc != NULL)
-	{
-		pc->label = 0;
-		pc = pc->next;
-	}
 }
 
 static void	goround_pc(t_data_prog *data_prog)
 {
 	data_prog->player->first_pc = data_prog->player->pc;
-	nulling_pc_label(data_prog->player->pc);
-	while(1)
+	while (data_prog->player->pc != 0)
 	{
-		if (data_prog->player->pc->label == 1)
-			break ;
-		while (data_prog->player->pc != 0 && data_prog->player->pc->label == 0)
-		{
+		if (data_prog->player->pc->command != 0)
 			processing_pc(data_prog);
-			data_prog->player->pc->label = 1;
-			data_prog->player->pc = data_prog->player->pc->next;
-		}
-		data_prog->player->pc = data_prog->player->first_pc;
+		data_prog->player->pc = data_prog->player->pc->next;
 	}
-	if (data_prog->game_info->counter == 8000)
-	{
-		print_field(data_prog->game_info, 0);
-		exit(79);
-	}
+	data_prog->player->pc = data_prog->player->first_pc;
 }
 
+
+void		get_commands_pc(t_data_prog *data_prog)
+{
+	data_prog->player->first_pc = data_prog->player->pc;
+	while (data_prog->player->pc != 0)
+	{
+		if (data_prog->player->pc->command == 0 && data_prog->player->pc->command_wait == 0)
+			get_command(data_prog);
+		data_prog->player->pc->command_wait = 0;
+		data_prog->player->pc = data_prog->player->pc->next;
+	}
+	data_prog->player->pc = data_prog->player->first_pc;
+
+}
 void		goround_players(t_data_prog *data_prog)
 {
 	data_prog->first_player = data_prog->player;
 	while(data_prog->player != 0)
 	{
 		goround_pc(data_prog);
+		get_commands_pc(data_prog);
 		data_prog->player = data_prog->player->next;
 	}
+
 	data_prog->player = data_prog->first_player;
 }

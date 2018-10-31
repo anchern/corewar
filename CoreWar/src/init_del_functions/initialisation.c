@@ -53,10 +53,12 @@ void	nulling_player_and_gameinfo(t_player *player, t_game_info *game_info)
 		player->alive_counter = 0;
 		player->last_live = 0;
 		player->player_number = 0;
+		player->pc_number = 1;
 		player->next = NULL;
 		player->header = init_header(player->header);
 		nulling_header(player->header);
 		player->pc = init_pc();
+		player->pc->pc_number = 1;
 		nulling_pc(player->pc, 0);
 		player->first_pc = player->pc;
 
@@ -150,6 +152,7 @@ void	nulling_pc(t_pc *pc, short pc_index)
 	pc->command = 0;
 	pc->alive_label = 0;
 	pc->time_todo = 0;
+	pc->command_wait = 0;
 
 }
 

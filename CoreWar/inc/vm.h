@@ -40,7 +40,9 @@ typedef struct			s_pc
 	unsigned char		alive_label;
 	unsigned short		time_todo;
 	unsigned char		command;
+	unsigned char		command_wait;
 	unsigned char		jump;
+	int 				pc_number;
 	char 				label;
 	char				carry;
 	unsigned int 		registry[REG_NUMBER];
@@ -54,6 +56,7 @@ typedef struct			s_player
 	unsigned			player_number;
 	int 				alive_counter;
 	int 				last_live;
+	int 				pc_number;
 	t_pc				*pc;
 	t_pc				*first_pc;
 	struct	s_player 	*next;
@@ -146,4 +149,5 @@ void					print_field(t_game_info *game_info, t_pc *pc);
 char					get_indent_pc(unsigned char codage_octal,
 										char dir_size);
 void					copy_registry(t_pc *new_pc, t_pc *pc);
+void					processing_pc(t_data_prog *data_prog);
 #endif
