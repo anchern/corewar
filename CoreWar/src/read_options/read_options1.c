@@ -66,7 +66,8 @@ char	r_ri_options(t_options *opt, t_sell *field, short pc_i)
 	else
 	{
 		opt->option_number[1] = 1;
-		opt->reg[1] = field[true_value_pc_index(pc_i + 2)].value > 16 ? 0 : field[true_value_pc_index(pc_i + 2)].value;
+		opt->reg[1] = field[true_value_pc_index(pc_i + 2)].value > 16 ? 0 :
+				field[true_value_pc_index(pc_i + 2)].value;
 	}
 	if (opt->reg[0] == 0 || (opt->option_number[1] == 1 && opt->reg[1] == 0))
 		return (add_indent(FIRST_CODE(field[pc_i].value), 4) +
@@ -100,6 +101,8 @@ char	r_options(t_options *options, t_sell *field, short pc_i)
 	if (field[pc_i].value >> 6 != 1)
 		return (add_indent(FIRST_CODE(field[pc_i].value), 4));
 	options->option_number[0] = 1;
-	options->reg[0] = field[true_value_pc_index(pc_i + 1)].value > 16 ? 0 : field[true_value_pc_index(pc_i + 1)].value;
-	return (options->reg[1] == 0 ? add_indent(FIRST_CODE(field[pc_i].value), 4) : -1);
+	options->reg[0] = field[true_value_pc_index(pc_i + 1)].value > 16 ? 0 :
+			field[true_value_pc_index(pc_i + 1)].value;
+	return (options->reg[1] == 0 ?
+	add_indent(FIRST_CODE(field[pc_i].value), 4) : -1);
 }

@@ -35,9 +35,7 @@ void	print_field(t_game_info *game_info, t_pc *pc)
 	i = 0;
 	ft_printf("%9c", ' ');
 	for (int i = 0; i < 64; i++)
-	{
 		ft_printf("%02x ", i);
-	}
 	ft_printf("\n");
 	for (int i = 0; i < 64 * 3 + 8; i++)
 		ft_printf("-");
@@ -65,41 +63,11 @@ void	print_field(t_game_info *game_info, t_pc *pc)
 	nulling_print_pc(game_info, pc);
 }
 
-
-
-
-
-int main(int argc, char **argv)
+void		print_winner(t_data_prog *data_prog)
 {
-	t_data_prog 	*data_prog;
 	int 			last_alive;
 	t_player		*winner;
-	unsigned int	player_number;
-
-	data_prog = data_prog_init();
-	if (ft_strcmp(argv[1], "-d") == 0)
-	{
-		data_prog->game_info->stop_game = ft_atoi(argv[2]);
-		set_players(data_prog, 3, argc, argv);
-	}
-	else
-		set_players(data_prog, 1, argc, argv);
-	data_prog->first_player = data_prog->player;
-	player_number = (unsigned)-1;
-	while (data_prog->player != NULL)
-	{
-		if (data_prog->player->player_number == player_number)
-		{
-			ft_printf("* Player %d, weighing %u bytes, \"%s\" (\"%s\") !\n", -(int)data_prog->player->player_number,
-					data_prog->player->header->prog_size, data_prog->player->header->prog_name, data_prog->player->header->comment);
-			player_number--;
-			data_prog->player = data_prog->first_player;
-		}
-		else
-			data_prog->player = data_prog->player->next;
-	}
-	data_prog->player = data_prog->first_player;
-	current_cycle_to_die(data_prog);
+	
 	last_alive = data_prog->player->last_live;
 	winner = data_prog->player;
 	while (data_prog->player != NULL)
@@ -111,7 +79,49 @@ int main(int argc, char **argv)
 		}
 		data_prog->player = data_prog->player->next;
 	}
-	ft_printf("Player %d, \"%s\", has won !\n", -(int)winner->player_number, winner->header->prog_name);
+	ft_printf("Player %d, \"%s\", has won !\n", -(int)winner->player_number,
+			winner->header->prog_name);
+}
+
+void		print_players(t_data_prog *data_prog)
+{
+	unsigned int	player_number;
+	
+	player_number = (unsigned)-1;
+	while (data_prog->player != NULL)
+	{
+		if (data_prog->player->player_number == player_number)
+		{
+			ft_printf("* Player %d, weighing %u bytes, \"%s\" (\"%s\") !\n",
+					-(int)data_prog->player->player_number,
+					  data_prog->player->header->prog_size,
+					  data_prog->player->header->prog_name,
+					  data_prog->player->header->comment);
+			player_number--;
+			data_prog->player = data_prog->first_player;
+		}
+		else
+			data_prog->player = data_prog->player->next;
+	}
+	data_prog->player = data_prog->first_player;
+}
+
+int main(int argc, char **argv)
+{
+	t_data_prog 	*data_prog;
+	
+	data_prog = data_prog_init();
+	if (ft_strcmp(argv[1], "-d") == 0)
+	{
+		data_prog->game_info->stop_game = ft_atoi(argv[2]);
+		set_players(data_prog, 3, argc, argv);
+	}
+	else
+		set_players(data_prog, 1, argc, argv);
+	data_prog->first_player = data_prog->player;
+	print_players(data_prog);
+	current_cycle_to_die(data_prog);
+	print_winner(data_prog);
 	free_memory(data_prog);
 	return (0);
 }

@@ -90,8 +90,8 @@ char		rdi_rd_r_options(t_options *opt, t_sell *field, short pc_i)
 	indent)], opt, 0))
 		return (get_indent_pc(field[pc_i].value, 2));
 	indent += add_indent(opt->option_number[0], 2);
-	if (!save[(field[pc_i].value >> 4 & 3) - 1](&field[true_value_pc_index(pc_i +
-																		   indent)], opt, 1))
+	if (!save[(field[pc_i].value >> 4 & 3) - 1](&field[true_value_pc_index(pc_i
+	+ indent)], opt, 1))
 		return (get_indent_pc(field[pc_i].value, 2));
 	indent += add_indent(opt->option_number[1], 2);
 	if (!save[0](&field[pc_i + indent], opt, 2))

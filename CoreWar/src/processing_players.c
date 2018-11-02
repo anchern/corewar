@@ -65,7 +65,6 @@ static void	set_options(t_data_prog *data_prog)
 	unsigned char value;
 	char tmp;
 
-
 	value = data_prog->pc->command;
 	if (value == 1)
 	{
@@ -88,7 +87,6 @@ static void	set_options(t_data_prog *data_prog)
 		data_prog->pc->pc_index += (unsigned char)(tmp + 2);
 		data_prog->pc->command = 0;
 	}
-
 }
 
 void get_command(t_data_prog *data_prog)
@@ -100,13 +98,12 @@ void get_command(t_data_prog *data_prog)
 				data_prog->game_info->field[data_prog->pc->pc_index].value;
 		data_prog->pc->time_todo =
 				data_prog->to_do_list[
-						data_prog->game_info->field[data_prog->pc->pc_index].value -
+					data_prog->game_info->field[data_prog->pc->pc_index].value -
 						1] - 2;
 		data_prog->pc->action = 2;
 	}
 	else
 		data_prog->pc->pc_index++;
-
 	data_prog->pc->pc_index =
 			true_value_pc_index(data_prog->pc->pc_index);
 }
@@ -150,7 +147,6 @@ void	goround_pc(t_data_prog *data_prog)
 		}
 		else
 			data_prog->pc->time_todo--;
-
 		data_prog->pc = data_prog->pc->next;
 	}
 	data_prog->pc = data_prog->first_pc;

@@ -26,13 +26,16 @@ unsigned int	load_command(t_data_prog *data_prog)
 	if (data_prog->pc->options->option_number[0] == 2)
 	{
 		result = 7;
-		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] = data_prog->pc->options->dir[0];
+		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] =
+				data_prog->pc->options->dir[0];
 	}
 	else if (data_prog->pc->options->option_number[0] == 3)
 	{
 		result = 5;
-		data_prog->pc->options->ind[0] = (short)(data_prog->pc->options->ind[0] % IDX_MOD);
-		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] = bytestoui(data_prog->game_info->field,
+		data_prog->pc->options->ind[0] =
+				(short)(data_prog->pc->options->ind[0] % IDX_MOD);
+		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] =
+				bytestoui(data_prog->game_info->field,
 				data_prog->pc->pc_index + data_prog->pc->options->ind[0]);
 	}
 	if (data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] == 0)
@@ -46,14 +49,14 @@ unsigned int	load_command(t_data_prog *data_prog)
 unsigned int	store_command(t_data_prog *data_prog)
 {
 	unsigned int	result;
-	static char counter;
 
 	result = 1;
-	counter = 0;
 	if (data_prog->pc->options->option_number[1] == 3)
 	{
-		uitobytes(data_prog->pc->registry[data_prog->pc->options->reg[0] - 1], data_prog->game_info->field,
-			data_prog->pc->pc_index + (short)(data_prog->pc->options->ind[1] % IDX_MOD));
+		uitobytes(data_prog->pc->registry[data_prog->pc->options->reg[0] - 1],
+				data_prog->game_info->field,
+			data_prog->pc->pc_index +
+			(short)(data_prog->pc->options->ind[1] % IDX_MOD));
 		result = 5;
 	}
 	else if (data_prog->pc->options->option_number[1] == 1)
@@ -67,7 +70,8 @@ unsigned int	store_command(t_data_prog *data_prog)
 
 unsigned int	 addition_command(t_data_prog *data_prog)
 {
-	data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] = data_prog->pc->registry[data_prog->pc->options->reg[0] - 1]
+	data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] =
+			data_prog->pc->registry[data_prog->pc->options->reg[0] - 1]
 			+ data_prog->pc->registry[data_prog->pc->options->reg[1] - 1];
 	if (data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] == 0)
 		data_prog->pc->carry = 1;
@@ -78,8 +82,9 @@ unsigned int	 addition_command(t_data_prog *data_prog)
 
 unsigned int	substraction_command(t_data_prog *data_prog)
 {
-	data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] = data_prog->pc->registry[data_prog->pc->options->reg[0] - 1]
-										- data_prog->pc->registry[data_prog->pc->options->reg[1] - 1];
+	data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] =
+			data_prog->pc->registry[data_prog->pc->options->reg[0] - 1]
+			- data_prog->pc->registry[data_prog->pc->options->reg[1] - 1];
 	if (data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] == 0)
 		data_prog->pc->carry = 1;
 	else

@@ -23,8 +23,8 @@ void	save_in_var(unsigned int *var, unsigned char *arr)
 void	copy_field(t_game_info *game_info, unsigned char *field, int field_size,
 				   short start_position)
 {
-	int				i;
-
+	int i;
+	
 	i = 0;
 	while (i < field_size)
 	{
@@ -39,7 +39,7 @@ int		read_header(t_game_info *game_info, header_t *header, char *filename,
 	unsigned char	buf[COMMENT_LENGTH + 1];
 	int				fd;
 	ssize_t 		rd;
-
+	
 	if ((fd = open(filename, O_RDONLY)) < 0)
 		file_error(filename);
 	header->magic = 0;
@@ -70,10 +70,10 @@ int		read_header(t_game_info *game_info, header_t *header, char *filename,
 	return (0);
 }
 
-void		set_start_numbers(unsigned *free_numbers)
+void	set_start_numbers(unsigned *free_numbers)
 {
 	int	i;
-
+	
 	i = 0;
 	while (i < MAX_PLAYERS)
 	{
