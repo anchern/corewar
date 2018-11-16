@@ -8,25 +8,7 @@ include_directories(lib/mylib)
 #add_definitions("-Wall -Wextra -Werror -O3")
 
 
-add_executable(corewar src/main.c inc/vm.h inc/op.h
-        src/iobytes.c src/read_options/read_options1.c src/additional_function.c
-        src/read_options/read_options2.c src/read_options/for_read_options.c
-        src/processing_program_args/processing_players_args.c inc/errors.h
-        src/errors/errors1.c
-        inc/vm_init.h src/processing_game.c src/processing_players.c
-        src/init_del_functions/free_memory.c src/print_field.c
-        src/get_flags.c src/print_usage.c
-        src/commands/commands1_5.c
-        src/commands/commands6_10.c
-        src/commands/commands11_15.c
-        src/commands/dop6_10commands.c
-        src/commands/dop11_15commands.c
-        src/init_del_functions/init_data_prog.c
-        src/init_del_functions/init_and_nulling_options.c
-        src/init_del_functions/init_and_nulling_pc.c
-        src/init_del_functions/init_and_nulling_player_and_game_info.c
-        src/init_del_functions/init_arrays.c
-        src/init_del_functions/init_and_nulling_header.c)
+add_executable(corewar src/main.c inc/vm.h inc/op.h src/commands/commands1_5.c src/commands/commands6_10.c src/commands/commands11_15.c src/iobytes.c src/read_options/read_options1.c src/additional_function.c src/read_options/read_options2.c src/read_options/for_read_options.c src/processing_program_args/processing_players_args.c inc/errors.h src/errors/errors1.c inc/vm_init.h src/processing_game.c src/processing_players.c src/init_del_functions/free_memory.c)
 
 add_subdirectory(lib/mylib)
 
