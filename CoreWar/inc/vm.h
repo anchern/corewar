@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vm.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/24 04:10:21 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/16 07:05:27 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,5 +142,18 @@ char					get_indent_pc(unsigned char codage_octal,
 void					copy_registry(t_pc *new_pc, t_pc *pc);
 void					goround_pc(t_data_prog *data_prog);
 void					free_memory(t_data_prog *data_prog);
+unsigned int			dop_load_index_function(t_data_prog *data_prog, unsigned int
+result, unsigned int a, unsigned int b);
+void					dop_xor_function(t_data_prog *data_prog, unsigned int *result,
+								 unsigned int a, unsigned int b);
+void					dop_or_function(t_data_prog *data_prog, unsigned int *result,
+								unsigned int a, unsigned int b);
+void					dop_and_function(t_data_prog *data_prog, unsigned int *result,
+								 unsigned int a, unsigned int b);
+unsigned int			dop_long_load_index_function(t_data_prog *data_prog,
+											 unsigned int result, unsigned
+											 int a, unsigned int b);
+unsigned int			dop_store_index_function(t_data_prog *data_prog,
+										 unsigned int result, unsigned int b);
 
 #endif

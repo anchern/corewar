@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   commands1-5.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dlewando <dlewando@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/16 06:54:57 by dlewando          #+#    #+#             */
+/*   Updated: 2018/11/16 07:14:09 by dlewando         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/vm.h"
 
 unsigned int	alive_command(t_data_prog *data_prog)
@@ -20,7 +32,7 @@ unsigned int	alive_command(t_data_prog *data_prog)
 
 unsigned int	load_command(t_data_prog *data_prog)
 {
-	unsigned int	result;
+	unsigned int result;
 
 	result = 1;
 	if (data_prog->pc->options->option_number[0] == 2)
@@ -45,10 +57,9 @@ unsigned int	load_command(t_data_prog *data_prog)
 	return (result);
 }
 
-
 unsigned int	store_command(t_data_prog *data_prog)
 {
-	unsigned int	result;
+	unsigned int result;
 
 	result = 1;
 	if (data_prog->pc->options->option_number[1] == 3)
@@ -68,7 +79,7 @@ unsigned int	store_command(t_data_prog *data_prog)
 	return (result);
 }
 
-unsigned int	 addition_command(t_data_prog *data_prog)
+unsigned int	addition_command(t_data_prog *data_prog)
 {
 	data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] =
 			data_prog->pc->registry[data_prog->pc->options->reg[0] - 1]
