@@ -3,71 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 02:41:55 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/13 00:49:02 by achernys         ###   ########.fr       */
+/*   Updated: 2018/11/16 11:07:37 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/vm_init.h"
-
-void	print_pc(t_game_info *game_info, t_pc *pc)
-{
-	if (pc == 0)
-		return ;
-	game_info->field[pc->pc_index].owner = 1;
-	print_pc(game_info, pc->next);
-}
-
-void	nulling_print_pc(t_game_info *game_info, t_pc *pc)
-{
-	if (pc == 0)
-		return ;
-	game_info->field[pc->pc_index].owner = 0;
-	nulling_print_pc(game_info, pc->next);
-}
-
-void	print_field(t_game_info *game_info, t_pc *pc)
-{
-	int		i;
-
-	i = 0;
-	ft_printf("%9c", ' ');
-	for (int i = 0; i < 64; i++)
-		ft_printf("%02x ", i);
-	ft_printf("\n");
-	for (int i = 0; i < 64 * 3 + 8; i++)
-		ft_printf("-");
-	ft_printf("\n");
-	print_pc(game_info, pc);
-	ft_printf("0x0000 : ");
-	while (i < FIELD_SIZE)
-	{
-//		if (game_info->field[i].value == 2 || (game_info->field[i].value >= 4 && game_info->field[i].value <= 8) || game_info->field[i].value == 10 || game_info->field[i].value == 13 || game_info->field[i].value == 14)
-//			ft_printf("{red}%02x{eoc}", game_info->field[i].value);
-//		else if (game_info->field[i].owner == 1)
-//			ft_printf("{blue}%02x{eoc}", game_info->field[i].value);
-//		else
-		ft_printf("%02x", game_info->field[i].value);
-		if (!((i + 1) % 64))
-		{
-			ft_printf("\n");
-			if (i != FIELD_SIZE - 1)
-				ft_printf("%#06x : ", i + 1);
-		}
-		else
-			ft_printf(" ");
-		i++;
-	}
-	nulling_print_pc(game_info, pc);
-}
+#include "../lib/mylib/get_next_line.h"
 
 void		print_winner(t_data_prog *data_prog)
 {
 	int 			last_alive;
 	t_player		*winner;
-	
+
 	last_alive = data_prog->player->last_live;
 	winner = data_prog->player;
 	while (data_prog->player != NULL)
@@ -86,7 +36,8 @@ void		print_winner(t_data_prog *data_prog)
 void		print_players(t_data_prog *data_prog)
 {
 	unsigned int	player_number;
-	
+
+	data_prog->first_player = data_prog->player;
 	player_number = (unsigned)-1;
 	while (data_prog->player != NULL)
 	{
@@ -108,18 +59,25 @@ void		print_players(t_data_prog *data_prog)
 
 int main(int argc, char **argv)
 {
-	t_data_prog 	*data_prog;
-	
+	int			tmp;
+	t_data_prog *data_prog;
+	int			start_player_arg_num;
+	char		*line;
+
+	if (argc == 1)
+		print_usage();
 	data_prog = data_prog_init();
-	if (ft_strcmp(argv[1], "-d") == 0)
-	{
-		data_prog->game_info->stop_game = ft_atoi(argv[2]);
-		set_players(data_prog, 3, argc, argv);
-	}
-	else
-		set_players(data_prog, 1, argc, argv);
-	data_prog->first_player = data_prog->player;
+	start_player_arg_num = get_flags(data_prog, argv, argc);
+	set_players(data_prog, start_player_arg_num, argc, argv);
 	print_players(data_prog);
+	if (data_prog->game_info->flag_s > 0)
+	{
+		print_field(data_prog->game_info);
+		get_next_line(0, &line);
+		if ((tmp = ft_atoi(line)) > 0)
+			data_prog->game_info->flag_s = tmp;
+		free(line);
+	}
 	current_cycle_to_die(data_prog);
 	print_winner(data_prog);
 	free_memory(data_prog);

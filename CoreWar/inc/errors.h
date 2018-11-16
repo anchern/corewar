@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef ERRORS_H
-#define ERRORS_H
+# define ERRORS_H
 
 # define MANY_PLAYERS_ERR 70
 # define FILE_ERR 71

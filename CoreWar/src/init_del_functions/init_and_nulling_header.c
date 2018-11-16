@@ -12,14 +12,14 @@
 
 #include "../../inc/vm_init.h"
 
-header_t	*init_header(header_t *header)
+t_header	*init_header(t_header *header)
 {
-	if (!(header = (header_t *)ft_memalloc(sizeof(header_t))))
+	if (!(header = (t_header *)ft_memalloc(sizeof(t_header))))
 		exit(INIT_ERR);
 	return (header);
 }
 
-void		nulling_header(header_t *header)
+void		nulling_header(t_header *header)
 {
 	header->magic = 0;
 	header->prog_size = 0;

@@ -6,7 +6,7 @@
 /*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/28 01:34:51 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/03 21:24:44 by achernys         ###   ########.fr       */
+/*   Updated: 2018/11/16 11:19:34 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	copy_field(t_game_info *game_info, unsigned char *field, int field_size,
 	}
 }
 
-int		read_header(t_game_info *game_info, header_t *header, char *filename,
+int		read_header(t_game_info *game_info, t_header *header, char *filename,
 					   short start_position)
 {
 	unsigned char	buf[COMMENT_LENGTH + 1];
@@ -153,15 +153,12 @@ void		set_players(t_data_prog *data_prog, int start_arg, int argc, char **argv)
 	t_player		*new_player;
 	t_pc			*new_pc;
 	char			quantity_players;
-	int				file_names_number[4];
-	char			quantity_files;
 	unsigned int	player_number;
 
 
 	set_start_numbers(free_numbers);
 	current_player = data_prog->player;
 	quantity_players = 0;
-	quantity_files = 0;
 	while (start_arg < argc)
 	{
 		if (current_player->player_number != 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_and_nulling_player_and_game_info.c            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <dlewando@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 08:10:29 by dlewando          #+#    #+#             */
-/*   Updated: 2018/11/16 08:14:41 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/16 09:02:23 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,9 @@ void		nulling_player_and_gameinfo(t_player *player,
 		game_info->counter = 0;
 		game_info->max_checks_counter = 0;
 		game_info->stop_game = -1;
+		game_info->flag_s = 0;
+		game_info->flag_m = 0;
+		game_info->flag_i = 0;
+		game_info->flag_pc = 0;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   processing_players.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 17:53:07 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/27 00:49:07 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/16 10:37:58 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,18 +108,44 @@ void get_command(t_data_prog *data_prog)
 			true_value_pc_index(data_prog->pc->pc_index);
 }
 
+void	print_part_field(t_game_info *game_info, int start, int end)
+{
+	while (start < end)
+	{
+		ft_printf("%02x", game_info->field[start].value);
+		if (start != end - 1)
+			ft_printf(" ");
+		start++;
+	}
+}
+void	print_pc_inform(t_data_prog *data_prog, unsigned char value,
+							short	save_pc)
+{
+	ft_printf("P %4i\tcommand: %2x ", data_prog->pc->pc_number, value);
+	if (value == 9 && data_prog->pc->carry == 1)
+		ft_printf("OK");
+	else if (value == 9 && data_prog->pc->carry == 0)
+		ft_printf("KO");
+	ft_printf("\t\tmovement: %4i\t", data_prog->pc->pc_index - save_pc);
+	ft_printf("(%#06x -> %#06x) ", save_pc,
+			  data_prog->pc->pc_index);
+	if (value == 9)
+		print_part_field(data_prog->game_info, save_pc, save_pc + 3);
+	else
+		print_part_field(data_prog->game_info, save_pc,
+						 data_prog->pc->pc_index);
+	ft_printf("\n");
+}
 
 void	goround_pc(t_data_prog *data_prog)
 {
-	short	save_pc;
-	short	save_cmd;
 	unsigned char value;
+	short	save_pc;
 
 	data_prog->first_pc = data_prog->pc;
 	while (data_prog->pc != 0)
 	{
 		save_pc = data_prog->pc->pc_index;
-		save_cmd = data_prog->pc->command;
 		value = data_prog->pc->command;
 		if (data_prog->pc->time_todo == 0 && data_prog->pc->command != 0)
 			data_prog->pc->action = 1;
@@ -128,21 +154,8 @@ void	goround_pc(t_data_prog *data_prog)
 		else if (data_prog->pc->action == 1)
 		{
 			set_options(data_prog);
-//			if (value == 9 && data_prog->pc->carry == 1)
-//				;
-////			ft_printf("P %4i | ", data_prog->pc->pc_number);
-//			else
-//			{
-////			if (data_prog->pc->command == 9)
-////				ft_printf("carry = %d ", data_prog->pc->carry);
-//				ft_printf("P %4i\tcommand: %x\t\t\t", data_prog->pc->pc_number, save_cmd);
-//				ft_printf("%#06x -> %#06x %i %i ", save_pc,
-//						  data_prog->pc->pc_index,
-//						  data_prog->pc->pc_index - save_pc,
-//						  data_prog->game_info->counter);
-//				ft_printf("reg: %x %x\n", data_prog->pc->registry[1],
-//						  data_prog->pc->registry[2]);
-//			}
+			if (data_prog->game_info->flag_pc)
+				print_pc_inform(data_prog, value, save_pc);
 			data_prog->pc->action = 0;
 		}
 		else
