@@ -43,8 +43,7 @@ char	save_ind(t_sell *field, t_options *opt, char opt_num)
 	return (1);
 }
 
-
-char		add_indent(char arg, int dir_size)
+char	add_indent(char arg, int dir_size)
 {
 	if (arg == 1)
 		return (1);
@@ -54,4 +53,3 @@ char		add_indent(char arg, int dir_size)
 		return (2);
 	return (0);
 }
-

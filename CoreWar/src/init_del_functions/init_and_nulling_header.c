@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors1.c                                          :+:      :+:    :+:   */
+/*   init_and_nulling_header.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/28 05:51:05 by achernys          #+#    #+#             */
-/*   Updated: 2018/09/28 06:27:18 by achernys         ###   ########.fr       */
+/*   Created: 2018/11/16 08:08:43 by dlewando          #+#    #+#             */
+/*   Updated: 2018/11/16 08:08:43 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/vm.h"
+#include "../../inc/vm_init.h"
 
-void	too_many_players_err()
+header_t	*init_header(header_t *header)
 {
-	ft_printf("Too many champions.\n");
-	exit(MANY_PLAYERS_ERR);
+	if (!(header = (header_t *)ft_memalloc(sizeof(header_t))))
+		exit(INIT_ERR);
+	return (header);
 }
 
-void	file_error(char *path)
+void		nulling_header(header_t *header)
 {
-	ft_printf("Can't read source file %s\n", path);
-	exit(FILE_ERR);
+	header->magic = 0;
+	header->prog_size = 0;
 }
