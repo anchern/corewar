@@ -39,18 +39,19 @@ unsigned int	store_index_function(t_data_prog *data_prog)
 	}
 	else
 		return (1);
-	uitobytes(data_prog->pc->registry[data_prog->pc->options->reg[0] - 1], data_prog->game_info->field, data_prog->pc->pc_index +
+	uitobytes(data_prog->pc->registry[data_prog->pc->options->reg[0] - 1],
+			data_prog->game_info->field, data_prog->pc->pc_index +
 							(short)((short)(b + c) % IDX_MOD));
-//	ft_printf("\n!%#06x = %08x, reg #%i!\n",true_value_pc_index(data_prog->pc->pc_index + (short)((short)(b + c) % IDX_MOD)), data_prog->pc->registry[data_prog->pc->options->reg[0] - 1], data_prog->pc->options->reg[0]);
 	return (result);
 }
 
 unsigned int	fork_function(t_data_prog *data_prog)
 {
 	t_pc *new_pc;
-
+	
 	new_pc = init_pc();
-	nulling_pc(new_pc, true_value_pc_index(data_prog->pc->pc_index + (short)((short)data_prog->pc->options->dir[0] % IDX_MOD)));
+	nulling_pc(new_pc, true_value_pc_index(data_prog->pc->pc_index +
+	(short)((short)data_prog->pc->options->dir[0] % IDX_MOD)));
 	new_pc->alive_label = data_prog->pc->alive_label;
 	new_pc->action = 0;
 	new_pc->pc_number  = ++data_prog->pc_number;
@@ -64,18 +65,20 @@ unsigned int	fork_function(t_data_prog *data_prog)
 unsigned int	long_load_command(t_data_prog *data_prog)
 {
 	unsigned int	result;
-
+	
 	result = 1;
 	if (data_prog->pc->options->option_number[0] == 2)
 	{
 		result = 7;
-		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] = data_prog->pc->options->dir[0];
+		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] =
+				data_prog->pc->options->dir[0];
 	}
 	else if (data_prog->pc->options->option_number[0] == 3)
 	{
 		result = 5;
-		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] = bytestoui(data_prog->game_info->field,
-															  data_prog->pc->pc_index + data_prog->pc->options->ind[0]);
+		data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] =
+				bytestoui(data_prog->game_info->field,
+				data_prog->pc->pc_index + data_prog->pc->options->ind[0]);
 	}
 	if (data_prog->pc->registry[data_prog->pc->options->reg[1] - 1] == 0)
 		data_prog->pc->carry = 1;
@@ -87,10 +90,10 @@ unsigned int	long_load_command(t_data_prog *data_prog)
 
 unsigned int	long_load_index_function(t_data_prog *data_prog)
 {
-	unsigned int 	a;
-	unsigned int 	b;
+	unsigned int	a;
+	unsigned int	b;
 	unsigned int	result;
-
+	
 	a = 0;
 	b = 0;
 	result = 3;
@@ -123,7 +126,7 @@ unsigned int	long_load_index_function(t_data_prog *data_prog)
 		b = data_prog->pc->options->dir[1];
 	}
 	data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] = bytestoui(data_prog->game_info->field,
-														  data_prog->pc->pc_index + ((short)(a + b)));
+			data_prog->pc->pc_index + ((short)(a + b)));
 	if (data_prog->pc->registry[data_prog->pc->options->reg[2] - 1] == 0)
 		data_prog->pc->carry = 1;
 	else
@@ -134,9 +137,10 @@ unsigned int	long_load_index_function(t_data_prog *data_prog)
 unsigned int	long_fork_function(t_data_prog *data_prog)
 {
 	t_pc *new_pc;
-
+	
 	new_pc = init_pc();
-	nulling_pc(new_pc, true_value_pc_index(data_prog->pc->pc_index + (short)data_prog->pc->options->dir[0]));
+	nulling_pc(new_pc, true_value_pc_index(data_prog->pc->pc_index +
+	(short)data_prog->pc->options->dir[0]));
 	new_pc->alive_label = data_prog->pc->alive_label;
 	new_pc->carry = data_prog->pc->carry;
 	new_pc->action = 0;

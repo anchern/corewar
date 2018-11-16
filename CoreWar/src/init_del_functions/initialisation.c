@@ -25,7 +25,6 @@ void	nulling_header(header_t *header)
 	header->prog_size = 0;
 }
 
-
 t_game_info	*init_game_info(void)
 {
 	t_game_info *game_info;
@@ -204,18 +203,5 @@ t_data_prog	*data_prog_init(void)
 	nulling_pc(data_prog->pc, 0);
 	data_prog->pc->pc_number = 1;
 	data_prog->pc_number = 1;
-
 	return (data_prog);
 }
-//
-//t_exe_pc	*exe_pc_init(t_pc *pc)
-//{
-//	t_exe_pc	*exe_pc;
-//
-//	if (!(exe_pc = (t_exe_pc *)ft_memalloc(sizeof(t_exe_pc))))
-//		exit(INIT_ERR);
-//	exe_pc->pc = pc;
-//	exe_pc->pc_number = pc->pc_number;
-//	exe_pc->next = NULL;
-//	return (exe_pc);
-//}
