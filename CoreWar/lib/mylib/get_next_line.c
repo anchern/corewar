@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-int		ft_realloc(char **src, size_t size, size_t reqsize)
+int				ft_realloc(char **src, size_t size, size_t reqsize)
 {
 	char *str_tmp;
 

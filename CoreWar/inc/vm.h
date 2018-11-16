@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vm.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/11/16 12:01:34 by achernys         ###   ########.fr       */
+/*   Updated: 2018/11/16 14:19:34 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,4 +161,40 @@ unsigned int			dop_store_index_function(t_data_prog *data_prog,
 int						get_flags(t_data_prog *data_prog, char **argv,
 										int argc);
 void					print_usage(void);
+void					set_options(t_data_prog *data_prog);
+void					execute_command(t_data_prog *data_prog);
+void					check_players_numbers(t_player *player, char quantity,
+								unsigned *free_numbers);
+unsigned				get_free_number(unsigned *free_numbers);
+void					set_start_numbers(unsigned *free_numbers);
+char					is_valid_number(t_player *players,
+										t_player *current_player);
+char					set_player_numbers(t_data_prog *data_prog,
+										int start_arg, int argc, char **argv);
+char					read_mag_and_name(int fd, t_header *header);
+int						read_header(t_game_info *game_info, t_header *header,
+										char *filename, short start_position);
+char					read_bot_size_and_comment(int fd, t_header *header);
+t_player				*create_new_player(t_data_prog *data_prog, t_player
+															*current_player);
+void					save_in_var(unsigned int *var, unsigned char *arr);
+void					copy_field(t_game_info *game_info, unsigned char *field,
+								int field_size, short start_position);
+void					set_registry(t_pc *pc, unsigned int num);
+void					set_start_pc_index(t_pc *pc, char quantity, char i);
+void					init_player_numbers_data(unsigned *free_numbers,
+									t_player **current_player,
+									t_data_prog *data_prog,
+									char *quantity_players);
+void					print_players_on_field(t_player *current_player,
+								unsigned int player_number,
+								t_data_prog *data_prog);
+void					set_players(t_data_prog *data_prog,
+									int start_arg, int argc, char **argv);
+void					death_pc_delete(t_data_prog *data_prog);
+void					dop_pc_delete(t_data_prog *data_prog,
+									t_pc **save_previous,
+									t_pc **tmp_pc, char *flag);
+int						pc_number(t_pc *pc);
+void					nulling_alive_pc(t_pc *pc, t_data_prog *data_prog);
 #endif

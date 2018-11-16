@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_and_nulling_pc.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <dlewando@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 08:14:44 by dlewando          #+#    #+#             */
-/*   Updated: 2018/11/16 08:14:44 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/16 14:36:04 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_pc	*init_pc(void)
 
 	if (!(pc = (t_pc *)malloc(sizeof(t_pc))))
 		exit(INIT_ERR);
+	pc->options = init_options(pc->options);
 	return (pc);
 }
 
@@ -35,7 +36,6 @@ void	nulling_pc(t_pc *pc, short pc_index)
 	pc->next = 0;
 	pc->action = 0;
 	pc->pc_index = pc_index;
-	pc->options = init_options(pc->options);
 	nulling_options(pc->options);
 	pc->command = 0;
 	pc->alive_label = 0;

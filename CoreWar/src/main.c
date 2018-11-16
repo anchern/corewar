@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 02:41:55 by achernys          #+#    #+#             */
-/*   Updated: 2018/11/16 11:07:37 by achernys         ###   ########.fr       */
+/*   Updated: 2018/11/16 15:03:40 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void		print_winner(t_data_prog *data_prog)
 {
-	int 			last_alive;
+	int				last_alive;
 	t_player		*winner;
 
 	last_alive = data_prog->player->last_live;
@@ -45,9 +45,9 @@ void		print_players(t_data_prog *data_prog)
 		{
 			ft_printf("* Player %d, weighing %u bytes, \"%s\" (\"%s\") !\n",
 					-(int)data_prog->player->player_number,
-					  data_prog->player->header->prog_size,
-					  data_prog->player->header->prog_name,
-					  data_prog->player->header->comment);
+					data_prog->player->header->prog_size,
+					data_prog->player->header->prog_name,
+					data_prog->player->header->comment);
 			player_number--;
 			data_prog->player = data_prog->first_player;
 		}
@@ -57,12 +57,10 @@ void		print_players(t_data_prog *data_prog)
 	data_prog->player = data_prog->first_player;
 }
 
-int main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
-	int			tmp;
 	t_data_prog *data_prog;
 	int			start_player_arg_num;
-	char		*line;
 
 	if (argc == 1)
 		print_usage();
@@ -73,10 +71,7 @@ int main(int argc, char **argv)
 	if (data_prog->game_info->flag_s > 0)
 	{
 		print_field(data_prog->game_info);
-		get_next_line(0, &line);
-		if ((tmp = ft_atoi(line)) > 0)
-			data_prog->game_info->flag_s = tmp;
-		free(line);
+		read(0, 0, 1);
 	}
 	current_cycle_to_die(data_prog);
 	print_winner(data_prog);

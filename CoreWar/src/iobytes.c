@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../inc/vm.h"
 
 unsigned int	bytestoui(const t_sell *byte, short index)
@@ -24,9 +23,9 @@ unsigned int	bytestoui(const t_sell *byte, short index)
 	result = (result | byte[(index + 1) >= FIELD_SIZE ? (index + 1) % FIELD_SIZE
 													: index + 1].value) << 8;
 	result = (result | byte[(index + 2) >= FIELD_SIZE ? (index + 2) % FIELD_SIZE
-													  : index + 2].value) << 8;
+													: index + 2].value) << 8;
 	result = result | byte[(index + 3) >= FIELD_SIZE ? (index + 3) % FIELD_SIZE
-													 : index + 3].value;
+													: index + 3].value;
 	return (result);
 }
 
@@ -39,7 +38,7 @@ short			bytestos(const t_sell *byte, short index)
 	result = (result | byte[index >= FIELD_SIZE ? index % FIELD_SIZE :
 							index].value) << 8;
 	result = result | byte[(index + 1) >= FIELD_SIZE ? (index + 1) % FIELD_SIZE
-													  : index + 1].value;
+													: index + 1].value;
 	return (result);
 }
 

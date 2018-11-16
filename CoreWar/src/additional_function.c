@@ -19,7 +19,7 @@ short		true_value_pc_index(short pc_index)
 	if (pc_index < 0)
 	{
 		while (pc_index < 0)
-			pc_index += (short) FIELD_SIZE;
+			pc_index += (short)FIELD_SIZE;
 		return (pc_index);
 	}
 	if (pc_index >= FIELD_SIZE)

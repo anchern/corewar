@@ -19,7 +19,7 @@
 # define INIT_ERR 73
 # define ARG_ERR 74
 
-void	too_many_players_err();
 void	file_error(char *path);
+void	too_many_players_err(void);
 
 #endif

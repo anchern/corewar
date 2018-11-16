@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_options2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <dlewando@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 04:01:59 by achernys          #+#    #+#             */
-/*   Updated: 2018/11/16 08:24:54 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/16 15:14:40 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ char		get_indent_pc(unsigned char codage_octal, char dir_size)
 
 static char	save_hdir(t_sell *field, t_options *opt, char opt_num)
 {
-	opt->option_number[opt_num] = 2;
-	opt->dir[opt_num] = (unsigned)bytestos(field, 0);
+	opt->option_number[(int)opt_num] = (char)2;
+	opt->dir[(int)opt_num] = (unsigned)bytestos(field, 0);
 	return (1);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_options1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 02:41:36 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/24 12:06:33 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/16 13:42:15 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ char	di_r_options(t_options *opt, t_sell *field, short pc_i)
 	if ((field[pc_i].value >> 4 & 3) != 1 || (field[pc_i].value >> 6 != 2 &&
 										field[pc_i].value >> 6 != 3))
 		return (add_indent(FIRST_CODE(field[pc_i].value), 4) +
-		add_indent(MIDDLE_CODE(field[pc_i].value), 4));
-	if (field[pc_i].value >> 6 == 2)
+				add_indent(MIDDLE_CODE(field[pc_i].value), 4));
+	else if (field[pc_i].value >> 6 == 2)
 	{
 		opt->option_number[0] = 2;
 		opt->dir[0] = bytestoui(field, true_value_pc_index(pc_i + 1));
@@ -55,7 +55,8 @@ char	r_ri_options(t_options *opt, t_sell *field, short pc_i)
 										(field[pc_i].value >> 4 & 3) != 3))
 		return (add_indent(FIRST_CODE(field[pc_i].value), 4) +
 		add_indent(MIDDLE_CODE(field[pc_i].value), 4));
-	opt->option_number[0] = 1;
+	else
+		opt->option_number[0] = 1;
 	opt->reg[0] = field[true_value_pc_index(pc_i + 1)].value > 16 ? 0 :
 			field[true_value_pc_index(pc_i + 1)].value;
 	if ((field[pc_i].value >> 4 & 3) == 3)
@@ -71,8 +72,9 @@ char	r_ri_options(t_options *opt, t_sell *field, short pc_i)
 	}
 	if (opt->reg[0] == 0 || (opt->option_number[1] == 1 && opt->reg[1] == 0))
 		return (add_indent(FIRST_CODE(field[pc_i].value), 4) +
-		add_indent(MIDDLE_CODE(field[pc_i].value), 4));
-	return (-1);
+				add_indent(MIDDLE_CODE(field[pc_i].value), 4));
+	else
+		return (-1);
 }
 
 char	r_r_r_options(t_options *options, t_sell *field, short pc_i)
