@@ -6,7 +6,7 @@
 /*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/28 01:34:51 by achernys          #+#    #+#             */
-/*   Updated: 2018/10/03 21:24:44 by achernys         ###   ########.fr       */
+/*   Updated: 2018/11/16 01:08:44 by achernys         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	save_in_var(unsigned int *var, unsigned char *arr)
 	*var = *var | arr[3];
 }
 
-void	copy_field(t_game_info *game_info, unsigned char *field, int field_size,
+int		copy_field(t_game_info *game_info, unsigned char *field, int field_size,
 				   short start_position)
 {
 	int i;
@@ -31,6 +31,7 @@ void	copy_field(t_game_info *game_info, unsigned char *field, int field_size,
 		game_info->field[start_position++].value = field[i];
 		i++;
 	}
+	return(i);
 }
 
 int		read_header(t_game_info *game_info, header_t *header, char *filename,
@@ -55,6 +56,7 @@ int		read_header(t_game_info *game_info, header_t *header, char *filename,
 	ft_strcpy(header->prog_name, (char *)buf);
 	if (read(fd, buf, 4) < 4)
 		return (fd);
+	save_in_var(&header->prog_size, buf);
 	if (read(fd, buf, 4) < 4)
 		return (fd);
 	save_in_var(&header->prog_size, buf);
@@ -65,7 +67,12 @@ int		read_header(t_game_info *game_info, header_t *header, char *filename,
 		return (fd);
 	if ((rd = read(fd, buf, header->prog_size)) < header->prog_size || rd > CHAMP_MAX_SIZE)
 		return (fd);
-	copy_field(game_info, buf, header->prog_size, start_position);
+	if (header->prog_size != copy_field(game_info, buf, header->prog_size, start_position))
+	{
+		close(fd);
+		ft_printf("Declared bot size is not equal actual bot size.\n");
+		exit(322);
+	}
 	close(fd);
 	return (0);
 }
@@ -153,15 +160,16 @@ void		set_players(t_data_prog *data_prog, int start_arg, int argc, char **argv)
 	t_player		*new_player;
 	t_pc			*new_pc;
 	char			quantity_players;
-	int				file_names_number[4];
-	char			quantity_files;
 	unsigned int	player_number;
 
-
+	if (start_arg == argc)
+	{
+		ft_printf("Huinya kakae-to!!!\n");
+		exit(228);
+	}
 	set_start_numbers(free_numbers);
 	current_player = data_prog->player;
 	quantity_players = 0;
-	quantity_files = 0;
 	while (start_arg < argc)
 	{
 		if (current_player->player_number != 0)
@@ -210,6 +218,7 @@ void		set_players(t_data_prog *data_prog, int start_arg, int argc, char **argv)
 								  current_player->file_name,
 								  data_prog->pc->pc_index))) {
 				close(fd);
+				ft_printf("File information error!\n");
 				exit(FILE_INFORM_ERR);
 			}
 			player_number++;

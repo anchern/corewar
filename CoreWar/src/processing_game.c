@@ -15,7 +15,7 @@
 void		cycle_to_die_reduce(t_data_prog *data_prog, int *cycle_to_die)
 {
 	int	sum;
-	
+
 	sum = 0;
 	while (data_prog->player != 0)
 	{
@@ -48,49 +48,43 @@ int			pc_number(t_pc *pc)
 	return (pc_number(pc->next) + 1);
 }
 
-void		dop_pc_delete(t_data_prog *data_prog, t_pc **save_previous, t_pc
-	**tmp_pc, char *flag)
+void		death_pc_delete(t_data_prog *data_prog)
 {
 	t_pc	*first_pc;
 	t_pc	*removable_pc;
-	
-	first_pc = data_prog->pc;
-	while (first_pc != 0)
-	{
-		if (*save_previous != 0 && *flag == 0)
-		{
-			*tmp_pc = *save_previous;
-			*flag = 1;
-		}
-		if (first_pc->alive_label == 0)
-		{
-			removable_pc = first_pc;
-			first_pc = first_pc->next;
-			if (*save_previous != 0)
-				(*save_previous)->next = first_pc;
-			free(removable_pc);
-			removable_pc = 0;
-		}
-		if (first_pc != 0 && first_pc->alive_label == 1)
-			*save_previous = first_pc;
-		if (first_pc != 0 && first_pc->alive_label == 1)
-			first_pc = first_pc->next;
-	}
-}
-
-void		death_pc_delete(t_data_prog *data_prog)
-{
 	t_pc	*tmp_pc;
 	t_pc	*save_previous;
 	char	flag;
 
 	save_previous = 0;
+	first_pc = data_prog->pc;
 	tmp_pc = data_prog->pc;
 	if (tmp_pc->alive_label == 1)
 		flag = 1;
 	else
 		flag = 0;
-	dop_pc_delete(data_prog, &save_previous, &tmp_pc, &flag);
+	while (first_pc != 0)
+	{
+		if (save_previous != 0 && flag == 0)
+		{
+			tmp_pc = save_previous;
+			flag = 1;
+		}
+		if (first_pc->alive_label == 0)
+		{
+			removable_pc = first_pc;
+			first_pc = first_pc->next;
+			if (save_previous != 0)
+				save_previous->next = first_pc;
+			free(removable_pc);
+			removable_pc = 0;
+		}
+		if (first_pc != 0 && first_pc->alive_label == 1)
+		{
+			save_previous = first_pc;
+			first_pc = first_pc->next;
+		}
+	}
 	if (flag == 0 && save_previous != 0)
 		tmp_pc = save_previous;
 	else if (flag == 0)
@@ -106,25 +100,6 @@ void		nulling_alive_pc(t_pc *pc, t_data_prog *data_prog)
 	nulling_alive_pc(pc->next, data_prog);
 }
 
-void		dop_cycle_current_cycle_to_die(int *current_i, int cycle_to_die,
-t_data_prog *data_prog)
-{
-	*current_i = 0;
-	while (*current_i < cycle_to_die)
-	{
-		(*current_i)++;
-		data_prog->game_info->counter++;
-		goround_pc(data_prog);
-		if (data_prog->game_info->counter ==
-			data_prog->game_info->stop_game)
-		{
-			print_field(data_prog->game_info, 0);
-			free_memory(data_prog);
-			exit(0);
-		}
-	}
-}
-
 void		current_cycle_to_die(t_data_prog *data_prog)
 {
 	int			cycle_to_die;
@@ -133,7 +108,19 @@ void		current_cycle_to_die(t_data_prog *data_prog)
 	cycle_to_die = CYCLE_TO_DIE;
 	while (cycle_to_die > 0 && data_prog->pc != 0)
 	{
-		dop_cycle_current_cycle_to_die(&current_i, cycle_to_die, data_prog);
+		current_i = 0;
+		while (current_i < cycle_to_die)
+		{
+			current_i++;
+			data_prog->game_info->counter++;
+			goround_pc(data_prog);
+			if (data_prog->game_info->counter == data_prog->game_info->stop_game)
+			{
+				print_field(data_prog->game_info, 0);
+				free_memory(data_prog);
+				exit(0);
+			}
+		}
 		data_prog->game_info->max_checks_counter++;
 		cycle_to_die_reduce(data_prog, &cycle_to_die);
 		death_pc_delete(data_prog);
