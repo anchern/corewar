@@ -17,7 +17,7 @@ static void	value_between_1_and_17(int value, t_data_prog *data_prog)
 	if (value == 16)
 	{
 		ft_printf("Aff: %c\n",
-			(data_prog->pc->registry[(int)data_prog->pc->options->reg[0]] % 256));
+		(data_prog->pc->registry[(int)data_prog->pc->options->reg[0]] % 256));
 		data_prog->pc->pc_index += 3;
 	}
 	else if (value == 9)

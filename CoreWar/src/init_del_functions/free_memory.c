@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_memory.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlewando <dlewando@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 07:23:43 by dlewando          #+#    #+#             */
-/*   Updated: 2018/11/16 07:23:43 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/22 16:14:33 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void		free_pc(t_pc *pc)
 void		free_memory(t_data_prog *data_prog)
 {
 	free(data_prog->game_info);
-	free_player(data_prog->first_player);
 	free_pc(data_prog->first_pc);
+	free_player(data_prog->first_player);
 	free(data_prog->arrays);
 	free(data_prog);
 }

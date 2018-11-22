@@ -1,6 +1,3 @@
-/Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/achernys/corewar/CoreWar/cmake-build-debug/CMakeFiles/corewar.dir
-/Users/achernys/corewar/CoreWar/cmake-build-debug/lib/mylib/CMakeFiles/rebuild_cache.dir
-/Users/achernys/corewar/CoreWar/cmake-build-debug/lib/mylib/CMakeFiles/edit_cache.dir
-/Users/achernys/corewar/CoreWar/cmake-build-debug/lib/mylib/CMakeFiles/mylib.dir
+/Users/dlewando/corewartest/CoreWar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/dlewando/corewartest/CoreWar/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/dlewando/corewartest/CoreWar/cmake-build-debug/CMakeFiles/CoreWar.dir

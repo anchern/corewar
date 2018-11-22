@@ -30,7 +30,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../CMakeLists.txt"
   "CMakeFiles/3.12.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.12.1/CMakeSystem.cmake"
-  "../lib/mylib/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -42,11 +41,9 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "lib/mylib/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/corewar.dir/DependInfo.cmake"
-  "lib/mylib/CMakeFiles/mylib.dir/DependInfo.cmake"
+  "CMakeFiles/CoreWar.dir/DependInfo.cmake"
   )

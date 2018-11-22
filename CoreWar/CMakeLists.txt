@@ -1,15 +1,133 @@
 cmake_minimum_required(VERSION 3.12)
 project(CoreWar C)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
 
+include_directories(inc)
 include_directories(lib/mylib)
+include_directories(lib/mylib/libft)
 
-#add_definitions("-Wall -Wextra -Werror -O3")
-
-
-add_executable(corewar src/main.c inc/vm.h inc/op.h src/commands/commands1_5.c src/commands/commands6_10.c src/commands/commands11_15.c src/iobytes.c src/read_options/read_options1.c src/additional_function.c src/read_options/read_options2.c src/read_options/for_read_options.c src/processing_program_args/processing_players_args.c inc/errors.h src/errors/errors1.c inc/vm_init.h src/processing_game.c src/processing_players.c src/init_del_functions/free_memory.c)
-
-add_subdirectory(lib/mylib)
-
-target_link_libraries(corewar mylib)
+add_executable(CoreWar
+        inc/errors.h
+        inc/op.h
+        inc/vm.h
+        inc/vm_init.h
+        lib/mylib/libft/ft_atoi.c
+        lib/mylib/libft/ft_bzero.c
+        lib/mylib/libft/ft_isalnum.c
+        lib/mylib/libft/ft_isalpha.c
+        lib/mylib/libft/ft_isascii.c
+        lib/mylib/libft/ft_isdigit.c
+        lib/mylib/libft/ft_isprint.c
+        lib/mylib/libft/ft_itoa.c
+        lib/mylib/libft/ft_lstadd.c
+        lib/mylib/libft/ft_lstdel.c
+        lib/mylib/libft/ft_lstdelone.c
+        lib/mylib/libft/ft_lstiter.c
+        lib/mylib/libft/ft_lstmap.c
+        lib/mylib/libft/ft_lstnew.c
+        lib/mylib/libft/ft_lstpushback.c
+        lib/mylib/libft/ft_memalloc.c
+        lib/mylib/libft/ft_memccpy.c
+        lib/mylib/libft/ft_memchr.c
+        lib/mylib/libft/ft_memcmp.c
+        lib/mylib/libft/ft_memcpy.c
+        lib/mylib/libft/ft_memdel.c
+        lib/mylib/libft/ft_memmove.c
+        lib/mylib/libft/ft_memset.c
+        lib/mylib/libft/ft_pow.c
+        lib/mylib/libft/ft_putchar.c
+        lib/mylib/libft/ft_putchar_fd.c
+        lib/mylib/libft/ft_putendl.c
+        lib/mylib/libft/ft_putendl_fd.c
+        lib/mylib/libft/ft_putnbr.c
+        lib/mylib/libft/ft_putnbr_fd.c
+        lib/mylib/libft/ft_putstr.c
+        lib/mylib/libft/ft_putstr_fd.c
+        lib/mylib/libft/ft_strcat.c
+        lib/mylib/libft/ft_strchr.c
+        lib/mylib/libft/ft_strclr.c
+        lib/mylib/libft/ft_strcmp.c
+        lib/mylib/libft/ft_strcpy.c
+        lib/mylib/libft/ft_strdel.c
+        lib/mylib/libft/ft_strdup.c
+        lib/mylib/libft/ft_strequ.c
+        lib/mylib/libft/ft_striter.c
+        lib/mylib/libft/ft_striteri.c
+        lib/mylib/libft/ft_strjoin.c
+        lib/mylib/libft/ft_strlcat.c
+        lib/mylib/libft/ft_strlen.c
+        lib/mylib/libft/ft_strmap.c
+        lib/mylib/libft/ft_strmapi.c
+        lib/mylib/libft/ft_strncat.c
+        lib/mylib/libft/ft_strncmp.c
+        lib/mylib/libft/ft_strncpy.c
+        lib/mylib/libft/ft_strnequ.c
+        lib/mylib/libft/ft_strnew.c
+        lib/mylib/libft/ft_strnstr.c
+        lib/mylib/libft/ft_strrchr.c
+        lib/mylib/libft/ft_strsplit.c
+        lib/mylib/libft/ft_strstr.c
+        lib/mylib/libft/ft_strsub.c
+        lib/mylib/libft/ft_strtrim.c
+        lib/mylib/libft/ft_strtrimc.c
+        lib/mylib/libft/ft_tolower.c
+        lib/mylib/libft/ft_toupper.c
+        lib/mylib/libft/libft.h
+        lib/mylib/ft_bitoa.c
+        lib/mylib/ft_forparse.c
+        lib/mylib/ft_forparse01.c
+        lib/mylib/ft_forparse02.c
+        lib/mylib/ft_ftoa.c
+        lib/mylib/ft_get_tval.c
+        lib/mylib/ft_getfloatval.c
+        lib/mylib/ft_getint.c
+        lib/mylib/ft_getparam.c
+        lib/mylib/ft_gettxtval.c
+        lib/mylib/ft_getunsignedval.c
+        lib/mylib/ft_itoabase.c
+        lib/mylib/ft_other.c
+        lib/mylib/ft_parsetype.c
+        lib/mylib/ft_printf.c
+        lib/mylib/ft_printf.h
+        lib/mylib/ft_proc_e_type.c
+        lib/mylib/ft_procdouble.c
+        lib/mylib/ft_processingflags.c
+        lib/mylib/ft_procint.c
+        lib/mylib/ft_procnotation.c
+        lib/mylib/ft_procstr.c
+        lib/mylib/ft_proctxt.c
+        lib/mylib/ft_setcolor.c
+        lib/mylib/get_next_line.c
+        lib/mylib/get_next_line.h
+        src/commands/commands11_15.c
+        src/commands/commands1_5.c
+        src/commands/commands6_10.c
+        src/commands/dop11_15commands.c
+        src/commands/dop6_10commands.c
+        src/errors/errors1.c
+        src/init_del_functions/free_memory.c
+        src/init_del_functions/init_and_nulling_header.c
+        src/init_del_functions/init_and_nulling_options.c
+        src/init_del_functions/init_and_nulling_pc.c
+        src/init_del_functions/init_and_nulling_player_and_game_info.c
+        src/init_del_functions/init_arrays.c
+        src/init_del_functions/init_data_prog.c
+        src/processing_program_args/additional_functions.c
+        src/processing_program_args/create_new_player.c
+        src/processing_program_args/processing_players_args.c
+        src/processing_program_args/read_header.c
+        src/processing_program_args/valid_and_set_numbers.c
+        src/read_options/for_read_options.c
+        src/read_options/read_options1.c
+        src/read_options/read_options2.c
+        src/additional_function.c
+        src/get_flags.c
+        src/iobytes.c
+        src/main.c
+        src/pc_manipulation.c
+        src/print_field.c
+        src/print_usage.c
+        src/processing_game.c
+        src/processing_players.c
+        src/set_options_and_execute.c)

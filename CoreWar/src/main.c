@@ -6,7 +6,7 @@
 /*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/22 02:41:55 by achernys          #+#    #+#             */
-/*   Updated: 2018/11/16 15:03:40 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/22 17:01:59 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int			main(int argc, char **argv)
 		print_usage();
 	data_prog = data_prog_init();
 	start_player_arg_num = get_flags(data_prog, argv, argc);
+	if (start_player_arg_num >= argc)
+		exit(228);
 	set_players(data_prog, start_player_arg_num, argc, argv);
 	print_players(data_prog);
 	if (data_prog->game_info->flag_s > 0)

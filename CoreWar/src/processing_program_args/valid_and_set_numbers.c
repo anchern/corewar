@@ -6,7 +6,7 @@
 /*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 13:59:12 by dlewando          #+#    #+#             */
-/*   Updated: 2018/11/16 14:06:24 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/22 13:58:58 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,9 @@ char		set_player_numbers(t_data_prog *data_prog, int start_arg, int argc,
 		cur_player = create_new_player(data_prog, cur_player);
 		if (!ft_strcmp(argv[start_arg], "-n"))
 		{
-			if (start_arg + 1 == argc)
+			if (start_arg++ + 1 == argc)
 				exit(ARG_ERR);
-			cur_player->player_number = (unsigned)-ft_atoi(argv[++start_arg]);
+			check_num_flag(&(cur_player->player_number), argv, start_arg, 1);
 			if (!is_valid_number(data_prog->player, cur_player))
 				cur_player->player_number = get_free_number(free_num);
 			free_num[-(int)cur_player->player_number - 1] = 0;

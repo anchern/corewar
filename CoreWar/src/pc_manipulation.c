@@ -67,6 +67,7 @@ void		death_pc_delete(t_data_prog *data_prog)
 	else if (flag == 0)
 		tmp_pc = 0;
 	data_prog->pc = tmp_pc;
+	data_prog->first_pc = data_prog->pc;
 }
 
 void		nulling_alive_pc(t_pc *pc, t_data_prog *data_prog)

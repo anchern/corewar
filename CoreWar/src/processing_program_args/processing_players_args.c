@@ -26,7 +26,8 @@ void		print_players_on_field(t_player *current_player,
 								current_player->file_name,
 								data_prog->pc->pc_index)))
 			{
-				ft_printf("Error in file %s\n", current_player->file_name);
+				ft_printf("{red}Error in file %s{eoc}\n",
+						current_player->file_name);
 				close(fd);
 				exit(FILE_INFORM_ERR);
 			}

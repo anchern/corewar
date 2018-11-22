@@ -6,7 +6,7 @@
 /*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/21 15:04:39 by achernys          #+#    #+#             */
-/*   Updated: 2018/11/16 14:19:34 by dlewando         ###   ########.fr       */
+/*   Updated: 2018/11/22 13:56:08 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,12 +189,12 @@ void					init_player_numbers_data(unsigned *free_numbers,
 void					print_players_on_field(t_player *current_player,
 								unsigned int player_number,
 								t_data_prog *data_prog);
-void					set_players(t_data_prog *data_prog,
-									int start_arg, int argc, char **argv);
 void					death_pc_delete(t_data_prog *data_prog);
 void					dop_pc_delete(t_data_prog *data_prog,
 									t_pc **save_previous,
 									t_pc **tmp_pc, char *flag);
 int						pc_number(t_pc *pc);
 void					nulling_alive_pc(t_pc *pc, t_data_prog *data_prog);
+void					check_num_flag(unsigned int *dest,
+									char **argv, int arg, char sign);
 #endif

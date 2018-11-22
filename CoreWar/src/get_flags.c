@@ -3,14 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   get_flags.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achernys <achernys@student.unit.ua>        +#+  +:+       +#+        */
+/*   By: dlewando <dlewando@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 06:34:11 by achernys          #+#    #+#             */
-/*   Updated: 2018/11/16 11:33:47 by achernys         ###   ########.fr       */
+/*   Updated: 2018/11/22 14:16:22 by dlewando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/vm.h"
+
+void		check_num_flag(unsigned int *dest, char **argv, int arg,
+		char sign)
+{
+	int i;
+
+	i = 0;
+	if (argv[arg][i] == '-' || argv[arg][i] == '+')
+		i++;
+	while (ft_isdigit(argv[arg][i]) == 1)
+		i++;
+	if (argv[arg][i] != '\0')
+		print_usage();
+	if ((i == 0 || (i == 1 && ft_strncmp(argv[arg], "-", 1) == 0) ||
+			(i == 1 && ft_strncmp(argv[arg], "+", 1) == 0)))
+		print_usage();
+	if (ft_atoi(argv[arg]) < 0)
+		print_usage();
+	if (sign == 1)
+		*dest = (unsigned)-ft_atoi(argv[arg]);
+	else
+		*dest = (unsigned)ft_atoi(argv[arg]);
+}
 
 static char	flags_definition(t_data_prog *data_prog, char **argv, int argc,
 		int *using_args)
@@ -19,13 +42,15 @@ static char	flags_definition(t_data_prog *data_prog, char **argv, int argc,
 	{
 		if (++(*using_args) == argc)
 			print_usage();
-		data_prog->game_info->stop_game = ft_atoi(argv[*using_args]);
+		check_num_flag((unsigned *)&(data_prog->game_info->stop_game),
+				argv, *using_args, 0);
 	}
 	else if (*using_args != argc && ft_strcmp(argv[*using_args], "-s") == 0)
 	{
 		if (++(*using_args) == argc)
 			print_usage();
-		data_prog->game_info->flag_s = ft_atoi(argv[*using_args]);
+		check_num_flag((unsigned *)&(data_prog->game_info->flag_s),
+								argv, *using_args, 0);
 	}
 	else if (*using_args != argc && ft_strcmp(argv[*using_args], "-m") == 0)
 		data_prog->game_info->flag_m = 1;

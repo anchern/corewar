@@ -6,25 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/Users/dlewando/Corewar/corewar/CoreWar/inc/op.h
+/Users/dlewando/corewartest/CoreWar/inc/errors.h
 
-/Users/dlewando/Corewar/corewar/CoreWar/inc/vm.h
+/Users/dlewando/corewartest/CoreWar/inc/op.h
+
+/Users/dlewando/corewartest/CoreWar/inc/vm.h
 ../lib/mylib/ft_printf.h
-/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_printf.h
+/Users/dlewando/corewartest/CoreWar/lib/mylib/ft_printf.h
 ../inc/op.h
-/Users/dlewando/Corewar/corewar/CoreWar/inc/op.h
+/Users/dlewando/corewartest/CoreWar/inc/op.h
+errors.h
+/Users/dlewando/corewartest/CoreWar/inc/errors.h
 fcntl.h
 -
 
-/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/ft_printf.h
+/Users/dlewando/corewartest/CoreWar/inc/vm_init.h
+vm.h
+/Users/dlewando/corewartest/CoreWar/inc/vm.h
+
+/Users/dlewando/corewartest/CoreWar/lib/mylib/ft_printf.h
 libft/libft.h
-/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h
+/Users/dlewando/corewartest/CoreWar/lib/mylib/libft/libft.h
 stdarg.h
 -
 math.h
 -
 
-/Users/dlewando/Corewar/corewar/CoreWar/lib/mylib/libft/libft.h
+/Users/dlewando/corewartest/CoreWar/lib/mylib/libft/libft.h
 string.h
 -
 stdlib.h
@@ -32,7 +40,7 @@ stdlib.h
 unistd.h
 -
 
-/Users/dlewando/Corewar/corewar/CoreWar/src/main.c
-../inc/vm.h
-/Users/dlewando/Corewar/corewar/CoreWar/inc/vm.h
+/Users/dlewando/corewartest/CoreWar/src/processing_program_args/processing_players_args.c
+../../inc/vm_init.h
+/Users/dlewando/corewartest/CoreWar/inc/vm_init.h
 
